@@ -94,8 +94,25 @@ namespace GPOpgaver
          */
         public static int StepsInBinarySearch(int[] integerArray, int arrayStart, int arrayEnd, int searchFor)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Write your solution here
+
+            searchFor = integerArray.Length;
+            int Mid = 0;
+            arrayStart = 0;
+            arrayEnd = integerArray.Length - 1;
+
+            while(arrayStart <= arrayEnd)
+            {
+                Mid = (arrayStart + arrayEnd) / 2;
+                if (searchFor < integerArray[Mid])
+                    arrayStart = Mid + 1;
+                if (searchFor > integerArray[Mid])
+                    arrayEnd = Mid - 1;
+            }
+
+            return searchFor;
+
         }
         /*
          * Introduktion til Algoritmer
