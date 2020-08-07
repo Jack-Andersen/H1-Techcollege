@@ -6,7 +6,7 @@ namespace GPOpgaver
     {
         static void Main(string[] args)
         {
-
+           Opgaver.ArrayOfMultiples(7, 5);
         }
     }
 }

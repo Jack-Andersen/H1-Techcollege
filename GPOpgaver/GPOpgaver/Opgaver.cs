@@ -89,29 +89,29 @@ namespace GPOpgaver
         /*
          * Introduktion til Algoritmer
          * Exercise 4.b.
-         * List all the steps used to search for 9 in the sequence 1, 3, 4, 5, 6, 8, 9, 11
+         * List all the steps used to search for 9 in the sequence 1, 3, 4, 5, 6, 8, 9, 11 
          * Do this by completing the unit test for 4B
          */
         public static int StepsInBinarySearch(int[] integerArray, int arrayStart, int arrayEnd, int searchFor)
         {
             //throw new NotImplementedException();
             //Write your solution here
+            int start = arrayStart;
+            int end = arrayEnd; 
+            int mid = 0;
+            int count = 0;
 
-            searchFor = integerArray.Length;
-            int Mid = 0;
-            arrayStart = 0;
-            arrayEnd = integerArray.Length - 1;
-
-            while(arrayStart <= arrayEnd)
+            while(searchFor != integerArray[mid])
             {
-                Mid = (arrayStart + arrayEnd) / 2;
-                if (searchFor < integerArray[Mid])
-                    arrayStart = Mid + 1;
-                if (searchFor > integerArray[Mid])
-                    arrayEnd = Mid - 1;
+                count++;
+                mid = (start + end) / 2;
+                if (searchFor < integerArray[mid])
+                    end = mid - 1;
+                if (searchFor > integerArray[mid])
+                    start = mid + 1;
             }
 
-            return searchFor;
+            return count;
 
         }
         /*
@@ -121,8 +121,23 @@ namespace GPOpgaver
          */
         public static int InsertSortedList(List<int> sortedList, int insert)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Write your solution here
+
+            int postion = 0;
+
+            for (int i = 0; i < sortedList.Count()-1; i++)
+            {
+                if (insert > sortedList[i])
+                {
+                    postion = i;
+                }
+            }
+
+            sortedList.Insert(postion+1, insert);
+
+            return postion+1;
+
         }
         /*
          * Exercise 6.
@@ -132,8 +147,19 @@ namespace GPOpgaver
          */
         public static int[] ArrayOfMultiples(int num, int length)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Write your solution here
+
+            int[] arr = Enumerable.Range(num, length).ToArray();
+            //int[] arr = new int[length];
+
+            for (int i = 0; i < length; i++)
+            {
+                arr[i] = num * (i + 1);
+            }
+
+            return arr;
+
         }
         /*
          * Exercise 7.
@@ -142,7 +168,7 @@ namespace GPOpgaver
          */
         public static int PowerRanger(int power, int min, int max)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Write your solution here
         }
         /*
