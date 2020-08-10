@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace GPOpgaver
 {
@@ -170,6 +171,20 @@ namespace GPOpgaver
         {
             //throw new NotImplementedException();
             //Write your solution here
+
+            int number = 0;
+            int startnumber = 0;
+            int count = 0;
+
+            while (number < max)
+            {
+                number = (int)Math.Pow(startnumber++, power);
+                if (number >= min && number <= max)
+                    count++;
+            }
+
+            return count;
+
         }
         /*
          * Exercise 8.
@@ -180,8 +195,19 @@ namespace GPOpgaver
          */
         public static long Factorial(int n)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Write your solution here
+
+            long result = 1;
+
+            while (n >= 1)
+            {
+                result = result * n;
+                n = n - 1;
+            }
+
+            return result;
+
         }
         /*
          * Exercise 9.
@@ -192,8 +218,32 @@ namespace GPOpgaver
          */
         public static string IncrementString(string txt)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             //Write your solution here
+
+            int number = 0;
+
+            string[] newData = new string[txt.Length];
+            string digits = new string(txt.Where(char.IsDigit).ToArray());
+            string letters = new string(txt.Where(char.IsLetter).ToArray());
+
+            if (digits.Length > 0)
+            {
+                number = int.Parse(digits);
+                if(number.ToString().Length != digits.Length)
+                {
+                    number
+                }
+            }
+            else
+            {
+                number = 0;
+            }
+
+            string newtxt = letters + (++number).ToString();
+
+            return newtxt;
+
         }
     }
 }
