@@ -6,8 +6,7 @@ namespace Reaction_time_game_PN
     class Program
     {
 
-        private static System.Timers.Timer aTimer;
-
+        public static System.Timers.Timer aTimer;
 
         static void Main(string[] args)
         {
