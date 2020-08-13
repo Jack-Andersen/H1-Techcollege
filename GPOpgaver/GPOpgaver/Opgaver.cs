@@ -222,6 +222,7 @@ namespace GPOpgaver
             //Write your solution here
 
             int number = 0;
+            string newtxt = "";
 
             string[] newData = new string[txt.Length];
             string digits = new string(txt.Where(char.IsDigit).ToArray());
@@ -230,17 +231,23 @@ namespace GPOpgaver
             if (digits.Length > 0)
             {
                 number = int.Parse(digits);
-                if(number.ToString().Length != digits.Length)
+                if(number.ToString().Length != txt.Length)
                 {
-                    number
+                    number++;
+                    while ((letters + (number).ToString()).Length < txt.Length)
+                    {
+                        letters = letters + "0";
+                    }
+                    newtxt = letters + (number).ToString();
                 }
             }
             else
             {
-                number = 0;
-            }
 
-            string newtxt = letters + (++number).ToString();
+                digits = "1";
+                newtxt = letters + digits;
+
+            }
 
             return newtxt;
 

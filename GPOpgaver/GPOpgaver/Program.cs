@@ -6,7 +6,7 @@ namespace GPOpgaver
     {
         static void Main(string[] args)
         {
-            Opgaver.IncrementString("foobar01002");
+            Opgaver.IncrementString("foo023432");
         }
     }
 }
