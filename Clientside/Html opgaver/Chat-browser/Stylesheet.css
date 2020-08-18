@@ -1,0 +1,67 @@
+body {
+
+    background-image: url("images/cherry-blossoms.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.chatBox{
+
+    height: 500px;
+    width: 1400px;
+    margin-left: 100px;
+    margin-top: 150px;
+
+    border: black solid;
+    color:  white;
+    background-color: gray;
+
+}
+
+.userBox{
+
+    height: 560px;
+    width: 300px;
+    float: right;
+    margin-right: 100px;
+
+    border: black solid;
+    color:  white;
+    background-color:gray;
+
+}
+
+.msgBox{
+
+    height: 50px;
+    width: 1400px;
+    margin-left: 100px;
+    margin-top: 10px;
+    
+    border: black solid;
+    color: white;
+    background-color: pink;
+}
+
+.btn{
+
+    background-color: pink;
+    border: none;
+    color: white;
+    padding: 4px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 2.5px;
+    margin-right: 2.5px;
+    float: right;
+    width: 99.65%;
+
+}
+
+.msg{
+
+    width: 91%;
+
+}
