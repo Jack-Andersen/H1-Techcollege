@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Reaction_time_game_new/1.0.0": {
+        "runtime": {
+          "Reaction_time_game_new.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Reaction_time_game_new/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

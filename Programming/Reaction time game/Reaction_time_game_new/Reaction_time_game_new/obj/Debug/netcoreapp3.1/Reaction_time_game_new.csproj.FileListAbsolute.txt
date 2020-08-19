@@ -1,0 +1,10 @@
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\bin\Debug\netcoreapp3.1\Reaction_time_game_new.exe
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\bin\Debug\netcoreapp3.1\Reaction_time_game_new.deps.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\bin\Debug\netcoreapp3.1\Reaction_time_game_new.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\bin\Debug\netcoreapp3.1\Reaction_time_game_new.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\bin\Debug\netcoreapp3.1\Reaction_time_game_new.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\bin\Debug\netcoreapp3.1\Reaction_time_game_new.pdb
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\obj\Debug\netcoreapp3.1\Reaction_time_game_new.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\obj\Debug\netcoreapp3.1\Reaction_time_game_new.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\obj\Debug\netcoreapp3.1\Reaction_time_game_new.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Reaction time game\Reaction_time_game_new\Reaction_time_game_new\obj\Debug\netcoreapp3.1\Reaction_time_game_new.pdb

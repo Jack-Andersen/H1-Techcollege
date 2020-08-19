@@ -42,7 +42,7 @@ namespace Reaction_time_game_PN
                 Console.WriteLine("The application started at {0:HH:mm:ss:fff}", startTime);
                 if (disable == true)
                 {
-                   Console.ReadKey();
+                    Console.ReadKey();
                 }
 
                 DateTime endTime = DateTime.Now;
@@ -62,7 +62,7 @@ namespace Reaction_time_game_PN
 
             }
 
-            while (restart != false);  
+            while (restart != false);
 
             static void SetTimer()
             {
