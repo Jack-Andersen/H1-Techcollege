@@ -12,38 +12,41 @@ namespace Reaction_time_game_PN
         static void Main(string[] args)
         {
 
+            int value = 0;
             bool restart = true;
-
+             
             do
             {
 
                 Console.Clear();
 
                 Console.WriteLine("Press ENTER to start the game");
+                Console.WriteLine("Press 2 for players");
                 Console.WriteLine("When you see a O press ENTER");
+                
+                switch (value)
+                {
+                    case 1: 
+                    case 2:
 
+                        break;
+                }
                 while (Console.ReadKey().Key != ConsoleKey.Enter)
                 {
                     Console.WriteLine(" \n Michael is a retard");
                 }
 
                 Random randomNum = new Random();
-
                 int num = randomNum.Next(1, 10);
-
-                bool disable = false;
                 System.Threading.Thread.Sleep(num * 1000);
+
                 Console.WriteLine("O");
 
-                disable = true;
                 SetTimer();
 
                 DateTime startTime = DateTime.Now;
                 Console.WriteLine("The application started at {0:HH:mm:ss:fff}", startTime);
-                if (disable == true)
-                {
-                    Console.ReadKey();
-                }
+                Console.ReadKey();
 
                 DateTime endTime = DateTime.Now;
                 aTimer.Stop();
