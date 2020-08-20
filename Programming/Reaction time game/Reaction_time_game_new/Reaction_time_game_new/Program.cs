@@ -167,6 +167,7 @@ namespace Reaction_time_game_PN
                         Console.WriteLine(String.Format("player 1 your time in total was {0} ", player1Timer));
                         Console.WriteLine(String.Format("player 2 your time in total was {0} ", player2Timer));
                         Console.WriteLine(String.Format("{0} won", player1Timer < player2Timer ? "player 1" : "player 2"), ConsoleColor.White);
+                        Console.ReadLine();
                     }
 
                     Console.Clear();
