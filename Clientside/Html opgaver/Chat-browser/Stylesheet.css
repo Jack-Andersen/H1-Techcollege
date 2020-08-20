@@ -1,3 +1,7 @@
+@media only screen and (min-width: 1000px){
+
+}
+
 body {
 
     background-image: url("images/cherry-blossoms.webp");
@@ -6,12 +10,11 @@ body {
 
 }
 
-.chatBox{
 
-    height: 500px;
-    width: 1400px;
-    margin-left: 100px;
-    margin-top: 150px;
+
+.chatBoxInside{
+
+    height: 100%;
 
     border: black solid;
     color:  white;
@@ -21,47 +24,49 @@ body {
 
 .userBox{
 
-    height: 560px;
-    width: 300px;
-    float: right;
-    margin-right: 100px;
+    height: 100%;
+    margin-top: 120px;
+
+}
+
+.userBoxInside{
+
+
 
     border: black solid;
     color:  white;
     background-color:gray;
 
 }
+.chatBox{
 
+    height: 550px;
+    margin-top: 120px;
+}
 .msgBox{
 
     height: 50px;
-    width: 1400px;
-    margin-left: 100px;
-    margin-top: 10px;
-    
-    border: black solid;
-    color: white;
-    background-color: pink;
+    margin-top: 20px;
+
 }
 
 .btn{
 
     background-color: pink;
-    border: none;
     color: white;
     padding: 4px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     margin-top: 2.5px;
-    margin-right: 2.5px;
+
     float: right;
-    width: 99.65%;
+    width: 100%;
 
 }
 
 .msg{
 
-    width: 91%;
+    width: 90%;
 
 }
