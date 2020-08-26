@@ -162,7 +162,7 @@ namespace Reaction_time_game_PN
                                 player2Timer = timer.EndTime;
                             }
 
-                        } while (!player1Pressed || player2Pressed);
+                        } while (!player1Pressed && player2Pressed);
 
                         Console.WriteLine(String.Format("player 1 your time in total was {0} ", player1Timer));
                         Console.WriteLine(String.Format("player 2 your time in total was {0} ", player2Timer));
