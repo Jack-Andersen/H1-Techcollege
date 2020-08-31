@@ -1,0 +1,11 @@
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\obj\Debug\netcoreapp3.1\Highscore.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\obj\Debug\netcoreapp3.1\Highscore.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\obj\Debug\netcoreapp3.1\Highscore.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\bin\Debug\netcoreapp3.1\Highscore.exe
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\bin\Debug\netcoreapp3.1\Highscore.deps.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\bin\Debug\netcoreapp3.1\Highscore.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\bin\Debug\netcoreapp3.1\Highscore.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\bin\Debug\netcoreapp3.1\Highscore.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\bin\Debug\netcoreapp3.1\Highscore.pdb
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\obj\Debug\netcoreapp3.1\Highscore.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Highscore\Highscore\Highscore\obj\Debug\netcoreapp3.1\Highscore.pdb

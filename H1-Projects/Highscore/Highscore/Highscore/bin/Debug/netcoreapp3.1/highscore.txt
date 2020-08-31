@@ -1,0 +1,6 @@
+Kaj  = 10000
+Pia  = 10000
+miss  = 88
+hej = 22
+naaa 44 = 44
+cscs = 33
