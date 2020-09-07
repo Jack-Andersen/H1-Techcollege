@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat\\Noodle_chat.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat\\Noodle_chat.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat\\Noodle_chat.csproj",
+        "projectName": "Noodle_chat",
+        "projectPath": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat\\Noodle_chat.csproj",
+        "packagesPath": "C:\\Users\\Elder\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Elder\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "TECHCOOL": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
