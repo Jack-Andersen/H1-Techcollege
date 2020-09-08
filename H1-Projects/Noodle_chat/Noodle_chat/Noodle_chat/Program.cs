@@ -6,6 +6,47 @@ namespace Noodle_chat
     class Program
     {
 
+        static void InsertUser(string UserName)
+        {
+            string SQL = @"
+            INSERT INTO UserID_for_chat (UserName)
+            VALUES ('{0}')";
+            string formattet = string.Format(SQL, UserName);
+            Console.WriteLine(formattet);
+            SQLet.Execute(formattet);
+        }
+
+        static void DeleteUser(string ID)
+        {
+            string SQL = @"
+            DELETE FROM UserID_for_chat WHERE UserID = '{0}'";
+            string formattet = string.Format(SQL, ID);
+            Console.WriteLine(formattet);
+            SQLet.Execute(formattet);
+        }
+
+        static void UpdateUser(string ID, string UserName)
+        {
+            string SQL = @"
+            UPDATE UserID_for_chat SET UserName = '{0}' WHERE UserID = {1}";
+            string formattet = string.Format(SQL, UserName, ID);
+            Console.WriteLine(formattet);
+            SQLet.Execute(formattet);
+        }
+
+        static void ShowAllUsers()
+        {
+            string SQL = @"
+            SELECT * FROM UserID_for_chat
+            ORDER BY UserID";
+            string formattet = string.Format(SQL);
+            Result result = SQLet.GetResult(formattet);
+            foreach (var record in result)
+            {
+                Console.WriteLine(record["UserID"] + "\t" + record["UserName"]);
+            }
+        }
+
         static void InsertMessage(string MessagesText, int MessagesUserID)
         {
             string SQL = @"
@@ -62,12 +103,13 @@ namespace Noodle_chat
         {
             string SQL = @"
             SELECT * FROM Messages_for_chat
+            left join UserID_for_chat on Messages_for_chat.MessagesUserID = UserID_for_chat.UserID
             ORDER BY MessagesID";
             string formattet = string.Format(SQL);
             Result result = SQLet.GetResult(formattet);
             foreach (var record in result)
             {
-                Console.WriteLine(record["MessagesID"] + "\t" + record["MessagesText"] + "\t" + record["MessagesUserID"] + "\t" + record["MessagesDate"]);
+                Console.WriteLine(record["MessagesID"] + "\t" + record["MessagesText"] + "\t" + record["UserName"] + "\t" + record["MessagesDate"]);
             }
         }
 
@@ -81,6 +123,10 @@ namespace Noodle_chat
             const ConsoleKey keyInfo2 = ConsoleKey.D2;
             const ConsoleKey keyInfo3 = ConsoleKey.D3;
             const ConsoleKey keyInfo4 = ConsoleKey.D4;
+            const ConsoleKey keyInfo5 = ConsoleKey.D5;
+            const ConsoleKey keyInfo6 = ConsoleKey.D6;
+            const ConsoleKey keyInfo7 = ConsoleKey.D7;
+            const ConsoleKey keyInfo8 = ConsoleKey.D8;
 
             while (true)
             {
@@ -95,25 +141,51 @@ namespace Noodle_chat
 
                 Console.WriteLine("\n");
 
-                Console.WriteLine("Press 1 InsertMessage.\nPress 2 DeleteMessage.\nPress 3 UpdateMessage.\nPress 4 ShowMessage from user.\n");
+                Console.WriteLine("Press 1 Insert user.\nPress 2 Delete user.\nPress 3 Update user.\nPress 4 Show all users.\nPress 5 Insert message.\nPress 6 Delete message.\nPress 7 Update message.\nPress 8 Show message from user.\n");
 
                 ConsoleKey pressedKey = PressedKey();
 
                 switch (pressedKey)
                 {
                     case keyInfo1:
-                        Console.Write("Enter log message > ");
-                        string input = Console.ReadLine();
-                        InsertMessage(input, 1);
+                        Console.Write("Enter user name > ");
+                        string inputUser = Console.ReadLine();
+                        InsertUser(inputUser);
                         break;
 
                     case keyInfo2:
+                        Console.Write("Specify what user you want to delete > ");
+                        string deleteUser = Console.ReadLine();
+                        DeleteUser(deleteUser);
+                        break;
+
+                    case keyInfo3:
+                        Console.Write("What ID do you want to update > ");
+                        string updateUser = Console.ReadLine();
+                        Console.Write("What do you want to update your name to > ");
+                        string updateUserName = Console.ReadLine();
+                        UpdateUser(updateUser, updateUserName);
+                        break;
+
+                    case keyInfo4:                
+                        ShowAllUsers();
+                        break;
+
+                    case keyInfo5:
+                        Console.Write("Enter message > ");
+                        string input = Console.ReadLine();
+                        Console.Write("Enter ID for user > ");
+                        int MessagesUserID = int.Parse(Console.ReadLine());
+                        InsertMessage(input, MessagesUserID);
+                        break;
+
+                    case keyInfo6:
                         Console.Write("Specify what ID you want to delete > ");
                         string inputdelete = Console.ReadLine();
                         DeleteMessage(inputdelete);
                         break;
 
-                    case keyInfo3:
+                    case keyInfo7:
                         Console.Write("What ID do you want to update > ");
                         string inputUpdate = Console.ReadLine();
                         Console.Write("What do you want to update your message to > ");
@@ -121,12 +193,13 @@ namespace Noodle_chat
                         UpdateMessage(inputUpdate, inputMessage);
                         break;
 
-                    case keyInfo4:
+                    case keyInfo8:
                         Console.Write("Show message from user > ");
                         int aInputID = int.Parse(Console.ReadLine());
                         Console.WriteLine("");
                         ShowMessage(aInputID);
                         break;
+
                 }
             }
 
@@ -136,7 +209,7 @@ namespace Noodle_chat
                 {
                     while (!Console.KeyAvailable) ;
                     ConsoleKey pressed = Console.ReadKey(true).Key;
-                    if (pressed == keyInfo1 || pressed == keyInfo2 || pressed == keyInfo3 || pressed == keyInfo4)
+                    if (pressed == keyInfo1 || pressed == keyInfo2 || pressed == keyInfo3 || pressed == keyInfo4 || pressed == keyInfo5 || pressed == keyInfo6 || pressed == keyInfo7 || pressed == keyInfo8)
                         return pressed;
                     Console.Clear();
                 } while (true);

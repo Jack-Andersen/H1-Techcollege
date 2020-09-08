@@ -59,3 +59,4 @@ C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Noodle_chat\Noodle_ch
 C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\obj\Debug\netcoreapp3.1\Noodle_chat.csproj.CopyComplete
 C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\obj\Debug\netcoreapp3.1\Noodle_chat.dll
 C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\obj\Debug\netcoreapp3.1\Noodle_chat.pdb
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\obj\Debug\netcoreapp3.1\Noodle_chat.csprojAssemblyReference.cache
