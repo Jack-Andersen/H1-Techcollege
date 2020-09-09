@@ -141,7 +141,16 @@ namespace Noodle_chat
 
                 Console.WriteLine("\n");
 
-                Console.WriteLine("Press 1 Insert user.\nPress 2 Delete user.\nPress 3 Update user.\nPress 4 Show all users.\nPress 5 Insert message.\nPress 6 Delete message.\nPress 7 Update message.\nPress 8 Show message from user.\n");
+                Console.WriteLine("Users:");
+                Console.WriteLine("Press 1 Insert user.\n" +
+                                  "Press 2 Delete user.\n" +
+                                  "Press 3 Update user.\n" +
+                                  "Press 4 Show all users.\n\n");
+                Console.WriteLine("Messages:");
+                Console.WriteLine("Press 5 Insert message.\n" +
+                                  "Press 6 Delete message.\n" +
+                                  "Press 7 Update message.\n" +
+                                  "Press 8 Show message from user.\n");
 
                 ConsoleKey pressedKey = PressedKey();
 
@@ -194,7 +203,7 @@ namespace Noodle_chat
                         break;
 
                     case keyInfo8:
-                        Console.Write("Show message from user > ");
+                        Console.Write("Show message from userID > ");
                         int aInputID = int.Parse(Console.ReadLine());
                         Console.WriteLine("");
                         ShowMessage(aInputID);

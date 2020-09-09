@@ -18,7 +18,7 @@ namespace Reaction_time_game_PN
             private const ConsoleKey gameStart = ConsoleKey.Enter;
 
             public void Menu()
-            {              
+            {
                 const ConsoleKey singlePlayer = ConsoleKey.Enter;
                 const ConsoleKey multiPlayer = ConsoleKey.D2;
                 const ConsoleKey exitKey = ConsoleKey.Escape;
@@ -59,8 +59,6 @@ namespace Reaction_time_game_PN
                 }
             }
 
-
-
             private void SinglePlayerRun()
             {
                 Console.Clear();
@@ -92,7 +90,7 @@ namespace Reaction_time_game_PN
                         Console.WriteLine("0");
 
                         Timer timer = new Timer();
-                        timer.Time();
+                        timer.StartTime();
 
                         while (!Console.KeyAvailable && Console.ReadKey(true).Key != player1) ;
                         double playertimer = timer.EndTime;
@@ -144,9 +142,9 @@ namespace Reaction_time_game_PN
                         System.Threading.Thread.Sleep(num * 1000);
 
                         Console.WriteLine("O");
-                       
+
                         Timer timer = new Timer();
-                        timer.Time();
+                        timer.StartTime();
 
                         do
                         {
@@ -184,7 +182,7 @@ namespace Reaction_time_game_PN
             {
                 private DateTime startTime;
 
-                public void Time()
+                public void StartTime()
                 {
                     startTime = DateTime.Now;
                 }
