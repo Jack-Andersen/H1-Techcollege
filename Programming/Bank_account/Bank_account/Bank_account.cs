@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Objekter_know_how
+namespace Bank_account
 {
     class Bank_account
     {
@@ -18,7 +18,7 @@ namespace Objekter_know_how
         {
             if (balance <= 0 || balance - withdrawAmount < 0)
             {
-                 throw new ArgumentException("You don't have enough money");
+                throw new ArgumentException("You don't have enough money");
             }
             else
             {
@@ -35,7 +35,9 @@ namespace Objekter_know_how
 
         public void Print()
         {
-           Console.WriteLine(balance.ToString()); 
+            balance.ToString();
         }
+
+        public double Getbalance { get => balance; }
     }
 }
