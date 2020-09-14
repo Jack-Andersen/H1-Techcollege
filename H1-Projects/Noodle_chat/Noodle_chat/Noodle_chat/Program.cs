@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TECHCOOL;
 
 namespace Noodle_chat
@@ -115,8 +116,18 @@ namespace Noodle_chat
 
         static void Main(string[] args)
         {
-
+            
             SQLet.ConnectSqlServer("Noodle_chat", "JACK-ANDERSEN-J");
+            List<Message> Beskeder = Database.GetMessages();
+            Console.WriteLine(Beskeder.Count);
+            string beskedHTML = HTMLGenerator.GenerateMessages(Beskeder);
+            Console.WriteLine(beskedHTML);
+            List<User> User = Database.GetUsers();
+            string userHTML = HTMLGenerator.GenerateUser(User);
+            Console.WriteLine(userHTML);
+            string Index = HTMLGenerator.generateIndex(Beskeder, User);
+            Console.WriteLine(Index);
+            System.IO.File.WriteAllText("C:/Users/Elder/Documents/GitHub/H1-Techcollege/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/test.html", Index);
 
             bool start = false;
             const ConsoleKey keyInfo1 = ConsoleKey.D1;
