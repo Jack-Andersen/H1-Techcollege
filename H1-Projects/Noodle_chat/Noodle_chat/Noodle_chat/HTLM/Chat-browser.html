@@ -22,15 +22,8 @@
             <div class="col-12 col-md-8">
                 <div class="row">
                     <div class="chatBox col-12">
-                        <div class="chatBoxInside">
-                            <p><span class="timestamp">08-09-2020 15:02:21</span>
-                                <span class="nick"> 3</span>
-                                <br><span class="message">hej</span>
-                            </p><hr><p>
-                                <span class="timestamp">09-09-2020 07:19:21</span>
-                                <span class="nick"> 3</span><br>
-                                <span class="message">My Little Secret</span>
-                            </p><hr>
+                        <div class="chatBoxInside" style="overflow-y: scroll">
+                            {{MESSAGEWINDOW}}
                         </div>
                     </div>
                     <div class="msgBox col-12">
@@ -42,10 +35,8 @@
                 </div>    
             </div>
         <div class="userBox col-md-2">
-            <div class="userBoxInside">
-                <p>New</p><hr>
-                <p>kat</p><hr>
-                <p>Sådan</p><hr>
+            <div class="userBoxInside" style="overflow-y: scroll">
+                {{USERWINDOW}}
             </div>
         </div>
     </div>
@@ -59,6 +50,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+
+        var objDiv = document.getElementById("your_div");
+        objDiv.scrollTop = objDiv.scrollHeight;
+
 </body>
 
 </html>

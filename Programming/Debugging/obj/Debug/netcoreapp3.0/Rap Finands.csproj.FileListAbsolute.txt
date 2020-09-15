@@ -1,0 +1,13 @@
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Rap Finands.exe
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Rap Finands.deps.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Rap Finands.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Rap Finands.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Rap Finands.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Rap Finands.pdb
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\obj\Debug\netcoreapp3.0\Rap Finands.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\obj\Debug\netcoreapp3.0\Rap Finands.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\obj\Debug\netcoreapp3.0\Rap Finands.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\obj\Debug\netcoreapp3.0\Rap Finands.csproj.CopyComplete
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\obj\Debug\netcoreapp3.0\Rap Finands.dll
+C:\Users\Elder\Documents\GitHub\H1-Techcollege\Programming\Debugging\obj\Debug\netcoreapp3.0\Rap Finands.pdb

@@ -20,9 +20,9 @@ namespace Noodle_chat
             string html = "";
             foreach (Message msg in messages)
             {
-                string tpl1 = "<p><span class=\"timestamp\">{0}</span><span class=\"nick\"> {1}</span><br><span class=\"message\">{2}</span></p><hr>";
-
-                html += string.Format(tpl1, msg.MessagesDate, msg.MessagesUserID, msg.MessagesText);
+                string tpl1 = "<p><span class=\"Simon\">{0} </span><span class=\"timestamp\">{1}</span><br><span class=\"message\">{2}</span></p><hr>";
+                string formattedDate = msg.MessagesDate.ToString("t");
+                html += string.Format(tpl1, msg.User.UserName, formattedDate, msg.MessagesText); //new
             }
             return html;
         }
