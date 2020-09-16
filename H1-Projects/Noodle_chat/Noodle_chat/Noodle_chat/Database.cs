@@ -31,7 +31,7 @@ namespace Noodle_chat
                 SQLet.Execute(@"CREATE VIEW Noodle_Info AS
                     SELECT MessagesID, MessagesUserID, MessagesText, MessagesDate, UserName FROM Messages_for_chat
                     INNER JOIN UserID_for_chat
-                    ON Messages_for_chat.MessagesUserID = UserID_for_chat.UserID"); //New
+                    ON Messages_for_chat.MessagesUserID = UserID_for_chat.UserID");
             }
             catch(Microsoft.Data.SqlClient.SqlException)
             {
@@ -42,7 +42,7 @@ namespace Noodle_chat
         public static List<Message> GetMessages()
         {
             List<Message> messages = new List<Message>();
-            Result result = SQLet.GetResult(@"SELECT * FROM Noodle_Info"); //New
+            Result result = SQLet.GetResult(@"SELECT * FROM Noodle_Info");
             int number = 0;
             foreach (var row in result)
             {
@@ -61,7 +61,7 @@ namespace Noodle_chat
 
                 //sæt propertien User til en bruger instans
                 int.TryParse(row["MessagesID"], out number);
-                msg.User = new User(number ,row["UserName"]); //New
+                msg.User = new User(number ,row["UserName"]);
 
                 //Tilføj msg til listen.
                 messages.Add(msg); 

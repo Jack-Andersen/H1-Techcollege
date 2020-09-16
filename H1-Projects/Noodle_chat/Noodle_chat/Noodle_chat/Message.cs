@@ -11,7 +11,7 @@ namespace Noodle_chat
         public int MessagesUserID { get; set; }
         public string MessagesText { get; set; }
         public DateTime MessagesDate { get; set; }
-        public User User { get; set; } //New
+        public User User { get; set; }
 
         //Constructor
         public Message(string text, int userID)

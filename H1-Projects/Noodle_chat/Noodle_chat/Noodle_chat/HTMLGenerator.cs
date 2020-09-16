@@ -22,7 +22,7 @@ namespace Noodle_chat
             {
                 string tpl1 = "<p><span class=\"Simon\">{0} </span><span class=\"timestamp\">{1}</span><br><span class=\"message\">{2}</span></p><hr>";
                 string formattedDate = msg.MessagesDate.ToString("t");
-                html += string.Format(tpl1, msg.User.UserName, formattedDate, msg.MessagesText); //new
+                html += string.Format(tpl1, msg.User.UserName, formattedDate, msg.MessagesText);
             }
             return html;
         }
