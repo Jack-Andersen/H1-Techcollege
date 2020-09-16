@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj": {}
+    "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj": {
+    "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj",
+        "projectUniqueName": "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj",
         "projectName": "Lagersystem_project",
-        "projectPath": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj",
+        "projectPath": "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\Lagersystem_project.csproj",
         "packagesPath": "C:\\Users\\Elder\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\obj\\",
+        "outputPath": "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Lagersystem_project\\Lagersystem_project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elder\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

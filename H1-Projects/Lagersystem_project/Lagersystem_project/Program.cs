@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SqlClient;
 
 namespace Lagersystem_project
 {
@@ -6,7 +7,15 @@ namespace Lagersystem_project
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Database db = new Database();
+            SqlConnection conn = db.Connection();
+
+            string sql = "SELECT * FROM Table_Products;";
+            SqlCommand Command = new SqlCommand(sql, conn);
+            
+            Command.ExecuteReader();
+            conn.Close();
         }
     }
 }
