@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 <head>
@@ -8,7 +8,7 @@
 
     <link rel="Stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="Stylesheet" href="Stylesheet.css" type="text/css">
+    <link rel="Stylesheet" href="HTLM/Stylesheet.css" type="text/css">
 
 
     <title>Chat-browser</title>
@@ -22,20 +22,22 @@
             <div class="col-12 col-md-8">
                 <div class="row">
                     <div class="chatBox col-12">
-                        <div class="chatBoxInside" style="overflow-y: scroll">
+                        <div class="chatBoxInside" style="overflow-y: scroll" id="Chatbox">
                             {{MESSAGEWINDOW}}
                         </div>
                     </div>
                     <div class="msgBox col-12">
                         <div class="btn">
-                            <input class="msg" type="text" placeholder="Type massage:">
-                            <input type="submit" value="Send massage">
+                            <form action="/" method="post">
+                                  <input class="msg" type="text" placeholder="Type massage:" name="massage">
+                                  <input type="submit" value="Send massage">
+                            </form>
                         </div>
                     </div>
                 </div>    
             </div>
         <div class="userBox col-md-2">
-            <div class="userBoxInside" style="overflow-y: scroll">
+            <div class="userBoxInside" style="overflow-y: scroll" id="Userbox">
                 {{USERWINDOW}}
             </div>
         </div>
@@ -51,8 +53,29 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 
-        var objDiv = document.getElementById("your_div");
-        objDiv.scrollTop = objDiv.scrollHeight;
+       <script>
+        var objDiv = document.getElementById("Chatbox");
+        objDiv.scrollTop = objDiv.scrollHeight; 
+
+           var objDiv = document.getElementById("Userbox");
+        objDiv.scrollTop = objDiv.scrollHeight; 
+
+           var currentMessageHTML = document.getElementById("Chatbox").innerHTML;
+        var interval = setInterval(function() {
+ 
+        var xhttp = new XMLHttpRequest(); 
+        xhttp.open("GET", "/messages/", false);
+        xhttp.send();
+        
+        document.getElementById("Chatbox").innerHTML = xhttp.responseText; 
+        if (xhttp.responseText != currentMessageHTML) 
+        {
+            objDiv = document.getElementById("Chatbox");
+            objDiv.scrollTop = objDiv.scrollHeight;
+            currentMessageHTML = xhttp.responseText;
+        }
+    },200);
+       </script>
 
 </body>
 

@@ -1,0 +1,10 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\Noodle_chat.exe
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\Noodle_chat.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\Microsoft.Data.SqlClient.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\TECHCOOL.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\Microsoft.Data.Sqlite.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\bin\Debug\Noodle_chat.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\obj\Debug\docker-compose.dcproj.CopyComplete

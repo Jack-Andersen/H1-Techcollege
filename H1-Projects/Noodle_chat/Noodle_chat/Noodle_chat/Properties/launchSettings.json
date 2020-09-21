@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Noodle_chat": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

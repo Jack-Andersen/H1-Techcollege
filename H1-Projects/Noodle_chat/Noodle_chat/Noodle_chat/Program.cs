@@ -1,21 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using TECHCOOL;
 
 namespace Noodle_chat
 {
     class Program
     {
-
-        static void InsertUser(string UserName)
-        {
-            string SQL = @"
-            INSERT INTO UserID_for_chat (UserName)
-            VALUES ('{0}')";
-            string formattet = string.Format(SQL, UserName);
-            Console.WriteLine(formattet);
-            SQLet.Execute(formattet);
-        }
 
         static void DeleteUser(string ID)
         {
@@ -46,16 +37,6 @@ namespace Noodle_chat
             {
                 Console.WriteLine(record["UserID"] + "\t" + record["UserName"]);
             }
-        }
-
-        static void InsertMessage(string MessagesText, int MessagesUserID)
-        {
-            string SQL = @"
-            INSERT INTO Messages_for_chat (MessagesText, MessagesUserID, MessagesDate)
-            VALUES ('{0}', {1}, '{2}')";
-            string formattet = string.Format(SQL, MessagesText, MessagesUserID, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            Console.WriteLine(formattet);
-            SQLet.Execute(formattet);
         }
 
         static void DeleteMessage(string ID)
@@ -116,8 +97,21 @@ namespace Noodle_chat
 
         static void Main(string[] args)
         {
-            
+            string host = "http://localhost:8080/";
+            if (args.Length > 0)
+            {
+                 host = args[0];
+            }
             SQLet.ConnectSqlServer("Noodle_chat", "JACK-ANDERSEN-J");
+            RequestHandler requestHandler = new RequestHandler(host);
+            requestHandler.start();
+            Console.ReadLine();
+        }
+
+        static void Main_(string[] args)
+        {
+            
+            SQLet.ConnectSqlServer("Noodle_chat", "JACK-ANDERSEN-J", "SA", "Muskel-Mads");
             List<Message> Beskeder = Database.GetMessages();
             Console.WriteLine(Beskeder.Count);
             string beskedHTML = HTMLGenerator.GenerateMessages(Beskeder);
@@ -127,7 +121,7 @@ namespace Noodle_chat
             Console.WriteLine(userHTML);
             string Index = HTMLGenerator.generateIndex(Beskeder, User);
             Console.WriteLine(Index);
-            System.IO.File.WriteAllText("C:/Users/Elder/Documents/GitHub/H1-Techcollege/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/test.html", Index);
+            System.IO.File.WriteAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/test.html", Index);
 
             bool start = false;
             const ConsoleKey keyInfo1 = ConsoleKey.D1;
@@ -170,7 +164,7 @@ namespace Noodle_chat
                     case keyInfo1:
                         Console.Write("Enter user name > ");
                         string inputUser = Console.ReadLine();
-                        InsertUser(inputUser);
+                        Database.InsertUser(inputUser);
                         break;
 
                     case keyInfo2:
@@ -196,7 +190,7 @@ namespace Noodle_chat
                         string input = Console.ReadLine();
                         Console.Write("Enter ID for user > ");
                         int MessagesUserID = int.Parse(Console.ReadLine());
-                        InsertMessage(input, MessagesUserID);
+                        Database.InsertMessage(input, MessagesUserID);
                         break;
 
                     case keyInfo6:

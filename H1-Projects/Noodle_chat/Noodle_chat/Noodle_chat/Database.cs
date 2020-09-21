@@ -72,7 +72,6 @@ namespace Noodle_chat
 
         }
 
-
         public static List<User> GetUsers()
         {
             List<User> user = new List<User>();
@@ -93,5 +92,26 @@ namespace Noodle_chat
             return user;
 
         }
+
+        public static void InsertUser(string UserName)
+        {
+            string SQL = @"
+            INSERT INTO UserID_for_chat (UserName)
+            VALUES ('{0}')";
+            string formattet = string.Format(SQL, UserName);
+            Console.WriteLine(formattet);
+            SQLet.Execute(formattet);
+        }
+
+        public static void InsertMessage(string MessagesText, int MessagesUserID)
+        {
+            string SQL = @"
+            INSERT INTO Messages_for_chat (MessagesText, MessagesUserID, MessagesDate)
+            VALUES ('{0}', {1}, '{2}')";
+            string formattet = string.Format(SQL, MessagesText, MessagesUserID, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            Console.WriteLine(formattet);
+            SQLet.Execute(formattet);
+        }
+
     }
 }
