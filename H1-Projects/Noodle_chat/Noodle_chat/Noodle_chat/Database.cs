@@ -113,5 +113,31 @@ namespace Noodle_chat
             SQLet.Execute(formattet);
         }
 
+        public static User GetUserByLogin(string username) //new
+        {
+            string sql = "";
+            username = username.Replace("'", "\'");
+            sql = string.Format("SELECT UserID, UserName FROM UserID_for_chat WHERE UserName = '{0}'", username);
+            Result result = SQLet.GetResult(sql);
+            if (result.Count == 0)
+            {
+                return null;
+            }
+            User user = new User(int.Parse(result[0]["UserID"]), result[0]["UserName"]);
+            return user;
+        }
+        
+        public static User GetUser(int userID) //new
+        {
+            string sql = "";
+            sql = string.Format("SELECT UserID, UserName FROM UserID_for_chat WHERE UserID = '{0}'", userID);
+            Result result = SQLet.GetResult(sql);
+            if (result.Count == 0)
+            {
+                return null;
+            }
+            User user = new User(int.Parse(result[0]["UserID"]), result[0]["UserName"]);
+            return user;
+        }
     }
 }

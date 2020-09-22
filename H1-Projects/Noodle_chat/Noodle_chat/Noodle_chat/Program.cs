@@ -97,6 +97,8 @@ namespace Noodle_chat
 
         static void Main(string[] args)
         {
+            //string host = "http://172.18.10.10:8080/";
+            //string host = "http://192.168.1.101:8080/";
             string host = "http://localhost:8080/";
             if (args.Length > 0)
             {
@@ -119,7 +121,7 @@ namespace Noodle_chat
             List<User> User = Database.GetUsers();
             string userHTML = HTMLGenerator.GenerateUser(User);
             Console.WriteLine(userHTML);
-            string Index = HTMLGenerator.generateIndex(Beskeder, User);
+            string Index = HTMLGenerator.generateIndex(Beskeder, User, 0);
             Console.WriteLine(Index);
             System.IO.File.WriteAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/test.html", Index);
 

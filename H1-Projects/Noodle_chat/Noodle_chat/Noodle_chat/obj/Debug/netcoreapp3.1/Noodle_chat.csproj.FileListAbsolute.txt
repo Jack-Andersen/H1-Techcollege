@@ -125,3 +125,4 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_cha
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\obj\Debug\netcoreapp3.1\Noodle_chat.csproj.CoreCompileInputs.cache
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\bin\Debug\netcoreapp3.1\HTLM\Stylesheet.css
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\bin\Debug\netcoreapp3.1\HTLM\images\cherry-blossoms.webp
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\obj\Debug\netcoreapp3.1\Noodle_chat.csprojAssemblyReference.cache

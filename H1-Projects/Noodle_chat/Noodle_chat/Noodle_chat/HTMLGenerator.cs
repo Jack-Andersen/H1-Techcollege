@@ -7,11 +7,18 @@ namespace Noodle_chat
     class HTMLGenerator
     {
 
-        public static string generateIndex(List<Message> messages, List<User> user)
+        public static string generateIndex(List<Message> messages, List<User> user, int userID)
         {
             string html = System.IO.File.ReadAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/Chat-browser.html");
             html = html.Replace("{{MESSAGEWINDOW}}", HTMLGenerator.GenerateMessages(messages));
             html = html.Replace("{{USERWINDOW}}", HTMLGenerator.GenerateUser(user));
+            html = html.Replace("{{USERID}}", userID.ToString()); //new
+            return html;
+        }
+
+        public static string generateLogin() //new
+        {
+            string html = System.IO.File.ReadAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/Login.html");
             return html;
         }
 

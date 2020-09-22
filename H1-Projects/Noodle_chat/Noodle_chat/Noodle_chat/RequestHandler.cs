@@ -19,27 +19,47 @@ namespace Noodle_chat
         {
             WebLet httplistener = new WebLet(host);
             //httplistener.Route("/Stylesheet.css", requestStylesheet);
+            httplistener.Route("^/login/$", requestLoginHTML);
             httplistener.Route("^/messages/$", requestMessages);
             httplistener.Route("^/Users/$", requestUsers);
-            httplistener.Route("^/$",requestroot);          
+            httplistener.Route("^/$", requestroot);
             httplistener.Start();
         }
 
         //brugern request localhost:8080/
         string requestroot(Request r)
         {
-
-            if (r.HttpMethod == "POST")
+            User user = null;
+            if (r.HttpMethod == "POST") //new
             {
                 RequestData data = r.Data;
-                string msg = data.Post["massage"];
-                Database.InsertMessage(msg.ToString(), 3);
-                
-            }
+                if (r.Data.Post.ContainsKey("username"))
+                {
+                     user = logUserIn(r.Data);
 
-            List<Message> messages = Database.GetMessages();
-            List<User> users = Database.GetUsers();
-            return HTMLGenerator.generateIndex(messages, users);
+                }
+                else if (r.Data.Post.ContainsKey("massage"))
+                {
+                    int userID = 0;
+                    int.TryParse(r.Data.Post["UserID"], out userID);
+                    user = Database.GetUser(userID);
+
+                    if (user != null)
+                    { 
+                    string msg = data.Post["massage"];
+                    Database.InsertMessage(msg.ToString(), 3);
+                    }
+                }
+            }
+            if (user != null)
+            {
+                List<Message> messages = Database.GetMessages();
+                List<User> users = Database.GetUsers();
+                return HTMLGenerator.generateIndex(messages, users, user.UserID);
+            }
+            return HTMLGenerator.generateLogin(); //new
+
+
         }
 
         //Brugeren requester localhost 8080/messages/
@@ -67,5 +87,24 @@ namespace Noodle_chat
             return "";
         }
 
+        string requestLoginHTML(Request request) //new
+        {
+            return HTMLGenerator.generateLogin();
+        }
+
+        public User logUserIn(RequestData data) //new
+        {
+            User user = Database.GetUserByLogin(data.Post["username"]);
+            if (user == null)
+            {
+                Database.InsertUser(data.Post["username"]);
+                user = Database.GetUserByLogin(data.Post["username"]);
+            }
+
+
+
+            return user;
+
+        }
     }
 }

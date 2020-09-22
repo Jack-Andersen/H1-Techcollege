@@ -23,23 +23,21 @@
             <div class="row">
                 <div class="chatBox col-12">
                     <div class="chatBoxInside" style="overflow-y: scroll" id="Chatbox">
-                        {{MESSAGEWINDOW}}
+                        <form action = "/" method ="post">
+                            <input type="text" name="username" placeholder="Indtast brugernavn" />
+                            <input type="password" name="password" />
+                            <input type="submit" value="Log ind" />
+                        </form>
                     </div>
                 </div>
                 <div class="msgBox col-12">
-                    <div class="btn">
-                        <form action="/" method="post">
-                            <input class="msg" type="text" placeholder="Type massage:" name="massage">
-                            <input hidden="hidden" name="UserID" value="{{USERID}}" >
-                            <input type="submit" value="Send massage">
-                        </form>
+                    <div class="btn">      
                     </div>
                 </div>
             </div>
         </div>
         <div class="userBox col-md-2">
             <div class="userBoxInside" style="overflow-y: scroll" id="Userbox">
-                {{USERWINDOW}}
             </div>
         </div>
     </div>   
@@ -53,29 +51,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
-            <script>
-                var objDiv = document.getElementById("Chatbox");
-                objDiv.scrollTop = objDiv.scrollHeight;
-        
-                var objDiv = document.getElementById("Userbox");
-                objDiv.scrollTop = objDiv.scrollHeight;
-        
-                var currentMessageHTML = document.getElementById("Chatbox").innerHTML;
-                var interval = setInterval(function() {
-        
-                var xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "/messages/", false);
-                xhttp.send();
-        
-                document.getElementById("Chatbox").innerHTML = xhttp.responseText;
-                if (xhttp.responseText != currentMessageHTML)
-                {
-                objDiv = document.getElementById("Chatbox");
-                objDiv.scrollTop = objDiv.scrollHeight;
-                currentMessageHTML = xhttp.responseText;
-                }
-                },200);
-        </script>
 </body>
 
 </html>
