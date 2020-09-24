@@ -5,21 +5,17 @@ using System.Text;
 
 namespace Lagersystem_project
 {
-    class Database
+    public class Database
     {
 
-
-
-        public SqlConnection Connection()
+        public SqlConnection connection()
         {
-            SqlConnectionStringBuilder connectionString = new SqlConnectionStringBuilder();
-            connectionString.DataSource = "JACK-ANDERSEN-J";
-            connectionString.InitialCatalog = "Lagersystem_H1";
-            connectionString.UserID = "JACK-ANDERSEN-J\\Elder";
-            connectionString.Password = "";
-            connectionString.IntegratedSecurity = true;
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.DataSource = "JACK-ANDERSEN-J";
+            builder.InitialCatalog = "Lagersystem_H1";
+            builder.IntegratedSecurity = true;
 
-            return new SqlConnection(connectionString.ConnectionString);
+            return new SqlConnection(builder.ToString());
         }
     }
 }

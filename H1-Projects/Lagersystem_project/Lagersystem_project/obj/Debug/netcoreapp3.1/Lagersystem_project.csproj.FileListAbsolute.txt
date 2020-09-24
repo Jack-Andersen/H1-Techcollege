@@ -16,3 +16,5 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\La
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.csproj.CopyComplete
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.genruntimeconfig.cache

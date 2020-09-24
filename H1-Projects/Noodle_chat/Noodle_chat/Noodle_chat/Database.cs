@@ -113,7 +113,7 @@ namespace Noodle_chat
             SQLet.Execute(formattet);
         }
 
-        public static User GetUserByLogin(string username) //new
+        public static User GetUserByLogin(string username)
         {
             string sql = "";
             username = username.Replace("'", "\'");
@@ -127,7 +127,7 @@ namespace Noodle_chat
             return user;
         }
         
-        public static User GetUser(int userID) //new
+        public static User GetUser(int userID)
         {
             string sql = "";
             sql = string.Format("SELECT UserID, UserName FROM UserID_for_chat WHERE UserID = '{0}'", userID);

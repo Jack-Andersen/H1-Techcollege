@@ -102,7 +102,7 @@ namespace Noodle_chat
             string host = "http://localhost:8080/";
             if (args.Length > 0)
             {
-                 host = args[0];
+                host = args[0];
             }
             SQLet.ConnectSqlServer("Noodle_chat", "JACK-ANDERSEN-J");
             RequestHandler requestHandler = new RequestHandler(host);
