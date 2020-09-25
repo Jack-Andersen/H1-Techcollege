@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj": {}
+    "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj": {
+    "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj",
+        "projectUniqueName": "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj",
         "projectName": "Highscore",
-        "projectPath": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj",
+        "projectPath": "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Highscore\\Highscore\\Highscore\\Highscore.csproj",
         "packagesPath": "C:\\Users\\Elder\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Elder\\Documents\\GitHub\\H1-Techcollege\\H1-Projects\\Highscore\\Highscore\\Highscore\\obj\\",
+        "outputPath": "C:\\Users\\Elder\\Documents\\GitHub\\Jack_Andersen\\H1-Projects\\Highscore\\Highscore\\Highscore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Elder\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

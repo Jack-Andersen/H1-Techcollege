@@ -13,3 +13,13 @@ H1-Projects/Lagersystem_project/.vs/Lagersystem_project/v16/.suo
 *.v2
 .vs/Jack_Andersen/v16/.suo
 *.sqlite
+.vs/Jack_Andersen/v16/.suo
+*.sqlite
+*.json
+H1-Projects/Highscore/Highscore/.vs/Highscore/v16/.suo
+*.cache
+*.props
+*.dll
+*.pdb
+*.cache
+*.v2

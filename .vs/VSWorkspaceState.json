@@ -2,11 +2,14 @@
   "ExpandedNodes": [
     "",
     "\\H1-Projects",
+    "\\H1-Projects\\H1-Projects",
+    "\\H1-Projects\\Highscore",
+    "\\H1-Projects\\Highscore\\Highscore",
     "\\H1-Projects\\Lagersystem_project",
     "\\H1-Projects\\Noodle_chat",
     "\\H1-Projects\\Noodle_chat\\Noodle_chat",
     "\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat"
   ],
-  "SelectedNode": "\\H1-Projects\\Lagersystem_project\\Lagersystem_project.sln",
+  "SelectedNode": "\\H1-Projects\\Highscore\\Highscore\\Highscore.sln",
   "PreviewInSolutionExplorer": false
 }
