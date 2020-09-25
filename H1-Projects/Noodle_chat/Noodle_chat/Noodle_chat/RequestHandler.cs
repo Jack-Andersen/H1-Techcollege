@@ -30,7 +30,7 @@ namespace Noodle_chat
         string requestroot(Request r)
         {
             User user = null;
-            if (r.HttpMethod == "POST") //new
+            if (r.HttpMethod == "POST")
             {
                 RequestData data = r.Data;
                 if (r.Data.Post.ContainsKey("username"))
@@ -47,7 +47,7 @@ namespace Noodle_chat
                     if (user != null)
                     { 
                     string msg = data.Post["massage"];
-                    Database.InsertMessage(msg.ToString(), 3);
+                    Database.InsertMessage(msg.ToString(), userID);
                     }
                 }
             }
@@ -57,7 +57,7 @@ namespace Noodle_chat
                 List<User> users = Database.GetUsers();
                 return HTMLGenerator.generateIndex(messages, users, user.UserID);
             }
-            return HTMLGenerator.generateLogin(); //new
+            return HTMLGenerator.generateLogin();
 
 
         }
@@ -87,12 +87,12 @@ namespace Noodle_chat
             return "";
         }
 
-        string requestLoginHTML(Request request) //new
+        string requestLoginHTML(Request request)
         {
             return HTMLGenerator.generateLogin();
         }
 
-        public User logUserIn(RequestData data) //new
+        public User logUserIn(RequestData data)
         {
             User user = Database.GetUserByLogin(data.Post["username"]);
             if (user == null)

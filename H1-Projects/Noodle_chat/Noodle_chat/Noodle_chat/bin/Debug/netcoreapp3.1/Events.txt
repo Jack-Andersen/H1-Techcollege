@@ -1,0 +1,19 @@
+25-09-2020 10:47:43, Error, Something went wrong
+25-09-2020 10:48:53, Error, Something went wrong
+25-09-2020 11:08:28, Error, Could not find file 'C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\HTLM\Chat-browser.html'.
+25-09-2020 11:13:54, Error, Could not find file 'C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Noodle_chat\Noodle_chat\Noodle_chat\HTLM\Login.html'.
+25-09-2020 11:18:24, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:32:19, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:32:47, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:34:15, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:47:54, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:48:10, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:49:16, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:53:05, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:53:16, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:53:24, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:53:24, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:53:34, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:53:34, Error, Invalid object name 'UserID_for_chatz'.
+25-09-2020 11:55:01, Info, Starting of Server on http://localhost:8080/
+25-09-2020 11:56:33, Info, Starting of Server on http://localhost:8080/

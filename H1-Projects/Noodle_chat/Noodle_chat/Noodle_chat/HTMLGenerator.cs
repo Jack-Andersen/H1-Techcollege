@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Noodle_chat
@@ -9,16 +10,39 @@ namespace Noodle_chat
 
         public static string generateIndex(List<Message> messages, List<User> user, int userID)
         {
-            string html = System.IO.File.ReadAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/Chat-browser.html");
+
+            string html;
+
+            try
+            {
+                html = System.IO.File.ReadAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/Chat-browser.html");
+            }
+            catch (FileNotFoundException e)
+            {
+                Logger.WriteToFile(e);
+                return "<h1> Missing template for chat-browser </h1>";
+            }
+
             html = html.Replace("{{MESSAGEWINDOW}}", HTMLGenerator.GenerateMessages(messages));
             html = html.Replace("{{USERWINDOW}}", HTMLGenerator.GenerateUser(user));
-            html = html.Replace("{{USERID}}", userID.ToString()); //new
+            html = html.Replace("{{USERID}}", userID.ToString());
             return html;
         }
 
-        public static string generateLogin() //new
+        public static string generateLogin()
         {
-            string html = System.IO.File.ReadAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/Login.html");
+
+            string html;
+
+            try
+            {
+                html = System.IO.File.ReadAllText("C:/Users/Elder/Documents/GitHub/Jack_Andersen/H1-Projects/Noodle_chat/Noodle_chat/Noodle_chat/HTLM/Login.html");
+            }
+            catch (FileNotFoundException e)
+            {
+                Logger.WriteToFile(e);
+                return "<h1> Missing template for login </h1>";
+            }
             return html;
         }
 

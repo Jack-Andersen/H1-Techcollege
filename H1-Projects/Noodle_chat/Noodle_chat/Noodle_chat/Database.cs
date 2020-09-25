@@ -75,7 +75,18 @@ namespace Noodle_chat
         public static List<User> GetUsers()
         {
             List<User> user = new List<User>();
-            Result result = SQLet.GetResult("SELECT UserID, UserName FROM UserID_for_chat");
+
+            Result result;
+
+            try
+            {
+                result = SQLet.GetResult("SELECT UserID, UserName FROM UserID_for_chat");
+            }
+            catch (Microsoft.Data.SqlClient.SqlException e)
+            {
+                Logger.WriteToFile(e);
+                    return new List<User>();
+            }
             int number = 0;
             foreach (var row in result)
             {
@@ -115,10 +126,22 @@ namespace Noodle_chat
 
         public static User GetUserByLogin(string username)
         {
+
+            Result result;
+
             string sql = "";
             username = username.Replace("'", "\'");
             sql = string.Format("SELECT UserID, UserName FROM UserID_for_chat WHERE UserName = '{0}'", username);
-            Result result = SQLet.GetResult(sql);
+            try
+            {
+                result = SQLet.GetResult(sql);
+            }
+            catch (Microsoft.Data.SqlClient.SqlException e)
+            {
+                Logger.WriteToFile(e);
+                return null;
+            }
+
             if (result.Count == 0)
             {
                 return null;

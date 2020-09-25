@@ -106,15 +106,26 @@ namespace Noodle_chat
             }
             SQLet.ConnectSqlServer("Noodle_chat", "JACK-ANDERSEN-J");
             RequestHandler requestHandler = new RequestHandler(host);
+            Logger.WriteToFile("Starting of Server on " + host);
             requestHandler.start();
             Console.ReadLine();
         }
 
         static void Main_(string[] args)
         {
+
+            List<Message> Beskeder;
             
             SQLet.ConnectSqlServer("Noodle_chat", "JACK-ANDERSEN-J", "SA", "Muskel-Mads");
-            List<Message> Beskeder = Database.GetMessages();
+            try
+            {
+                Beskeder = Database.GetMessages();
+            }
+            catch
+            {
+                Logger.WriteToFile(new Exception("Something went wrong"));
+                return;
+            }
             Console.WriteLine(Beskeder.Count);
             string beskedHTML = HTMLGenerator.GenerateMessages(Beskeder);
             Console.WriteLine(beskedHTML);
