@@ -6,3 +6,10 @@ Programming/Reaction time game/Reaction_time_game_new/.vs/Reaction_time_game_new
 H1-Projects/Highscore/Highscore/.vs/Highscore/v16/Server/sqlite3/db.lock
 Programming/Objekter_know_how/.vs/Objekter_know_how/v16/Server/sqlite3/db.lock
 Programming/Bank_account/.vs/Bank_account/v16/Server/sqlite3/db.lock
+*.json
+*.cache
+*.dll
+H1-Projects/Lagersystem_project/.vs/Lagersystem_project/v16/.suo
+*.v2
+.vs/Jack_Andersen/v16/.suo
+*.sqlite
