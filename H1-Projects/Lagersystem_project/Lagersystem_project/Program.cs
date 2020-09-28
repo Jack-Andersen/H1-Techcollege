@@ -31,7 +31,8 @@ namespace Lagersystem_project
                 Console.WriteLine("Press 1 Insert product.\n" +
                                   "Press 2 Delete product.\n" +
                                   "Press 3 Update product.\n" +
-                                  "Press 4 Show all product.\n");
+                                  "Press 4 Show all product.\n" +
+                                  "Press 5 Show all locations of products\n");
 
                 ConsoleKey pressedKey = PressedKey();
 
@@ -56,7 +57,7 @@ namespace Lagersystem_project
                         int updateID = int.Parse(Console.ReadLine());
                         Console.Write("What do you want to update your product to > ");
                         string updateProductName = Console.ReadLine();
-                        Console.WriteLine("The amount of the specific product > ");
+                        Console.Write("The amount of the specific product > ");
                         int updateProductAmount = int.Parse(Console.ReadLine());
                         Methods_And_Functions.UpdateProduct(updateID, updateProductName, updateProductAmount, conn);
                         break;
@@ -66,6 +67,13 @@ namespace Lagersystem_project
                         Console.WriteLine("All products\n");
                         Console.WriteLine("{0,-10} {1,-20} {2,-10}", "ProductID:", "ProductName:", "ProductAmount:");
                         Methods_And_Functions.ShowAllProducts(conn);
+                        break;
+
+                    case keyInfo5:
+                        Console.WriteLine("");
+                        Console.WriteLine("All locations of products\n");
+                        Console.WriteLine("{0,-10} {1,-20}", "LocationID:", "ProductID:");
+                        Methods_And_Functions.ShowAllLocations(conn);
                         break;
 
                 }            

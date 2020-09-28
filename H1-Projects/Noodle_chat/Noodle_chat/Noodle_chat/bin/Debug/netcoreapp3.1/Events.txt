@@ -17,3 +17,4 @@
 25-09-2020 11:53:34, Error, Invalid object name 'UserID_for_chatz'.
 25-09-2020 11:55:01, Info, Starting of Server on http://localhost:8080/
 25-09-2020 11:56:33, Info, Starting of Server on http://localhost:8080/
+28-09-2020 12:20:01, Info, Starting of Server on http://localhost:8080/
