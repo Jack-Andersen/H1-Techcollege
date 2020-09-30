@@ -28,9 +28,10 @@
                 </div>
                 <div class="msgBox col-12">
                     <div class="btn">
-                        <form action="/" method="post">
+                        <form action="/" method="post" onsubmit="document.getElementById('recipientID').value = document.location.hash.substr(1)">
                             <input class="msg" type="text" placeholder="Type massage:" name="massage">
-                            <input hidden="hidden" name="UserID" value="{{USERID}}" >
+                            <input hidden="hidden" name="UserID" value="{{USERID}}">
+                            <input hidden="hidden" name="recipientID" value="" id="recipientID">
                             <input type="submit" value="Send massage">
                         </form>
                     </div>

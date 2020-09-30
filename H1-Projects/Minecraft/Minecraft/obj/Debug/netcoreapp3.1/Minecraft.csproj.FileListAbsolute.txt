@@ -1,0 +1,13 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\bin\Debug\netcoreapp3.1\Minecraft.exe
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\bin\Debug\netcoreapp3.1\Minecraft.deps.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\bin\Debug\netcoreapp3.1\Minecraft.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\bin\Debug\netcoreapp3.1\Minecraft.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\bin\Debug\netcoreapp3.1\Minecraft.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\bin\Debug\netcoreapp3.1\Minecraft.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Minecraft\Minecraft\obj\Debug\netcoreapp3.1\Minecraft.genruntimeconfig.cache

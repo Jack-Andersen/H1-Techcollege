@@ -53,7 +53,7 @@ namespace Noodle_chat
             {
                 string tpl1 = "<p><span class=\"Simon\">{0} </span><span class=\"timestamp\">{1}</span><br><span class=\"message\">{2}</span></p><hr>";
                 string formattedDate = msg.MessagesDate.ToString("t");
-                html += string.Format(tpl1, msg.User.UserName, formattedDate, msg.MessagesText);
+                html += string.Format(tpl1, msg.Sender.UserName, formattedDate, msg.MessagesText);
             }
             return html;
         }
@@ -63,9 +63,9 @@ namespace Noodle_chat
             string html = "";
             foreach (User loginUser in user)
             {
-                string tpl2 = "<p>{0}</p><hr>";
+                string link = $"<p><a href=\"#{loginUser.UserID}\">{loginUser.UserName}</a></p><hr>";
 
-                html += string.Format(tpl2, loginUser.UserName);
+                html += link;
             }
             return html;
         }

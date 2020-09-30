@@ -36,6 +36,7 @@ namespace Noodle_chat
                 if (r.Data.Post.ContainsKey("username"))
                 {
                      user = logUserIn(r.Data);
+                     User.CurrentUserID = user.UserID; //sæt ID på indlogget bruger på CurrentUserID
 
                 }
                 else if (r.Data.Post.ContainsKey("massage"))
@@ -45,9 +46,14 @@ namespace Noodle_chat
                     user = Database.GetUser(userID);
 
                     if (user != null)
-                    { 
-                    string msg = data.Post["massage"];
-                    Database.InsertMessage(msg.ToString(), userID);
+                    {
+                        int recipientid = 0;
+                        string msg = data.Post["massage"];
+                     if (r.Data.Post.ContainsKey("recipientID"))
+                        {
+                            int.TryParse(r.Data.Post["recipientID"], out recipientid);
+                        }
+                            Database.InsertMessage(msg.ToString(), userID, recipientid);
                     }
                 }
             }
@@ -57,8 +63,8 @@ namespace Noodle_chat
                 List<User> users = Database.GetUsers();
                 return HTMLGenerator.generateIndex(messages, users, user.UserID);
             }
-            return HTMLGenerator.generateLogin();
 
+            return HTMLGenerator.generateLogin();
 
         }
 
@@ -100,8 +106,6 @@ namespace Noodle_chat
                 Database.InsertUser(data.Post["username"]);
                 user = Database.GetUserByLogin(data.Post["username"]);
             }
-
-
 
             return user;
 

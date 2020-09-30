@@ -29,9 +29,11 @@ namespace Noodle_chat
                 ");
 
                 SQLet.Execute(@"CREATE VIEW Noodle_Info AS
-                    SELECT MessagesID, MessagesUserID, MessagesText, MessagesDate, UserName FROM Messages_for_chat
-                    INNER JOIN UserID_for_chat
-                    ON Messages_for_chat.MessagesUserID = UserID_for_chat.UserID");
+                    SELECT MessagesID, MessagesUserID, MessagesText, MessagesDate, sender.UserName, 
+                    recipient.UserID AS recipientID, recipient.UserName AS recipient FROM Messages_for_chat
+                    INNER JOIN UserID_for_chat AS sender
+                    ON Messages_for_chat.MessagesUserID = sender.UserID
+                    LEFT JOIN UserID_for_chat as recipient ON Messages_for_chat.recipientID = recipient.UserID");
             }
             catch(Microsoft.Data.SqlClient.SqlException)
             {
@@ -42,7 +44,10 @@ namespace Noodle_chat
         public static List<Message> GetMessages()
         {
             List<Message> messages = new List<Message>();
-            Result result = SQLet.GetResult(@"SELECT * FROM Noodle_Info");
+            Result result = SQLet.GetResult($@"SELECT * FROM Noodle_Info 
+                WHERE (recipientID = 0 OR recipientID IS NULL)
+                OR recipientID = {User.CurrentUserID}
+                OR MessagesUserID = {User.CurrentUserID}");
             int number = 0;
             foreach (var row in result)
             {
@@ -61,7 +66,10 @@ namespace Noodle_chat
 
                 //sæt propertien User til en bruger instans
                 int.TryParse(row["MessagesID"], out number);
-                msg.User = new User(number ,row["UserName"]);
+                msg.Sender = new User(number ,row["UserName"]);
+
+                int.TryParse(row["recipientID"], out number);
+                msg.Recipient = new User(number, row["recipient"]);
 
                 //Tilføj msg til listen.
                 messages.Add(msg); 
@@ -114,12 +122,12 @@ namespace Noodle_chat
             SQLet.Execute(formattet);
         }
 
-        public static void InsertMessage(string MessagesText, int MessagesUserID)
+        public static void InsertMessage(string MessagesText, int MessagesUserID, int recipientID = 0)
         {
             string SQL = @"
-            INSERT INTO Messages_for_chat (MessagesText, MessagesUserID, MessagesDate)
-            VALUES ('{0}', {1}, '{2}')";
-            string formattet = string.Format(SQL, MessagesText, MessagesUserID, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            INSERT INTO Messages_for_chat (MessagesText, MessagesUserID, MessagesDate, recipientID)
+            VALUES ('{0}', {1}, '{2}', {3})";
+            string formattet = string.Format(SQL, MessagesText, MessagesUserID, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), recipientID);
             Console.WriteLine(formattet);
             SQLet.Execute(formattet);
         }
