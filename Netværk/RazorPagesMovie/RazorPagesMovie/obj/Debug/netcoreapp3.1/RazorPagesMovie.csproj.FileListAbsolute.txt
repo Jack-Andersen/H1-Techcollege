@@ -9,7 +9,6 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPage
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesMovie.pdb
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesMovie.Views.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\bin\Debug\netcoreapp3.1\RazorPagesMovie.Views.pdb
-C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.csprojAssemblyReference.cache
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.AssemblyInfoInputs.cache
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.AssemblyInfo.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.RazorAssemblyInfo.cache
@@ -175,3 +174,4 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPage
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages\Movies\Details.cshtml.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages\Movies\Edit.cshtml.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\Razor\Pages\Movies\Index.cshtml.g.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Netværk\RazorPagesMovie\RazorPagesMovie\obj\Debug\netcoreapp3.1\RazorPagesMovie.csprojAssemblyReference.cache

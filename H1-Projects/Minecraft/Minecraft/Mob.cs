@@ -14,7 +14,6 @@ namespace Minecraft
 
         public abstract bool Hostile();
         public abstract int Speed();
-
         public abstract int Strength();
 
     }
