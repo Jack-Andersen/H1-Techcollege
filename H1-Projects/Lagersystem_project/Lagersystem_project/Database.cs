@@ -10,12 +10,20 @@ namespace Lagersystem_project
 
         public SqlConnection connection()
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "JACK-ANDERSEN-J";
-            builder.InitialCatalog = "Lagersystem_H1";
-            builder.IntegratedSecurity = true;
+            try
+            {
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = "JACK-ANDERSEN-J";
+                builder.InitialCatalog = "Lagersystem_H1";
+                builder.IntegratedSecurity = true;
 
-            return new SqlConnection(builder.ToString());
+                return new SqlConnection(builder.ToString());
+            }
+            catch(SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+                return null;
+            }
         }
     }
 }

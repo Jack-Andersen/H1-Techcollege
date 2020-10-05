@@ -16,5 +16,9 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\La
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.csproj.CopyComplete
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.pdb
-C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.csproj.CoreCompileInputs.cache
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.genruntimeconfig.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\bin\Debug\netcoreapp3.1\xunit.abstractions.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\bin\Debug\netcoreapp3.1\xunit.assert.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\bin\Debug\netcoreapp3.1\xunit.core.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\bin\Debug\netcoreapp3.1\xunit.execution.dotnet.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H1-Projects\Lagersystem_project\Lagersystem_project\obj\Debug\netcoreapp3.1\Lagersystem_project.csproj.CoreCompileInputs.cache
