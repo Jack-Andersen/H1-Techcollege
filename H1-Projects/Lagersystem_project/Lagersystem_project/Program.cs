@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Linq.Expressions;
 
 namespace Lagersystem_project
 {
@@ -7,31 +8,35 @@ namespace Lagersystem_project
     {
         public static void Main(string[] args)
         {
-
             Database db = new Database();
             SqlConnection conn = db.connection();
             conn.Open();
+            SwitchCase(conn);
+        }
 
-            const ConsoleKey keyInfo1 = ConsoleKey.D1;
-            const ConsoleKey keyInfo2 = ConsoleKey.D2;
-            const ConsoleKey keyInfo3 = ConsoleKey.D3;
-            const ConsoleKey keyInfo4 = ConsoleKey.D4;
-            const ConsoleKey keyInfo5 = ConsoleKey.D5;
-            const ConsoleKey keyInfo6 = ConsoleKey.Escape;
-
+        const ConsoleKey keyInfo1 = ConsoleKey.D1;
+        const ConsoleKey keyInfo2 = ConsoleKey.D2;
+        const ConsoleKey keyInfo3 = ConsoleKey.D3;
+        const ConsoleKey keyInfo4 = ConsoleKey.D4;
+        const ConsoleKey keyInfo5 = ConsoleKey.D5;
+        const ConsoleKey keyInfo6 = ConsoleKey.Escape;
+        public static void SwitchCase(SqlConnection conn)
+        {
             while (true)
             {
 
                 Methods_And_Functions.Menu();
 
-                ConsoleKey pressedKey = PressedKey();
+                ConsoleKey pressedKey = PressedKey(conn);
 
                 switch (pressedKey)
                 {
+
                     case keyInfo1:
+                        Console.WriteLine("Press --> Enter <-- without any word to leave");
                         Console.Write("Enter Product name > ");
                         string inputProduct = Console.ReadLine();
-                        if(inputProduct != "")
+                        if (inputProduct != "")
                         {
                             Console.Write("Enter Product Amount > ");
                             int productAmount = int.Parse(Console.ReadLine());
@@ -39,24 +44,27 @@ namespace Lagersystem_project
                             break;
                         }
                         Console.Clear();
-                        break;  
+                        break;
 
                     case keyInfo2:
+                        Console.WriteLine("Put the value as --> 0 <-- if you want to exit");
                         Console.Write("Specify what ProductID you want to delete > ");
-                        int productID = int.Parse(Console.ReadLine());
-                        if(productID != null)
+                        string input2 = Console.ReadLine();
+                        if (input2 != "")
                         {
+                            int productID = int.Parse(input2);
                             Methods_And_Functions.DeleteProduct(productID, conn);
-                            break;
                         }
                         Console.Clear();
                         break;
 
                     case keyInfo3:
+                        Console.WriteLine("Put the value as --> 0 <-- if you want to exit");
                         Console.Write("What ID do you want to update > ");
-                        int updateID = int.Parse(Console.ReadLine());
-                        if( updateID != null)
+                        string input3 = Console.ReadLine();          
+                        if (input3 != "")
                         {
+                            int updateID = int.Parse(input3);
                             Console.Write("What do you want to update your product to > ");
                             string updateProductName = Console.ReadLine();
                             Console.Write("The amount of the specific product > ");
@@ -66,7 +74,6 @@ namespace Lagersystem_project
                         }
                         Console.Clear();
                         break;
-                        
 
                     case keyInfo4:
                         Console.WriteLine("");
@@ -82,20 +89,19 @@ namespace Lagersystem_project
                         Methods_And_Functions.ShowAllLocations(conn);
                         break;
 
-                }            
+                }
             }
-
-            ConsoleKey PressedKey()
+        }
+        static ConsoleKey PressedKey(SqlConnection conn)
+        {
+            do
             {
-                do
-                {
-                    while (!Console.KeyAvailable) ;
-                    ConsoleKey pressed = Console.ReadKey(true).Key;
-                    if (pressed == keyInfo1 || pressed == keyInfo2 || pressed == keyInfo3 || pressed == keyInfo4 || pressed == keyInfo5 || pressed == keyInfo6)
-                        return pressed;
-                    Console.Clear();
-                } while (true);
-            }
-        }    
+                while (!Console.KeyAvailable) ;
+                ConsoleKey pressed = Console.ReadKey(true).Key;
+                if (pressed == keyInfo1 || pressed == keyInfo2 || pressed == keyInfo3 || pressed == keyInfo4 || pressed == keyInfo5)
+                    return pressed;
+                Console.Clear();
+            } while (true);
+        }
     }
 }

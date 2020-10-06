@@ -41,5 +41,6 @@ namespace XUnitTestProject_Lagersystem
             Assert.Equal("1 rows affected.\n", Methods_And_Functions.InsertProduct("Headset", 100, conn));
             conn.Close();
         }
+
     }
 }

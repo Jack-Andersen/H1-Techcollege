@@ -15,7 +15,7 @@ namespace Lagersystem_project
                               "Press 2 Delete product.\n" +
                               "Press 3 Update product.\n" +
                               "Press 4 Show all products.\n" +
-                              "Press 5 Show all locations of products\n");
+                              "Press 5 Show all locations of products.\n");
         }
 
         public static string InsertProduct(string ProductName, int ProductAmount, SqlConnection conn)
@@ -116,7 +116,6 @@ namespace Lagersystem_project
             while (sdr.Read())
             {
                 Console.WriteLine("{0,-10} {1,-20} {2,-10}", sdr[0], sdr[1], sdr[2]);
-
             }
 
             Console.WriteLine("");
