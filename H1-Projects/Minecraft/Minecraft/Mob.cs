@@ -8,9 +8,9 @@ namespace Minecraft
     abstract class Mobs
     {
 
-        int x = 0;
-        int y = 0;
-        int hp = 100;
+        public int x = 0;
+        public int y = 0;
+        public int hp = 100;
 
         public abstract bool Hostile();
         public abstract int Speed();
@@ -23,6 +23,7 @@ namespace Minecraft
 
         public override bool Hostile()
         {
+            hp = 200;
             return true;
         }
 
