@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace Lagersystem_project
@@ -20,8 +22,10 @@ namespace Lagersystem_project
         const ConsoleKey keyInfo4 = ConsoleKey.D4;
         const ConsoleKey keyInfo5 = ConsoleKey.D5;
         const ConsoleKey keyInfo6 = ConsoleKey.Escape;
+
         public static void SwitchCase(SqlConnection conn)
         {
+
             while (true)
             {
 
@@ -33,7 +37,7 @@ namespace Lagersystem_project
                 {
 
                     case keyInfo1:
-                        Console.WriteLine("Press --> Enter <-- without any word to leave");
+                        Console.WriteLine("Press --> Enter <-- without any word to exit");
                         Console.Write("Enter Product name > ");
                         string inputProduct = Console.ReadLine();
                         if (inputProduct != "")
@@ -47,7 +51,7 @@ namespace Lagersystem_project
                         break;
 
                     case keyInfo2:
-                        Console.WriteLine("Put the value as --> 0 <-- if you want to exit");
+                        Console.WriteLine("Press --> Enter <-- without any number to exit");
                         Console.Write("Specify what ProductID you want to delete > ");
                         string input2 = Console.ReadLine();
                         if (input2 != "")
@@ -59,7 +63,7 @@ namespace Lagersystem_project
                         break;
 
                     case keyInfo3:
-                        Console.WriteLine("Put the value as --> 0 <-- if you want to exit");
+                        Console.WriteLine("Press --> Enter <-- without any number to exit");
                         Console.Write("What ID do you want to update > ");
                         string input3 = Console.ReadLine();          
                         if (input3 != "")
@@ -76,6 +80,7 @@ namespace Lagersystem_project
                         break;
 
                     case keyInfo4:
+                        Console.Clear();
                         Console.WriteLine("");
                         Console.WriteLine("All products\n");
                         Console.WriteLine("{0,-10} {1,-20} {2,-10}", "ProductID:", "ProductName:", "ProductAmount:");
@@ -89,15 +94,28 @@ namespace Lagersystem_project
                         Methods_And_Functions.ShowAllLocations(conn);
                         break;
 
+                    case keyInfo6:
+                            System.Environment.Exit(0);
+                        break;
                 }
             }
         }
         static ConsoleKey PressedKey(SqlConnection conn)
         {
+
+            List<ConsoleKey> key_Array = new List<ConsoleKey> { keyInfo1, keyInfo2, keyInfo3, keyInfo4, keyInfo5, keyInfo6 };
+            ConsoleKey pressed = Console.ReadKey(true).Key;
+
             do
             {
-                while (!Console.KeyAvailable) ;
-                ConsoleKey pressed = Console.ReadKey(true).Key;
+                while (!key_Array.Contains(pressed))
+                {
+                    Console.Clear();
+                    Methods_And_Functions.Menu();
+                    Console.WriteLine("Choose a vaild key!");
+                    pressed = Console.ReadKey(true).Key;
+                }
+                //ConsoleKey pressed = Console.ReadKey(true).Key;
                 if (pressed == keyInfo1 || pressed == keyInfo2 || pressed == keyInfo3 || pressed == keyInfo4 || pressed == keyInfo5)
                     return pressed;
                 Console.Clear();

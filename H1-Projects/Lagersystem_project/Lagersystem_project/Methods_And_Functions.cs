@@ -15,7 +15,8 @@ namespace Lagersystem_project
                               "Press 2 Delete product.\n" +
                               "Press 3 Update product.\n" +
                               "Press 4 Show all products.\n" +
-                              "Press 5 Show all locations of products.\n");
+                              "Press 5 Show all locations of products.\n" +
+                              "Press Esc to exit the Program.\n");
         }
 
         public static string InsertProduct(string ProductName, int ProductAmount, SqlConnection conn)
@@ -42,7 +43,7 @@ namespace Lagersystem_project
                     while (sdr.Read())
                     {
                         id = (int)sdr[0];
-                        Console.WriteLine(id);
+                        //Console.WriteLine(id);
                     }
                     sdr.Close();
 
@@ -148,6 +149,5 @@ namespace Lagersystem_project
             SqlCommand command = new SqlCommand(formatted, conn);
             command.ExecuteNonQuery();
         }
-
     }
 }
