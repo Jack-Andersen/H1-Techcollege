@@ -1,0 +1,108 @@
+body{
+    margin: 0%;
+}
+
+.links{
+
+    float: right;
+    margin-top: 10px;
+    margin-left: 1000px;
+    padding: 10px 4px;
+    position: fixed;
+    background-color: black;
+}
+
+.links a{
+    padding: 5px 10px;
+}
+
+a:link{
+
+    color: white;
+    border: solid 1px white;  
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+a:active {
+    color: white;
+    text-decoration: underline;
+}
+
+.intro{
+    background-image: url("Images/Circuit2.jpg");
+    height: 105vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+.intro img {
+    margin-left: 95px;
+    margin-top: 20px;
+    border-radius: 500px;
+    height: 250px;
+}
+
+.intro h1{
+    text-align: center;
+    margin: 0%;
+
+    padding-right: 110px;
+    font-style: oblique;
+}
+
+
+.itext a{
+    text-decoration: none;
+    font-size: 130%;
+    padding-bottom: 50px;
+}
+
+.itext{
+    text-align: center;
+    margin-top: 30px;
+    margin-right: 150px;
+    font-size: 110%;
+}
+
+
+.brødtext h2{
+    margin-left: 40px;
+}
+
+.brødtext{
+font-size: 110%;
+
+}
+.brødtext p{
+
+    float: left;
+}
+
+.uddannelsesmæssig{
+
+}
+
+.erhvervserfaring{
+
+}
+
+.kvalifikationer{
+
+}
+
+.footerInfo{
+
+}
