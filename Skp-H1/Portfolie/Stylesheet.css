@@ -1,5 +1,7 @@
 body{
     margin: 0%;
+    background-color: black;
+
 }
 
 .links{
@@ -49,8 +51,9 @@ a:active {
 }
 
 .intro img {
+    position: absolute;
     margin-left: 95px;
-    margin-top: 20px;
+    margin-top: 95px;
     border-radius: 500px;
     height: 250px;
 }
@@ -58,9 +61,9 @@ a:active {
 .intro h1{
     text-align: center;
     margin: 0%;
-
     padding-right: 110px;
     font-style: oblique;
+    padding-top: 15%;
 }
 
 
@@ -83,12 +86,27 @@ a:active {
 }
 
 .brødtext{
-font-size: 110%;
+    font-size: 110%;
 
 }
 .brødtext p{
 
     float: left;
+}
+
+.image{
+    background-image: url("Images/Circuit4.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: white;
+}
+
+.kvalifikationer h2{
+    margin-left: 40px;
+    padding-top: 20px;
+
 }
 
 .uddannelsesmæssig{
@@ -99,10 +117,50 @@ font-size: 110%;
 
 }
 
-.kvalifikationer{
+.projekter a{
+    color: blue;
+    border: none;
+}
 
+.footerInfo h2{
+    margin-left: 40px;
 }
 
 .footerInfo{
-
+    text-align: center;
 }
+
+.footerInfo a{
+    color: blue;
+    border: none;
+}
+
+.image .kvalifikationer{
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    width: 20%;
+}
+
+.image .uddannelsesmæssig{
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    width: 45%;
+}
+
+.image .erhvervserfaring{
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    width: 45%;
+}
+
+.image .projekter {
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    width: 45%;
+}
+
+.image .footerInfo {
+    background: rgb(0, 0, 0); 
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+  }
