@@ -7,8 +7,8 @@ body{
 .links{
 
     float: right;
-    margin-top: 10px;
-    margin-left: 1000px;
+    margin-top: 1%;
+    margin-left: 65%;
     padding: 10px 4px;
     position: fixed;
     background-color: black;
@@ -42,7 +42,7 @@ a:active {
 
 .intro{
     background-image: url("Images/Circuit2.jpg");
-    height: 105vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@ a:active {
 }
 
 .image{
-    background-image: url("Images/Circuit4.jpg");
+    background-image: url("Images/Circuit3.PNG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -106,14 +106,6 @@ a:active {
 .kvalifikationer h2{
     margin-left: 40px;
     padding-top: 20px;
-
-}
-
-.uddannelsesmæssig{
-
-}
-
-.erhvervserfaring{
 
 }
 
@@ -163,4 +155,68 @@ a:active {
     background: rgb(0, 0, 0); 
     background: rgba(0, 0, 0, 0.5); 
     padding: 20px;
-  }
+} 
+
+/* Large devices (laptops/desktops, 768px and up) */
+ @media only screen and (min-width: 768px) {
+
+ }
+
+  /* Extra small devices (phones, 375px and down) */
+@media only screen and (max-width: 375px) {
+  
+    .links{
+
+        line-height: 35px;
+
+    }
+    
+    .intro img {
+        margin-left: 60px;
+        margin-top: 20px;
+        height: 200px;
+        
+    }
+    
+    .intro h1{
+        padding-top: 65%;
+
+    }   
+    
+    .brødtext h2{
+        text-align: center;
+        padding-left: 15px;
+
+    }
+    
+    .brødtext{
+        text-align: center;
+        padding-right: 150px;
+    
+    }
+    
+    .image .kvalifikationer{
+        width: 63%;
+
+    }
+    
+    .image .uddannelsesmæssig{
+        width: 63%;
+
+    }
+    
+    .image .erhvervserfaring{ 
+        width: 63%;
+
+    }
+    
+    .image .projekter {
+        width: 63%;
+
+    }
+    
+    .image .footerInfo {
+        padding: 4%;
+        
+    }
+}
