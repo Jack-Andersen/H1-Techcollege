@@ -7,11 +7,12 @@ body{
 .links{
 
     float: right;
-    margin-top: 1%;
+    margin-top: 0.5%;
     margin-left: 65%;
     padding: 10px 4px;
     position: fixed;
     background-color: black;
+    line-height: 35px;
 }
 
 .links a{
@@ -158,12 +159,66 @@ a:active {
 } 
 
 /* Large devices (laptops/desktops, 768px and up) */
- @media only screen and (min-width: 768px) {
+ @media only screen and (max-width: 768px) {
+    
+    .links{
+    
+        text-align: center;
+        line-height: 35px;
+    }
+    
+    .intro img {
+        margin-left: 60px;
+        margin-top: 35px;
+        height: 200px;
 
- }
+    }
+    
+    .intro h1{
+        margin: 0%;
+        padding-top: 65%;
+    }
+    
+    
+    .itext a{
+        text-decoration: none;
+        font-size: 130%;
+        padding-bottom: 50px;
+    }
+    
+    .itext{
+        text-align: center;
+        margin-right: 150px;
+    }
+    
+    .brødtext{
+        text-align: center;
+        margin-right: 150px;
+    
+    }
+
+    .image .kvalifikationer{
+        width: 52%;
+    }
+    
+    .image .uddannelsesmæssig{
+        width: 52%;
+    }
+    
+    .image .erhvervserfaring{
+        width: 52%;
+    }
+    
+    .image .projekter {
+        width: 52%;
+    }
+    
+    .image .footerInfo {
+        padding: 20px;
+    } 
 
   /* Extra small devices (phones, 375px and down) */
-@media only screen and (max-width: 375px) {
+ @media only screen and (max-width: 375px) {
   
     .links{
 
@@ -218,5 +273,6 @@ a:active {
     .image .footerInfo {
         padding: 4%;
         
+    }
     }
 }
