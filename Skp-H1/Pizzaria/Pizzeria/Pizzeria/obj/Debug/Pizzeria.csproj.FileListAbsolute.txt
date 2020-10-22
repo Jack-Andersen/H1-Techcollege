@@ -1,0 +1,10 @@
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\bin\Debug\Pizzeria.exe.config
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\bin\Debug\Pizzeria.exe
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\bin\Debug\Pizzeria.pdb
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csprojAssemblyReference.cache
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.Properties.Resources.resources
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.GenerateResource.cache
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.csproj.CoreCompileInputs.cache
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.exe
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.pdb
+D:\Visual Studio\Saves\Pizzeria\Pizzeria\obj\Debug\Pizzeria.Panel.resources

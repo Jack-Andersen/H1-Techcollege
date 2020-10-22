@@ -1,0 +1,36 @@
+﻿<Window x:Class="One_2_Watch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:One_2_Watch"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="300" AllowsTransparency="True" WindowStyle="None" Background="Transparent">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="300"></WindowChrome>
+    </WindowChrome.WindowChrome>
+    
+    <Border CornerRadius="360" BorderBrush="#FFC0CB" BorderThickness="5" Background="White">
+        <StackPanel WindowChrome.IsHitTestVisibleInChrome="True">
+            <Label Foreground="#FFC0CB" Margin="0,15,0,0" FontSize="25" FontFamily="Stormfaze" HorizontalAlignment="Center" >Digital_Clock</Label>
+
+
+            <StackPanel Margin="0,20,0,5" Width="240" Height="100">
+                <Label Name="Time" Foreground="#FFC0CB" Margin="0,15,0,0" FontSize="50" FontFamily="Stormfaze" HorizontalAlignment="Center" >00:00:00</Label>
+
+            </StackPanel>
+
+            <StackPanel Margin="0,0,0,10" Width="230" Height="50">
+                <Label Name="Date" Foreground="#FFC0CB" Margin="0,8,0,0" FontSize="30" FontFamily="Stormfaze" HorizontalAlignment="Center" >00:00:2020</Label>
+
+            </StackPanel>
+
+            <Button Width="60" Padding="5,5,5,5" Background="#FFB6C1" FontSize="10" FontFamily="stormfaze" Foreground="White" BorderThickness="0" Name="QuitBtn">
+                Quit
+            </Button>
+
+        </StackPanel>
+
+    </Border>
+</Window>
