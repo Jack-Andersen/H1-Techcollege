@@ -15,14 +15,14 @@ namespace Hygge_discord_bot.Commands
         public string Description { get; private set; }
 
         [Command("Poll")]
-        public async Task Poll(CommandContext ctx, TimeSpan duration, string PollName, params DiscordEmoji[] emojiOptions)
+        public async Task Poll(CommandContext ctx, TimeSpan duration , params DiscordEmoji[] emojiOptions)
         {
             var interactivity = ctx.Client.GetInteractivity();
             var options = emojiOptions.Select(x => x.ToString());
 
             var pollEmbed = new DiscordEmbedBuilder
             {
-                Title = PollName,
+                Title = "Poll",
                 Description = string.Join(" ", options)
             };
 

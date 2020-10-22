@@ -1,0 +1,4 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.csproj.CoreCompileInputs.cache
