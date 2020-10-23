@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Schema;
@@ -140,25 +141,25 @@ namespace Edabit
 
 
 
-            //Return the First Element in an Array 6
+            //Convert All Array Objects to String 6
 
-            //Create a function that takes an array and returns the first element.
+            //Create a function that takes an array of integers and strings, converts integers to strings, and returns the array as a string array.
 
             //Examples
-            //GetFirstValue([5, 6, 7]) ➞ 5
-
-            //GetFirstValue(["Semiramis", "Gaia", "Hypatia"]) ➞ "Semiramis"
-
-            //GetFirstValue([true, false, true]) ➞ true
+            //ParseArray([1, 2, "a", "b"]) ➞ ["1", "2", "a", "b"]
             //Notes
-            //The first element in an array always has an index of 0.
+            //If you get stuck on a challenge, find help in the Resources tab.
 
-            static object GetFirstValue(object[] arr)
+            static string[] ParseArray (object[] arr)
             {
+                string arr2 = Array.ConvertAll(arr, x => x).ToString();
 
-                
-
+                Console.WriteLine(arr2);
             }
+
+
+
+            
         }
     }
 }
