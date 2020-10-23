@@ -1,6 +1,7 @@
 ﻿using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Interactivity.Extensions;
+using Hygge_discord_bot.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Hygge_discord_bot.Commands
     {
         [Command("ping")]
         [Description("Returns pong")]
+        [RequireCategorie(ChannelCheckMode.Any, "TekstKanaler")]
         public async Task Ping(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("pong").ConfigureAwait(false);
