@@ -47,12 +47,10 @@ namespace Hygge_discord_bot.Commands
                 var role = ctx.Guild.GetRole(768415405001146400);
                 await ctx.Member.RevokeRoleAsync(role).ConfigureAwait(false);
             }
-            //else
-            //{
+            else
+            {
             await joinMessage.DeleteAsync().ConfigureAwait(false);
-            //}
-
-            
+            }      
         }
     }
 }

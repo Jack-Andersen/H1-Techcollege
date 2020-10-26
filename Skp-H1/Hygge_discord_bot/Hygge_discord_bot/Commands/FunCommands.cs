@@ -21,7 +21,7 @@ namespace Hygge_discord_bot.Commands
 
         [Command("add")]
         [Description("Adds two numbers together")]
-        [RequireRoles(RoleCheckMode.All, "Moderator", "Owner")]
+        //[RequireRoles(RoleCheckMode.All, "Moderator", "Owner")]
         public async Task Add(CommandContext ctx,
             [Description("First Number")] int numberOne,
             [Description("Second Number")] int numberTwo)

@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace Hygge_discord_bot.Commands
 {
-    class Poll_Command : BaseCommandModule
+    public class PollCommands : BaseCommandModule
     {
-        public string Description { get; private set; }
 
-        [Command("Poll")]
-        public async Task Poll(CommandContext ctx, TimeSpan duration , params DiscordEmoji[] emojiOptions)
+        [Command("poll")]
+        [Description("poll duration Emojis")]
+        public async Task Poll(CommandContext ctx, TimeSpan duration, params DiscordEmoji[] emojiOptions)
         {
             var interactivity = ctx.Client.GetInteractivity();
             var options = emojiOptions.Select(x => x.ToString());
@@ -28,7 +28,7 @@ namespace Hygge_discord_bot.Commands
 
             var pollMessage = await ctx.Channel.SendMessageAsync(embed: pollEmbed).ConfigureAwait(false);
 
-            foreach(var option in emojiOptions)
+            foreach (var option in emojiOptions)
             {
                 await pollMessage.CreateReactionAsync(option).ConfigureAwait(false);
             }
