@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hygge_discord_bot.Handlers.Dialogue
+namespace Hygge_discord_bot.Handlers.Dialogue.Steps
 {
     public interface IDialogueStep
     {
