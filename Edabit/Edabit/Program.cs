@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
@@ -12,6 +13,8 @@ namespace Edabit
 {
     class Program
     {
+        private static IEnumerable<bool> testArray;
+
         static void Main(string[] args)
         {
             // Return Something to Me! 1
@@ -738,7 +741,188 @@ namespace Edabit
             //Notes
             //Step n is a positive integer.
 
-            static int StackBoxes(int n);
+            static int StackBoxes(int n)
+            {
+
+                double result = Math.Pow(n, 2);
+
+                return (int)result;
+
+            }
+
+
+
+            //Convert Hours into Seconds 30
+
+            //Write a function that converts hours into seconds.
+
+            //Examples
+            //howManySeconds(2) ➞ 7200
+
+            //howManySeconds(10) ➞ 36000
+
+            //howManySeconds(24) ➞ 86400
+            //Notes
+            //60 seconds in a minute, 60 minutes in an hour.
+            //Don't forget to return your answer.
+
+            static int HowManySecound(int hours)
+            {
+                return hours * 60 * 60;
+            }
+
+
+
+            //Is the Last Character an N? 31
+
+            //Create a function that takes a string(a random name).If the last character of the name is an "n", return true, otherwise return false.
+
+            //Examples
+            //isLastCharacterN("Aiden") ➞ true
+
+            //isLastCharacterN("Piet") ➞ false
+
+            //isLastCharacterN("Bert") ➞ false
+
+            //isLastCharacterN("Dean") ➞ true
+            //Notes
+            //The function must return a boolean value(i.e. true or false).
+
+            static bool isLastCharaterN(string word)
+            {
+
+                if (word.EndsWith("n"))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            //How Many D's Are There? 32
+
+            //Create a function that counts how many D's are in a sentence.
+
+            //Examples
+            //CountDs("My friend Dylan got distracted in school.") ➞ 4
+
+            //CountDs("Debris was scattered all over the yard.") ➞ 3
+
+            //CountDs("The rodents hibernated in their den.") ➞ 3
+            //Notes
+            //Your function must be case-insensitive.
+            //Remember to return the result.
+            //Check the Resources for help.
+
+            static int CountDS(string str)
+            {
+
+                int count = 0;
+
+                for (int i = 0; i < str.Length; i++)
+                {
+
+                    if (str[i] == 'D' || str[i] == 'd') ++count;
+
+                }
+
+                return count;
+
+            }
+
+
+
+            //How Much is True? 33
+
+            //Create a function which returns the number of true values there are in an array.
+
+            //Examples
+            //CountTrue([true, false, false, true, false]) ➞ 2
+
+            //CountTrue([false, false, false, false]) ➞ 0
+
+            //CountTrue([]) ➞ 0
+            //Notes
+            //Return 0 if given an empty array.
+            //All array items are of the type bool(true or false).
+
+            static int CountTrue(bool[] arr)
+            {
+
+                int counter = 0;
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] == true) counter++;
+                }
+                return counter;
+
+            }
+
+
+
+            //Raucous Applause 34
+
+            //fter an amazing performance, the crowd goes wild! People clap enthusiastically and most claps overlap with each other to create one homogeneous sound.
+
+            //An overlapped clap is a clap which starts but doesn't finish, as in "ClaClap" (the first clap is cut short and there are overall 2 claps).
+
+            //Given a string of what the overlapping claps sounded like, return how many claps were made in total.
+
+            //Examples
+            //CountClaps("ClaClaClaClap!") ➞ 4
+
+            //CountClaps("ClClClaClaClaClap!") ➞ 6
+
+            //CountClaps("CCClaClClap!Clap!ClClClap!") ➞ 9
+            //Notes
+            //Each clap starts with a capital "C".
+
+            static int CountClaps(string txt)
+            {
+                int clapCounter = 0;
+                for (int i = 0; i < txt.Length; i++)
+                {
+                    if (txt[i] == 'C')
+                    {
+                        clapCounter++;
+
+                    }
+                }
+
+                return clapCounter;
+
+            }
+
+
+
+            //Shapes With N Sides 35
+
+            //Create a function that takes a whole number as input and returns the shape with that number's amount of sides. Here are the expected outputs to get from these inputs.
+
+            //Inputs Outputs
+            //1   "circle"
+            //2   "semi-circle"
+            //3   "triangle"
+            //4   "square"
+            //5   "pentagon"
+            //6   "hexagon"
+            //7   "heptagon"
+            //8   "octagon"
+            //9   "nonagon"
+            //10  "decagon"
+            //Examples
+            //NSidedShape(3) ➞ "triangle"
+
+            //NSidedShape(1) ➞ "circle"
+
+            //NSidedShape(9) ➞ "nonagon"
+            //Notes
+            //There won't be any tests with a number below 1 or greater than 10.
+            //Return the output in lowercase.
+            //The challenge is intended to be completed without conditionals(it would take too long)!
 
 
 
