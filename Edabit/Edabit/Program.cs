@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
@@ -924,7 +925,176 @@ namespace Edabit
             //Return the output in lowercase.
             //The challenge is intended to be completed without conditionals(it would take too long)!
 
+            static string NSidedShape(int n)
+            {
+                string[] shapes = {"circle", "semi-circle", "triangle", "square","pentagon",
+                "hexagon",
+                "heptagon",
+                "octagon",
+                "nonagon",
+                "decagon"};
 
+                return shapes[n - 1];
+
+            }
+
+
+
+            //Convert Hours and Minutes into Seconds 36
+
+            //Write a function that takes two integers(hours, minutes), converts them to seconds, and adds them.
+
+            //Examples
+            //Convert(1, 3) ➞ 3780
+
+            //Convert(2, 0) ➞ 7200
+
+            //Convert(0, 0) ➞ 0
+            //Notes
+            //Don't forget to return the result.
+            //If you get stuck on a challenge, find help in the Resources tab.
+            //If you're really stuck, unlock solutions in the Solutions tab.
+
+            static int Convert(int hours, int minutes)
+            {
+               int h = hours * 3600;
+               int m = minutes * 60;
+
+               return h + m;
+            }
+
+
+
+            //String to Integer and Vice Versa 37
+
+            //Write two functions:
+
+            //toInt() : A function to convert a string to an integer.
+            //toStr() : A function to convert an integer to a string.
+            //Examples
+            //toInt("77") ➞ 77
+
+            //toInt("532") ➞ 532
+
+            //toStr(77) ➞ "77"
+
+            //toStr(532) ➞ "532"
+            //Notes
+            //Don't forget to return the result.
+            //If you get stuck on a challenge, find help in the Resources tab.
+            //If you're really stuck, unlock solutions in the Solutions tab.
+
+            //public static int toInt(string str)
+            //{
+            //    return Convert.ToInt32(str);
+            //}
+            //public static string toStr(int num)
+            //{
+            //    return Convert.ToString(num);
+            //}
+
+
+
+            //No Conditionals? 38
+
+            //Write a function that returns 0 if the input is 1, and returns 1 if the input is 0.
+
+            //Examples
+            //Flip(1) ➞ 0
+
+            //Flip(0) ➞ 1
+            //Notes
+            //Try completing this challenge without using any:
+
+            //Conditionals
+            //Ternary operators
+            //Negations
+            //Bit operators
+
+            static int Flip(int y)
+            {
+                return 1 - y;
+            }
+
+
+
+            //Hashes and Pluses 39
+
+            //Create a function that returns the number of hashes and pluses in a string.
+
+            //Examples
+            //HashPlusCount("###+") ➞ [3, 1]
+
+            //HashPlusCount("##+++#") ➞ [3, 3]
+
+            //HashPlusCount("#+++#+#++#") ➞ [4, 6]
+
+            //HashPlusCount("") ➞ [0, 0]
+            //Notes
+            //Return[0, 0] for an empty string.
+            //Return in the order of[hashes, pluses].
+
+            static int[] HashPlusCount(string s)
+            {
+                int hash = 0;
+                int plus = 0;
+
+                char[] arr = s.ToCharArray();
+                for (int i = 0; i < s.Length; i++)
+                {
+                    if (arr[i] == '#')
+                    {
+                        hash++;
+                    }
+                    if (arr[i] == '+')
+                    {
+                        plus++;
+                    }
+                }
+                int[] ans = { hash, plus };
+                return ans;
+            }
+
+
+
+            //The Study of Wumbology 40
+
+            //Create a function that flips M's to W's(all uppercase).
+
+            //Examples
+            //wumbo("I LOVE MAKING CHALLENGES") ➞ "I LOVE WAKING CHALLENGES"
+
+            //wumbo("MEET ME IN WARSAW") ➞ "WEET WE IN WARSAW"
+
+            //wumbo("WUMBOLOGY") ➞ "WUWBOLOGY"
+            //Notes
+            //N / A
+
+            static string wumbo(string words)
+            {
+                return words.Replace("m", "w").ToUpper();
+            }
+
+
+
+            //Get the File Name 41
+
+            //Create a function that returns the selected filename from a path.Include the extension in your answer.
+
+            //Examples
+            //GetFilename("C:/Projects/pil_tests/ascii/edabit.txt") ➞ "edabit.txt"
+
+            //GetFilename("C:/Users/johnsmith/Music/Beethoven_5.mp3") ➞ "Beethoven_5.mp3"
+
+            //GetFilename("ffprobe.exe") ➞ "ffprobe.exe"
+            //Notes
+            //Tests will include both absolute and relative paths.
+            //For simplicity, all paths will include forward slashes.
+
+            static string GetFilename(string path)
+            {
+
+            }
 
         }
     }
