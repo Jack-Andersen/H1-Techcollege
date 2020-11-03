@@ -1094,6 +1094,142 @@ namespace Edabit
             static string GetFilename(string path)
             {
 
+                return path.Split('/').Last();
+
+            }
+
+
+
+            //Burrrrrrrp 42
+
+            //Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
+
+            //Examples
+            //LongBurp(3) ➞ "Burrrp"
+
+            //LongBurp(5) ➞ "Burrrrrp"
+
+            //LongBurp(9) ➞ "Burrrrrrrrrp"
+            //Notes
+            //Expect num to always be >= 1.
+            //Remember to use a capital "B".
+            //Don't forget to return the result.
+
+            static string Longburp(int b)
+            {
+
+                string r = new string('r', b);
+                return $"Bu{r}p";
+            }
+
+
+
+            //Reverse and Capitalize 43
+
+            //Create a function that takes a string of lowercase characters and returns that string reversed and in upper case.
+
+            //Examples
+            //ReverseCapitalize("abc") ➞ "CBA"
+
+            //ReverseCapitalize("hellothere") ➞ "EREHTOLLEH"
+
+            //ReverseCapitalize("input") ➞ "TUPNI"
+
+            static string ReverseCapitalze(string str)
+            {
+
+                return new string(str.ToUpper().Reverse().ToArray());
+
+            }
+
+
+
+            //Recursion to Repeat a String n Number of Times 44
+
+            //Create a recursive function that takes two parameters and repeats the string n number of times.The first parameter txt is the string to be repeated and the second parameter is the number of times the string is to be repeated.
+
+            //Examples
+            //Repetition("ab", 3) ➞ "ababab"
+
+            //Repetition("kiwi", 1) ➞ "kiwi"
+
+            //Repetition("cherry", 2) ➞ "cherrycherry"
+            //Notes
+            //The second parameter of the function is positive integer.
+
+            static string Repetition(string txt, int n)
+            {
+                string Txt = "";
+                if (n > 0)
+                {
+                    Txt = txt + Repetition(txt, n - 1);
+                }
+                return Txt;
+            }
+
+
+
+            //Re - Form the Word 45
+
+            //A word has been split into a left part and a right part.Re - form the word by adding both halves together, changing the first character to an uppercase letter.
+
+            //Examples
+            //GetWord("seas", "onal") ➞ "Seasonal"
+
+            //GetWord("comp", "lete") ➞ "Complete"
+
+            //GetWord("lang", "uage") ➞ "Language"
+            //Notes
+            //N / A
+
+            static string GetWord(string left, string right)
+            {
+                string str = System.String.Concat(left, right);
+                str = char.ToUpper(str[0]) + str.Substring(1);
+                return str;
+            }
+
+
+
+            //Modifying the Last Character 46
+
+            //Create a function which makes the last character of a string repeat n number of times.
+
+            //Examples
+            //ModifyLast("Hello", 3) ➞ "Hellooo"
+
+            //ModifyLast("hey", 6) ➞ "heyyyyyy"
+
+            //ModifyLast("excuse me what?", 5) ➞ "excuse me what?????"
+            //Notes
+            //Test will include numbers and punctuation.
+            //Make sure the code is not case sensitive.
+
+            static string ModifyLast(string str, int n)
+            {
+
+                return str + new string(str[str.Length - 1], n - 1);
+
+            }
+
+
+
+            //Date Format 47
+
+            //Create a function that converts a date formatted as MM / DD / YYYY to YYYYDDMM.
+
+            //Examples
+            //FormatDate("11/12/2019") ➞ "20191211"
+
+            //FormatDate("12/31/2019") ➞ "20193112"
+
+            //FormatDate("01/15/2019") ➞ "20191501"
+            //Notes
+            //Return value should be a string.
+
+            static string FormatDate(string date)
+            {
+
             }
 
         }
