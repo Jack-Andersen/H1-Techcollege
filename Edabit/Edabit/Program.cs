@@ -1230,6 +1230,264 @@ namespace Edabit
             static string FormatDate(string date)
             {
 
+                DateTime inputDate = DateTime.Parse(date);
+                return inputDate.ToString("yyyydMM");
+
+            }
+
+
+
+            //The Collatz Conjecture 48
+
+            //Consider the following operation on an arbitrary positive integer:
+
+            //If n is even -> n / 2
+            //If n is odd -> n * 3 + 1
+            //Create a function to repeatedly evaluate these operations, until reaching 1.Return the number of steps it took.
+
+            //See the following example, using 10 as the input, with 6 steps:
+
+            //10 is even - 10 / 2 = 5
+            //5 is odd - 5 * 3 + 1 = 16
+            //16 is even - 16 / 2 = 8
+            //8 is even - 8 / 2 = 4
+            //4 is even - 4 / 2 = 2
+            //2 is even - 2 / 2 = 1->Reached 1, so return 6
+            //Examples
+            //collatz(2) ➞ 1
+    
+            //collatz(3) ➞ 7
+
+            //collatz(10) ➞ 6
+            //Notes
+            //For further information, check the Resources tab.
+
+            static int collatz(int num)
+            {
+
+                int steps = 0;
+
+                while (num != 1)
+                {
+                    if (num % 2 == 0)
+                    {
+                        num = num / 2;
+                        steps++;
+                    }
+                    else
+                    {
+                        num = num * 3 + 1;
+                        steps++;
+                    }
+                }
+
+                return steps;
+
+            }
+
+            //Return the First and Last Elements in an Array 49
+
+            //Create a function that takes an array of numbers and return the first and last elements as a new array.
+
+            //Examples
+            //FirstLast([5, 10, 15, 20, 25]) ➞ [5, 25]
+
+            //FirstLast(["edabit", 13, null, false, true]) ➞ ["edabit", true]
+
+            //FirstLast([undefined, 4, "6", "hello", null]) ➞ [undefined, null]
+            //Notes
+            //Test input will always contain a minimum of two elements within the array.
+            //Don't forget to return the result.
+            //If you get stuck on a challenge, find help in the Resources tab.
+            //If you're really stuck, unlock solutions in the Solutions tab.
+
+            static object[] FirstLast2(object[] values)
+            {
+                return new[] { values[0], values[values.Length - 1] };
+            }
+
+
+
+            //Stuttering Function 50
+
+            //Write a function that stutters a word as if someone is struggling to read it. The first two letters are repeated twice with an ellipsis ... and space after each, and then the word is pronounced with a question mark?.
+
+            //Examples
+            //Stutter("incredible") ➞ "in... in... incredible?"
+
+            //Stutter("enthusiastic") ➞ "en... en... enthusiastic?"
+
+            //Stutter("outstanding") ➞ "ou... ou... outstanding?"
+            //Notes
+            //Assume all input is in lower case and at least two characters long.
+
+            static string Stutter(string word)
+            {
+                string s = word.Substring(0, 2) + new string('.', 3) + " ";
+                return s + s + word;
+            }
+
+
+
+            //Concatenating Two Integer Arrays 51
+
+            //Create a function to concatenate two integer arrays.
+
+            //Examples
+            //concat([1, 3, 5], [2, 6, 8]) ➞ [1, 3, 5, 2, 6, 8]
+
+            //concat([7, 8], [10, 9, 1, 1, 2]) ➞ [7, 8, 10, 9, 1, 1, 2]
+
+            //concat([4, 5, 1], [3, 3, 3, 3, 3]) ➞ [4, 5, 1, 3, 3, 3, 3, 3]
+            //Notes
+            //Don't forget to return the result.
+            //See Resources tab for more info.
+
+            static int[] Concatarrays(int[] arr1, int[] arr2)
+            {
+                int[] arr3 = new int[arr1.Length + arr2.Length];
+
+                arr1.CopyTo(arr3, 0);
+                arr2.CopyTo(arr3, arr1.Length);
+
+                return arr3;
+
+            }
+
+
+
+            //Equality Check 52
+
+            //In this challenge, you must verify the equality of two different values given the parameters a and b.
+
+            //Both the value and type of the parameters need to be equal. The possible types of the given parameters are:
+
+            //Numbers
+            //Strings
+            //Booleans(false or true)
+            //What have you learned so far that will permit you to do two different checks(value and type) with a single statement?
+
+            //Implement a function that returns true if the parameters are equal, and false if they are not.
+
+            //Examples
+            //CheckEquality(1, true) ➞ false
+            //// A number and a boolean: the value and type are different.
+    
+            //CheckEquality(0, "0") ➞ false
+            //// A number and a string: the type is different.
+
+            //CheckEquality(1, 1) ➞ true
+            //// A number and a number: the type and value are equal.
+            //Notes
+            //If you get stuck on a challenge, find help in the Resources tab.
+            //If you're really stuck, unlock solutions in the Solutions tab.
+
+            static bool CheckEquality(object a, object b)
+            {
+                if (a.Equals(b))
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+
+
+
+            //Convert Yen to USD 53
+
+            //Create a function that can turn Yen(Japanese dollar) to USD(American dollar).
+
+            //Examples
+            //YenToUsd(1) ➞ 0.01
+
+            //YenToUsd(500) ➞ 4.65
+
+            //YenToUsd(649) ➞ 6.04
+            //Notes
+            //Each Yen to USD conversion is Yen / 107.5
+            //Round the result to two decimal places.
+
+            static double YenToUsd(int yen)
+            {
+                double result = yen / 107.5;
+                return Math.Round(result,2);
+            }
+
+
+
+            //Fraction Greater Than One 54
+
+            //Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
+
+            //Examples
+            //GreaterThanOne("1/2") ➞ false
+
+            //GreaterThanOne("7/4") ➞ true
+
+            //GreaterThanOne("10/10") ➞ false
+            //Notes
+            //Fractions must be strictly greater than 1(see example #3).
+
+            static bool GreaterThanOne(string str)
+            {
+                int a = int.Parse(str.Split('/')[0]);
+                int b = int.Parse(str.Split('/')[1]);
+                return a > b ? true : false;
+            }
+
+
+
+            //Finding Nemo 55
+
+
+            //You're given a string of words. You need to find the word "Nemo", and return a string like this: "I found Nemo at [the order of the word you find nemo]!".
+
+            //If you can't find Nemo, return "I can't find Nemo: (".
+
+            //Examples
+            //FindNemo("I am finding Nemo !") ➞ "I found Nemo at 4!"
+
+            //FindNemo("Nemo is me") ➞ "I found Nemo at 1!"
+
+            //FindNemo("I Nemo am") ➞ "I found Nemo at 2!"
+            //Notes
+            //! , ? . are always separated from the last word.
+            //Nemo will always look like Nemo, and not NeMo or other capital variations.
+            //Nemo's, or anything that says Nemo with something behind it, doesn't count as Finding Nemo.
+            //If there are multiple Nemo's in the sentence, only return for the first one.
+
+            static string FindNemo(string sentece)
+            {
+                string[] words = sentece.Split(' ');
+                int pos = 0;
+                foreach (string w in words)
+                {
+                    pos++;
+                    if (w == "Nemo")
+                        return string.Format("I found Nemo at {0}!", pos);
+                }
+                return "I can't find Nemo :(";
+            }
+
+
+
+            //Spaces Between Each Character 56
+
+            //Create a function that takes a string and returns a string with spaces in between all of the characters.
+
+            //Examples
+            //SpaceMeOut("space") ➞ "s p a c e"
+
+            //SpaceMeOut("far out") ➞ "f a r  o u t"
+
+            //SpaceMeOut("elongated musk") ➞ "e l o n g a t e d   m u s k"
+            //Notes
+            //Treat a space as its own character(i.e.leave three spaces between words).
+
+            static string SpaceMeOut(string str)
+            {
+
             }
 
         }
