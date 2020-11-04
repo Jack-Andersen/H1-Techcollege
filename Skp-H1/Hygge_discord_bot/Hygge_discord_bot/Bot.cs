@@ -22,14 +22,14 @@ namespace Hygge_discord_bot
         public InteractivityExtension Interactivity { get; private set; }
         public CommandsNextExtension commands { get; private set; }
 
-        public async Task Runasync()
+        public Bot(IServiceProvider services)
         {
 
             string json = string.Empty;
 
             using (var fs = File.OpenRead("Config.json"))
             using (var sr = new StreamReader(fs, new UTF8Encoding(false)))
-                json = await sr.ReadToEndAsync().ConfigureAwait(false);
+                json = sr.ReadToEnd();
 
             var configJson = JsonConvert.DeserializeObject<ConfigJson>(json);
 
@@ -56,7 +56,8 @@ namespace Hygge_discord_bot
                 EnableDms = false,
                 EnableMentionPrefix = true,
                 DmHelp = true,
-                
+                Services = services
+
             };
 
             commands = Client.UseCommandsNext(commandConfig);
@@ -65,9 +66,7 @@ namespace Hygge_discord_bot
             commands.RegisterCommands<RoleCommands>();
             commands.RegisterCommands<PollCommands>();
 
-            await Client.ConnectAsync();
-
-            await Task.Delay(-1);
+            Client.ConnectAsync();
 
         }
 

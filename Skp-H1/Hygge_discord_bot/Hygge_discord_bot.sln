@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hygge_discord_bot", "Hygge_discord_bot\Hygge_discord_bot.csproj", "{66A6E5FB-D5C5-4FE5-902E-0F9FD2A97DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hygge_discord_bot", "Hygge_discord_bot\Hygge_discord_bot.csproj", "{66A6E5FB-D5C5-4FE5-902E-0F9FD2A97DED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hygge_discord_bot.DAL", "Hygge_discord_bot.DAL", "{F1ABF153-3A25-4887-B366-CFF47425ABB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hygge_discord_bot.DAL", "Hygge_discord_bot.DAL\Hygge_discord_bot.DAL.csproj", "{0F456D31-BC5C-44C5-B1B8-6B347373E337}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{66A6E5FB-D5C5-4FE5-902E-0F9FD2A97DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66A6E5FB-D5C5-4FE5-902E-0F9FD2A97DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66A6E5FB-D5C5-4FE5-902E-0F9FD2A97DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F456D31-BC5C-44C5-B1B8-6B347373E337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F456D31-BC5C-44C5-B1B8-6B347373E337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F456D31-BC5C-44C5-B1B8-6B347373E337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F456D31-BC5C-44C5-B1B8-6B347373E337}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F456D31-BC5C-44C5-B1B8-6B347373E337} = {F1ABF153-3A25-4887-B366-CFF47425ABB5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {466400D0-44B0-4DB5-BFFA-A8987EEE3257}
