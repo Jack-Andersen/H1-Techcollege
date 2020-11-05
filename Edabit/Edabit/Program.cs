@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Schema;
 
@@ -1488,6 +1489,195 @@ namespace Edabit
             static string SpaceMeOut(string str)
             {
 
+                string result = "";
+
+                foreach(char letters in str)
+                {
+                    result = string.Join(" ", str.ToCharArray());
+                }
+
+                return result;
+
+            }
+
+
+
+            //Find the Bomb 57
+
+            //Create a function that finds the word "bomb" in the given string.If found, return "Duck!!!", otherwise, return "There is no bomb, relax.".
+
+            //Examples
+            //Bomb("There is a bomb.") ➞ "Duck!!!"
+
+            //Bomb("Hey, did you think there is a bomb?") ➞ "Duck!!!"
+
+            //Bomb("This goes boom!!!") ➞ "There is no bomb, relax."
+            //Notes
+            //"bomb" may appear in different cases(i.e.uppercase, lowercase, mixed).
+
+            static string Bomb(string txt)
+            {
+                if (txt.ToLower().Contains("bomb"))
+                {
+                    return "Duck!!!";
+                }
+                else
+                    return "There is no bomb, relax.";
+            }
+
+
+
+            //Find the nth Tetrahedral Number 58
+
+            //Create a function that takes an integer n and returns the nth tetrahedral number.
+
+            //Alternative Text
+
+            //Examples
+            //Tetra(2) ➞ 4
+
+            //Tetra(5) ➞ 35
+
+            //Tetra(6) ➞ 56
+            //Notes
+            //There is a formula for the nth tetrahedral number.
+
+            static int Tetra(int n)
+            {
+                return n * (n + 1) * (n + 2) / 6;
+            }
+
+
+
+            //Find the Amount of Potatoes 59
+
+            //Create a function to return the amount of potatoes there are in a string.
+
+            //Examples
+            //Potatoes("potato") ➞ 1
+
+            //Potatoes("potatopotato") ➞ 2
+
+            //Potatoes("potatoapple") ➞ 1
+            //Notes
+            //N / A
+
+            static int Potatoes(string potato)
+            {
+                return Regex.Matches(potato, "potato").Count;
+            }
+
+
+
+            //Scottish Screaming 60
+
+            //A strong Scottish accent makes every vowel similar to an "e", so you should replace every vowel with an "e".Additionally, it is being screamed, so it should be in block capitals.
+
+            //Create a function that takes a string and returns a string.
+
+            //Examples
+            //ToScottishScreaming("hello world") ➞ "HELLE WERLD"
+
+            //ToScottishScreaming("Mr. Fox was very naughty") ➞ "MR. FEX WES VERY NEEGHTY"
+
+            //ToScottishScreaming("Butterflies are beautiful!") ➞ "BETTERFLEES ERE BEEETEFEL!"
+            //Notes
+            //Make sure to include all punctuation that is in the original string.
+            //You don't need any more namespaces than are already given.
+
+            static string ToScottishScreaming(string str)
+            {
+                return str.ToLower()
+                          .Replace("a", "e")
+                          .Replace("i", "e")
+                          .Replace("o", "e")
+                          .Replace("u", "e")
+                          .ToUpper();
+            }
+
+
+
+            //Testing K^K == N ? 61
+
+            //Write a function that returns true if k ^ k == n for input(n, k) and return false otherwise.
+
+            //Examples
+            //KToK("4", 2) ➞ true
+
+            //KToK("387420489", 9) ➞ true
+            //# 9^9 == 387420489
+
+            //KToK("3124", 5) ➞ false
+
+            //KToK("17", 3) ➞ false
+            //Notes
+            //The ^ operator refers to exponentiation operation, not the bitwise XOR operation.
+
+            static bool KTok(string n, int k)
+            {
+                if (double.Parse(n) == Math.Pow(k, k))
+                {
+                    return true;
+                }
+                else
+                    return false;
+            }
+
+
+
+            //Is the Average of All Elements a Whole Number ? 62
+
+            //Create a function that takes an array as an argument and returns true or false depending on whether the average of all elements in the array is a whole number or not.
+
+            //Examples
+            //IsAvgWhole([1, 3]) ➞ true
+
+            //IsAvgWhole([1, 2, 3, 4]) ➞ false
+
+            //IsAvgWhole([1, 5, 6]) ➞ true
+
+            //IsAvgWhole([1, 1, 1]) ➞ true
+
+            //IsAvgWhole([9, 2, 2, 5]) ➞ false
+            //Notes
+            //N / A
+
+            static bool IsAvgWhole(int[] arr)
+            {
+                return arr.Average() % 1 == 0;
+            }
+
+
+
+            //Algorithms: Binary Search 63
+
+            //Create a function that finds a target number in a list of prime numbers.Implement a binary search algorithm in your function. The target number will be from 2 through 97.If the target is prime then return "yes" else return "no".
+
+            //Examples
+            //int[] primes = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97 }
+
+
+            //IsPrime(primes, 3) ➞ "yes"
+
+            //IsPrime(primes, 4) ➞ "no"
+
+            //IsPrime(primes, 67) ➞ "yes"
+
+            //IsPrime(primes, 36) ➞ "no"
+            //Notes
+            //You could use built -in functions to solve this, but the point of this challenge is to see if you understand the binary search algorithm.
+            //The solution is in the Resources tab.
+
+            static string IsPrime(int[] primes, int num)
+            {
+                {
+                    bool is_prime = true;
+                    for (int i = 2; i < num; i++)
+                    {
+                        if (num % i == 0) is_prime = false;
+                    }
+                    return is_prime ? "yes" : "no";
+                }
             }
 
         }
