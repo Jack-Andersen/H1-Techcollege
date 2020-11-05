@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,6 +26,8 @@ namespace Hygge_discord_bot
         }
 
         public void congigure(IApplicationBuilder app, IWebHostEnvironment env) { }
+
+        //$ dotnet-ef migrations add InitialCreate -p../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
 
     }
 }

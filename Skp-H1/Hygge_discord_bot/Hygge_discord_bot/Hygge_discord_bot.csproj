@@ -11,10 +11,16 @@
     <PackageReference Include="DSharpPlus.Interactivity" Version="4.0.0-nightly-00746" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
+    <PackageReference Include="microsoft.EntityFrameworkCore.Design" Version="3.1.9">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-rc.2.20475.5" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hygge_discord_bot.DAL.Migrations\Hygge_discord_bot.DAL.Migrations.csproj" />
     <ProjectReference Include="..\Hygge_discord_bot.DAL\Hygge_discord_bot.DAL.csproj" />
   </ItemGroup>
 
