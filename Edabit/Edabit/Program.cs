@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
@@ -1678,6 +1679,99 @@ namespace Edabit
                     }
                     return is_prime ? "yes" : "no";
                 }
+            }
+
+
+
+            //Solve the Equation 64
+
+            //Create a function that takes an equation(e.g. "1+1"), and returns the answer.
+
+            //Examples
+            //Equation("1+1") ➞ 2
+
+            //Equation("7*4-2") ➞ 26
+
+            //Equation("1+1+1+1+1") ➞ 5
+            //Notes
+            //N / A
+
+            static int Equation(string s)
+            {
+                DataTable dt = new DataTable();
+                return (int)dt.Compute(s, "");
+            }
+
+
+
+            //Count the Letters and Digits 65
+
+            //Write a function that takes a string and calculates the number of letters and digits within it.Return the result as anonymous type in string format.
+
+            //Examples
+            //count_all("Hello World") ➞ " { LETTERS =  10,  DIGITS =  0 }"
+
+            //count_all("H3ll0 Wor1d") ➞ " { LETTERS =  7,  DIGITS =  3 }"
+
+            //count_all("149990") ➞  "{ LETTERS =  0, DIGITS = 6 }"
+            //Notes
+            //Tests contain only alphanumeric characters.
+            //Spaces are not letters.
+            //All tests contain valid strings.
+            //Return the result as anonymous type.
+
+            static string ount_all(string txt)
+            {
+                int let = 0, dig = 0;
+                foreach (char c in txt)
+                {
+                    if (char.IsLetter(c)) let++;
+                    if (char.IsDigit(c)) dig++;
+                }
+                return new { LETTERS = let, DIGITS = dig }.ToString();
+            }
+
+
+
+            //Friday the 13th 66
+
+            //Given the month and year as numbers, return whether that month contains a Friday 13th.
+
+            //Examples
+            //HasFriday13th(3, 2020) ➞ True
+
+            //HasFriday13th(10, 2017) ➞ True
+
+            //HasFriday13th(1, 1985) ➞ False
+            //Notes
+            //January will be given as 1, February as 2, etc...
+            //Check Resources for some helpful tutorials on C#'s Datetime struct.
+
+            static bool HasFriday13th(int month, int year)
+            {
+                return new DateTime(year, month, 13).DayOfWeek == DayOfWeek.Friday;
+            }
+
+
+
+            //Consecutive Numbers 67
+
+            //Create a function that determines whether elements in an array can be re - arranged to form a consecutive list of numbers where each number appears exactly once.
+
+            //Examples
+            //Cons([5, 1, 4, 3, 2]) ➞ true
+            //// Can be re-arranged to form [1, 2, 3, 4, 5]
+
+            //Cons([5, 1, 4, 3, 2, 8]) ➞ false
+
+            //Cons([5, 6, 7, 8, 9, 9]) ➞ false
+            //// 9 appears twice
+            //Notes
+            //N / A
+
+            static bool Cons(int[] arr)
+            {
+
             }
 
         }
