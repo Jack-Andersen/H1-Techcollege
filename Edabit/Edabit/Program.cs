@@ -417,15 +417,15 @@ namespace Edabit
                 {
                     return "added";
                 }
-                else if(num1 - num2 == 24)
+                else if (num1 - num2 == 24)
                 {
                     return "subtracted";
                 }
-                else if(num1 * num2 == 24)
+                else if (num1 * num2 == 24)
                 {
                     return "multiplied";
                 }
-                else if(num1 / num2 == 24)
+                else if (num1 / num2 == 24)
                 {
                     return "divided";
                 }
@@ -453,7 +453,7 @@ namespace Edabit
             static string OddOrEven(string word)
             {
 
-                    return (word.Length % 2 == 0).ToString();
+                return (word.Length % 2 == 0).ToString();
 
             }
 
@@ -612,7 +612,7 @@ namespace Edabit
             }
 
 
-            
+
             //Lowercase, Uppercase or Mixed ? 25
 
             //Create a function which returns "upper" if all the letters in a word are uppercase, "lower" if lowercase and "mixed" for any mix of the two.
@@ -644,7 +644,7 @@ namespace Edabit
             }
 
 
-            
+
             //Concatenating First and Last Character of a String 26
 
             //Creates a function that takes a string and returns the concatenated first and last character.
@@ -959,10 +959,10 @@ namespace Edabit
 
             static int Convert(int hours, int minutes)
             {
-               int h = hours * 3600;
-               int m = minutes * 60;
+                int h = hours * 3600;
+                int m = minutes * 60;
 
-               return h + m;
+                return h + m;
             }
 
 
@@ -1257,7 +1257,7 @@ namespace Edabit
             //2 is even - 2 / 2 = 1->Reached 1, so return 6
             //Examples
             //collatz(2) ➞ 1
-    
+
             //collatz(3) ➞ 7
 
             //collatz(10) ➞ 6
@@ -1374,7 +1374,7 @@ namespace Edabit
             //Examples
             //CheckEquality(1, true) ➞ false
             //// A number and a boolean: the value and type are different.
-    
+
             //CheckEquality(0, "0") ➞ false
             //// A number and a string: the type is different.
 
@@ -1413,7 +1413,7 @@ namespace Edabit
             static double YenToUsd(int yen)
             {
                 double result = yen / 107.5;
-                return Math.Round(result,2);
+                return Math.Round(result, 2);
             }
 
 
@@ -1492,7 +1492,7 @@ namespace Edabit
 
                 string result = "";
 
-                foreach(char letters in str)
+                foreach (char letters in str)
                 {
                     result = string.Join(" ", str.ToCharArray());
                 }
@@ -1771,8 +1771,86 @@ namespace Edabit
 
             static bool Cons(int[] arr)
             {
-
+               Array.Sort(arr);
+               for (int i = 0, j = arr[0]; i < arr.Length; i++, j++)
+                  {
+               if (arr[i] != j)
+                  {
+                    return false;
+                  }
+               }
+                return true;
             }
+
+
+
+            //Is the Input Factorial of an Integer ? 68
+
+            //Create a function that checks if a given integer is exactly the factorial of an integer or not. true if it is, false otherwise.
+
+            //Examples
+            //isFactorial(2) ➞ true
+            //// 2 = 2 * 1 = 2!
+
+            //isFactorial(27) ➞ false
+
+            //isFactorial(24) ➞ true
+            //// 24 = 4 * 3 * 2 * 1 = 4!
+            //Notes
+            //No error handling is necessary.Inputs are all positive integers.
+            //Alternatively, you can solve this with a recursive approach.
+
+            static bool isFactorial(int n)
+            {
+                int j = 1;
+                for (int i = 1; i < n; i++)
+                {
+                    j *= i;
+                    if (j == n)
+                        return true;
+                }
+                return false;
+            }
+
+
+
+            //Clear Brackets 69
+
+            //Create a function Brackets() that takes a string and checks that the brackets in the math expression are correct.The function should return true or false.
+
+            //Examples
+            //Brackets("(a*(b-c)..... )") ➞ true
+
+            //Brackets(")(a-b-45/7*(a-34))") ➞ false
+
+            //Brackets("sin(90...)+.............cos1)") ➞ false
+            //Notes
+            //The string may not contain brackets, then return true.
+            //String may contain spaces.
+            //The string may be empty.
+
+            static bool Brackets(string str)
+            {
+                char[] arr = str.ToCharArray();
+                int count = 0;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] == '(')
+                    {
+                        if (Array.IndexOf(arr, ')', i + 1) == -1) return false;
+                        count++;
+                    }
+                    if (arr[i] == ')')
+                    {
+                        if (count == 0) return false;
+                        count--;
+                    }
+                }
+                return (count == 0) ? true : false;
+            }
+            
+
+
 
         }
     }
