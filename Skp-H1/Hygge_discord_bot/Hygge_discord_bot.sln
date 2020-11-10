@@ -9,7 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hygge_discord_bot.DAL", "Hy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hygge_discord_bot.DAL", "Hygge_discord_bot.DAL\Hygge_discord_bot.DAL.csproj", "{0F456D31-BC5C-44C5-B1B8-6B347373E337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hygge_discord_bot.DAL.Migrations", "Hygge_discord_bot.DAL.Migrations\Hygge_discord_bot.DAL.Migrations.csproj", "{6C662D37-0A23-4479-A7AB-3D24D8088EE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hygge_discord_bot.DAL.Migrations", "Hygge_discord_bot.DAL.Migrations\Hygge_discord_bot.DAL.Migrations.csproj", "{6C662D37-0A23-4479-A7AB-3D24D8088EE6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hygge_discord_bot.Core", "Hygge_discord_bot.Core", "{45EDE4E9-9FFE-44A9-9F0B-512F19702B1F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hygge_discord_bot.Core", "Hygge_discord_bot.Core\Hygge_discord_bot.Core.csproj", "{C51560A0-B793-4F4F-9126-89080FE60E8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +33,10 @@ Global
 		{6C662D37-0A23-4479-A7AB-3D24D8088EE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C662D37-0A23-4479-A7AB-3D24D8088EE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C662D37-0A23-4479-A7AB-3D24D8088EE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C51560A0-B793-4F4F-9126-89080FE60E8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C51560A0-B793-4F4F-9126-89080FE60E8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C51560A0-B793-4F4F-9126-89080FE60E8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C51560A0-B793-4F4F-9126-89080FE60E8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,6 +44,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0F456D31-BC5C-44C5-B1B8-6B347373E337} = {F1ABF153-3A25-4887-B366-CFF47425ABB5}
 		{6C662D37-0A23-4479-A7AB-3D24D8088EE6} = {F1ABF153-3A25-4887-B366-CFF47425ABB5}
+		{C51560A0-B793-4F4F-9126-89080FE60E8C} = {45EDE4E9-9FFE-44A9-9F0B-512F19702B1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {466400D0-44B0-4DB5-BFFA-A8987EEE3257}

@@ -65,6 +65,7 @@ namespace Hygge_discord_bot
             commands.RegisterCommands<FunCommands>();
             commands.RegisterCommands<RoleCommands>();
             commands.RegisterCommands<PollCommands>();
+            commands.RegisterCommands<RPGCommands>();
 
             Client.ConnectAsync();
 

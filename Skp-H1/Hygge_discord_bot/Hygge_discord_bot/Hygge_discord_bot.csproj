@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hygge_discord_bot.Core\Hygge_discord_bot.Core.csproj" />
     <ProjectReference Include="..\Hygge_discord_bot.DAL.Migrations\Hygge_discord_bot.DAL.Migrations.csproj" />
     <ProjectReference Include="..\Hygge_discord_bot.DAL\Hygge_discord_bot.DAL.csproj" />
   </ItemGroup>
