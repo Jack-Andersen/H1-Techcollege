@@ -5,6 +5,7 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -1848,7 +1849,125 @@ namespace Edabit
                 }
                 return (count == 0) ? true : false;
             }
-            
+
+
+
+            //The Karaca's Encryption Algorithm 70
+
+            //Make a function that encrypts a given input with these steps:
+
+            //Input: "apple"
+
+            //Step 1: Reverse the input: "elppa"
+
+            //Step 2: Replace all vowels using the following chart:
+
+            //a => 0
+            //e => 1
+            //i => 2
+            //o => 2
+            //u => 3
+
+            //// "1lpp0"
+            //Step 3: Add "aca" to the end of the word: "1lpp0aca"
+
+            //Output: "1lpp0aca"
+
+            //Examples
+            //Encrypt("banana") ➞ "0n0n0baca"
+
+            //Encrypt("karaca") ➞ "0c0r0kaca"
+
+            //Encrypt("burak") ➞ "k0r3baca"
+
+            //Encrypt("alpaca") ➞ "0c0pl0aca"
+            //Notes
+            //All inputs are strings, no uppercases and all output must be strings.
+
+            static string Encrypt(string word)
+            {
+                string vowels = "aeiou";
+                string subVowel = "01223";
+                string revWord = "";
+
+                foreach (var ch in word.ToCharArray())
+                {
+                    revWord = (vowels.Contains(ch) ? subVowel[vowels.IndexOf(ch)] : ch) + revWord;
+                }
+
+                return revWord + "aca";
+            }
+
+
+
+            //Check if an Array Contains a Given Number 71
+
+            //Write a method to check if an array contains a particular number.
+
+            //Examples
+            //Check([1, 2, 3, 4, 5], 3) ➞ true
+
+            //Check([1, 1, 2, 1, 1], 3) ➞ false
+
+            //Check([5, 5, 5, 6], 5) ➞ true
+
+            //Check([], 5) ➞ false
+            //Notes
+            //Don't forget to return the result.
+            //If you get stuck on a challenge, find help in the Resources tab.
+            //If you're really stuck, unlock solutions in the Solutions tab.
+
+            public static bool Check(int[] arr, int el)
+            {
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] == el)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+
+
+            //Nth Fibonacci Number 72
+
+            //Create a function to return the Nth number in the Fibonacci sequence as a string.
+
+            //Examples
+            //Fibonacci(10) ➞ "55"
+
+            //Fibonacci(20) ➞ "6765"
+
+            //Fibonacci(30) ➞ "832040"
+
+            //Fibonacci(40) ➞ "102334155"
+
+            //Fibonacci(50) ➞ "12586269025"
+
+            //Fibonacci(60) ➞ "1548008755920"
+            //Notes
+            //Your function is expected to calculate numbers greater than UInt64.MaxValue where n can be as large as but not greater than 200.
+
+            static string Fibonacci(int n)
+            {
+                BigInteger result = 0;
+                BigInteger first = 0;
+                BigInteger second = 1;
+
+                if (n == 0) return 0.ToString();
+                if (n == 1) return 1.ToString();
+
+                for (var i = 2; i <= n; i++)
+                {
+                    result = first + second;
+                    first = second;
+                    second = result;
+                }
+                return result.ToString();
+            }
+
 
 
 
