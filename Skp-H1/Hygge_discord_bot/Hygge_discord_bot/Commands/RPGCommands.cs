@@ -27,23 +27,38 @@ namespace Hygge_discord_bot.Commands
             _ItemService = itemService;
         }
 
-        [Command("additem")]
-        public async Task AddItem(CommandContext ctx, string name)
-        {
-            await _context.Items.AddAsync(new Item { Name = name, Description = "Test Description" } ).ConfigureAwait(false);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
-        }
-
         [Command("iteminfo")]
-        public async Task ItemInfo(CommandContext ctx, string name)
+        public async Task ItemInfo(CommandContext ctx)
         {
-            var item = await _ItemService.GetItemByName(name).ConfigureAwait(false);
+
+            var itemNameStep = new TextStep("What item are you looking for?", null);
+
+            string itemName = string.Empty;
+
+            itemNameStep.OnValidResult += (result) => itemName = result;
+
+            var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
+
+            var inputDialogueHandler = new DialogueHandler(
+                ctx.Client,
+                userChannel,
+                ctx.User,
+                itemNameStep
+            );
+
+            bool succeeded = await inputDialogueHandler.ProcessDialogue().ConfigureAwait(false);
+
+            if (!succeeded) { return; }
+
+            var item = await _ItemService.GetItemByName(itemName).ConfigureAwait(false);
 
             if (item == null)
             {
-                await ctx.Channel.SendMessageAsync($" There is no item called {name}");
+                await ctx.Channel.SendMessageAsync($" There is no item called {itemName}");
                 return;
             }
+
+            await ctx.Channel.SendMessageAsync($"Name: {item.Name}, Description {item.Description} ");
 
         }
     }
