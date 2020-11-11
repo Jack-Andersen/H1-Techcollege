@@ -1917,7 +1917,7 @@ namespace Edabit
             //If you get stuck on a challenge, find help in the Resources tab.
             //If you're really stuck, unlock solutions in the Solutions tab.
 
-            public static bool Check(int[] arr, int el)
+            static bool Check(int[] arr, int el)
             {
                 for (int i = 0; i < arr.Length; i++)
                 {
@@ -1970,7 +1970,80 @@ namespace Edabit
 
 
 
+            //Longest Common Ending 73
 
+            //Write a function that returns the longest common ending between two strings.
+
+            //Examples
+            //LongestCommonEnding("multiplication", "ration") ➞ "ation"
+
+            //LongestCommonEnding("potent", "tent") ➞ "tent"
+
+            //LongestCommonEnding("skyscraper", "carnivore") ➞ ""
+            //Notes
+            //Return an empty string if there exists no common ending.
+
+            static string LongestCommonEnding(string str1, string str2)
+            {
+                int i = 0;
+                while (i < str1.Length && i < str2.Length && str1[str1.Length - i - 1] == str2[str2.Length - i - 1])
+                {
+                    i++;
+                }
+                return str1.Substring(str1.Length - i, i);
+            }
+
+
+
+            //Find the Index(Part #2) 74
+
+            //Find the Index(Part #2)
+            //Create a function that searches for the index of a given item in an array using recursion.If the item is present, it should return the index, otherwise, it should return -1.
+
+            //Examples
+            //Search([1, 2, 3, 4], 3) ➞ 2
+
+            //Search([2, 4, 6, 8, 10], 8) ➞ 3
+
+            //Search([1, 3, 5, 7, 9], 11) ➞ -1
+            //Notes
+            //Use recursion.
+            //Avoid using Linq.
+            //If the item is not present, return -1.
+            //The given array is ordered.
+
+            static int Search(int[] arr, int item)
+            {
+                return Array.IndexOf(arr, item);
+            }
+
+
+
+            //Find the Vertex of a Quadratic 75
+
+            //Every quadratic curve y = a x² +b x + c has a vertex point: the turning point where the curve stops heading down and starts going up.
+
+            //Given the values a, b and c, you need to return the coordinates of the vertex. Return your answers rounded to 2 decimal places.
+
+            //Examples
+            //FindVertex(1, 0, 25)  ➞ [0, 25]
+            //// The vertex of y=x²+25 is at (0, 25).
+
+            //FindVertex(-1, 0, 25) ➞ [0, 25]
+            //// The vertex of y=-x²+25 is at (0, 25).
+
+            //FindVertex(1, 10, 4) ➞ [-5, -21]
+            //// The vertex of y=x²+10x+4 is at (-5, -21).
+            //Notes
+            //See Resources if you're not sure how to find the x or y coordinates of the vertex.
+            //a will always be non - zero.
+
+            static double[] FindVertex(int a, int b, int c)
+            {
+                double h = Math.Round((double)-b / (2 * a), 2);
+                double k = Math.Round(a * h * h + b * h + c, 2);
+                return new[] { h, k };
+            }
         }
     }
 }
