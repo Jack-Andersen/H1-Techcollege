@@ -27,6 +27,13 @@ namespace Hygge_discord_bot.Commands
             _ItemService = itemService;
         }
 
+        [Command("createitem")]
+        [RequireRoles(RoleCheckMode.Any, "Admin")]
+        public async Task CreateItem(CommandContext ctx)
+        {
+
+        }
+
         [Command("iteminfo")]
         public async Task ItemInfo(CommandContext ctx)
         {
