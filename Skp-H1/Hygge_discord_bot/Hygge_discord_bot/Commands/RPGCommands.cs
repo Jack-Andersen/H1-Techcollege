@@ -41,7 +41,7 @@ namespace Hygge_discord_bot.Commands
 
             var inputDialogueHandler = new DialogueHandler(
                 ctx.Client,
-                userChannel,
+                ctx.Channel,
                 ctx.User,
                 itemNameStep
             );

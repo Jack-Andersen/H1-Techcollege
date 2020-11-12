@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Hygge_discord_bot.Core.Services.Items;
 
 namespace Hygge_discord_bot
 {
@@ -17,7 +18,10 @@ namespace Hygge_discord_bot
             {
                 options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=RPGContext;Trusted_Connection=True;MultipleActiveResultSets=true",
                     x => x.MigrationsAssembly("Hygge_discord_bot.DAL.Migrations"));
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             });
+
+            services.AddScoped<IItemService, ItemService>();
 
             var serviceprovider = services.BuildServiceProvider();
 
