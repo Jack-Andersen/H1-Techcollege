@@ -2125,7 +2125,7 @@ namespace Edabit
             //Given numbers won't exceed 101.
             //A prime number is a number which has exactly two divisors(1 and itself).
 
-            public static int SumPrimes(int[] arr)
+            static int SumPrimes(int[] arr)
             {
                 return arr.Where(n => _IsPrime(n)).Sum();
             }
@@ -2156,7 +2156,7 @@ namespace Edabit
             //Notes
             //If the item is not present, return -1.
 
-            public static int Search(int[] arr, int item)
+            static int Search(int[] arr, int item)
             {
                 int count = -1;
                 for (int i = 0; i < arr.Length; i++)
