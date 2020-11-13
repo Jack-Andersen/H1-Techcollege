@@ -2109,6 +2109,69 @@ namespace Edabit
                 return arr;
             }
 
+
+
+            //Sum of Prime Numbers 78
+
+            //Create a function that takes a list of numbers and returns the sum of all prime numbers in the list.
+
+            //Examples
+            //SumPrimes(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }) ➞ 17
+
+            //SumPrimes(new int[] { 2, 3, 4, 11, 20, 50, 71 }) ➞ 87
+
+            //SumPrimes(new int[] { }) ➞ 0
+            //Notes
+            //Given numbers won't exceed 101.
+            //A prime number is a number which has exactly two divisors(1 and itself).
+
+            public static int SumPrimes(int[] arr)
+            {
+                return arr.Where(n => _IsPrime(n)).Sum();
+            }
+
+            static bool _IsPrime(int n)
+            {
+                if (n < 3) return n > 1;
+                if (n % 2 == 0) return false;
+                for (var i = 3; i < (int)Math.Sqrt(n) + 1; i += 2)
+                {
+                    if (n % i == 0) return false;
+                }
+                return true;
+            }
+
+
+
+            //Find the Index(Part 1) 79
+
+            //Create a function that finds the index of a given item.
+
+            //Examples
+            //Search([1, 5, 3], 5) ➞ 1
+
+            //Search([9, 8, 3], 3) ➞ 2
+
+            //Search([1, 2, 3], 4) ➞ -1
+            //Notes
+            //If the item is not present, return -1.
+
+            public static int Search(int[] arr, int item)
+            {
+                int count = -1;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i] == item)
+                    {
+                        count = i;
+                    }
+                }
+                return count;
+            }
+
+
+
+
         }
     }
 }
