@@ -2,3 +2,12 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.AssemblyInfoInputs.cache
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.AssemblyInfo.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp3.1\Edabit.exe
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp3.1\Edabit.deps.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp3.1\Edabit.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp3.1\Edabit.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp3.1\Edabit.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp3.1\Edabit.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.genruntimeconfig.cache

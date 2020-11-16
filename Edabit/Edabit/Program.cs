@@ -2168,6 +2168,103 @@ namespace Edabit
 
 
 
+            //Reverse Coding Challenge #1 80
+
+            //This is a reverse coding challenge. Normally you're given explicit directions with how to create a function. Here, you must generate your own function to satisfy the relationship between the inputs and outputs.
+
+            //Your task is to create a function that, when fed the inputs below, produce the sample outputs shown.
+
+            //Examples
+            //"A4B5C2" ➞ "AAAABBBBBCC"
+
+            //"C2F1E5" ➞ "CCFEEEEE"
+
+            //"T4S2V2" ➞ "TTTTSSVV"
+
+            //"A1B2C3D4" ➞ "ABBCCCDDDD"
+            //Notes
+            //If you get stuck, check the Comments for help.
+
+            static string MysteryFunc1(string str)
+            {
+                string str2 = "";
+
+                for (int i = 0; i < str2.Length; i = i + 2)
+                {
+                    str2 += new string(str2[i], int.Parse((str2[i]).ToString()));
+                }
+
+                return str2;
+
+            }
+
+
+
+            //Reverse Coding Challenge 81
+
+            //This is a reverse coding challenge. Normally you're given explicit directions with how to create a function. Here, you must generate your own function to satisfy the relationship between the inputs and outputs.
+
+            //Your task is to create a function that, when fed the inputs below, produce the sample outputs shown.
+
+            //Examples
+            //832 ➞ 594
+
+            //51 ➞ 36
+
+            //7977 ➞ 198
+
+            //1 ➞ 0
+
+            //665 ➞ 99
+
+            //149 ➞ 0
+            //Notes
+            //If you get stuck, see Comments for a hint.
+
+            static int MysteryFunc2(int num)
+            {
+                char[] arr = num.ToString().ToCharArray();
+                Array.Sort(arr);
+
+                return num - Int32.Parse(new string(arr));
+
+            }
+
+
+
+            //Count the Number of Duplicate Characters 82
+
+            //Create a function that takes a string and returns the number of alphanumeric characters that occur more than once.
+
+            //Examples
+            //DuplicateCount("abcde") ➞ 0
+
+            //DuplicateCount("aabbcde") ➞ 2
+
+            //DuplicateCount("Indivisibilities") ➞ 2
+
+            //DuplicateCount("Aa") ➞ 0
+            //// Case sensitive
+            //Notes
+            //Duplicate characters are case sensitive.
+            //The input string will contain only alphanumeric characters.
+
+            static int DuplicateCount(string str)
+            {
+                int count = 0;
+                char[] unique = str.Distinct().ToArray();
+                foreach (char c in unique)
+                {
+                    if (str.Count(x => x == c) > 1)
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            }
+
+
+
 
         }
     }
