@@ -2127,6 +2127,9 @@ namespace Edabit
 
             static bool _IsPrime(int n)
             {
+                //Lé awesome comment
+                //hvis n = 3, så kigger den på statementet (i < (int)Math.Sqrt(n) + 1)...
+                //som er..: 3 < 2(2 fordi det er kvadratroden af 3 afrundet til et helt tal(som er 1), +1 til sidst)
                 if (n < 3) return n > 1;
                 if (n % 2 == 0) return false;
                 for (var i = 3; i < (int)Math.Sqrt(n) + 1; i += 2)
@@ -2265,7 +2268,71 @@ namespace Edabit
 
 
 
+            //Parseltongue 83
 
+            //Hermione has come up with a precise formula for determining whether or not a phrase was ssspoken by a parssseltongue(a reference from the Harry Potter universe; the language of ssserpents and those who can converse with them).
+
+            //Each word in a sssentence must contain either:
+
+            //            Exactly two instances of the letter "s"(i.e.must be together ss), or...
+            //Zero instances of the letter "s" by itself.
+            //Examples
+            //IsParselTongue("Sshe ssselects to eat that apple. ") ➞ true
+
+            //IsParselTongue("She ssselects to eat that apple. ") ➞ false
+            //// "She" only contains one "s".
+            //// "ssselects" has three instances of "s" together (is not exactly two).
+
+            //            IsParselTongue("Beatrice samples lemonade") ➞ false
+            //// While "samples" has 2 instances of "s", they are not together.
+
+            //IsParselTongue("You ssseldom sssspeak sso boldly, ssso messmerizingly.") ➞ true
+            //Notes
+            //N / A
+
+            static bool IsParselTongue(string sentence)
+            {
+                string[] arr = sentence.Split(' ');
+
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    if (arr[i].ToLower().Contains("s"))
+                        if (!arr[i].ToLower().Contains("ss"))
+                            return false;
+                }
+                return true;
+            }
+
+
+
+            //Reverse Coding Challenge #2 84
+
+            //This is a reverse coding challenge.
+
+            //Your task is to create a function that, when fed the inputs below, produce the sample outputs shown.
+
+            //Examples
+            //3 ➞ 21
+
+            //9 ➞ 2221
+
+            //17 ➞ 22221
+
+            //24 ➞ 22228
+            //Notes
+            //If you get stuck, check the Comments for help.
+
+            static int MysteryFunc(int num)
+            {
+                int total = 2;
+                int ret = 0;
+                while (num >= total)
+                {
+                    total *= 2;
+                    ret = ret * 10 + 2;
+                }
+                return ret * 10 + (num % (total / 2));
+            }
         }
     }
 }
