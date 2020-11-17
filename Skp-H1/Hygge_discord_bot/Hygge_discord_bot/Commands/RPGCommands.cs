@@ -31,6 +31,30 @@ namespace Hygge_discord_bot.Commands
         [RequireRoles(RoleCheckMode.Any, "Admin")]
         public async Task CreateItem(CommandContext ctx)
         {
+            var itemDescriptionStep = new TextStep("What is the item about?", null);
+            var itemNameStep = new TextStep("What will the item be called?", itemDescriptionStep);
+
+            var item = new Item();
+
+            itemNameStep.OnValidResult += (result) => item.Name = result;
+            itemDescriptionStep.OnValidResult += (result) => item.Description = result;
+
+            var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
+
+            var inputDialogueHandler = new DialogueHandler(
+                ctx.Client,
+                userChannel,
+                ctx.User,
+                itemNameStep
+            );
+
+            bool succeeded = await inputDialogueHandler.ProcessDialogue().ConfigureAwait(false);
+
+            if (!succeeded) { return; }
+
+            await _ItemService.CreateNewItemAsync(item).ConfigureAwait(false);
+
+            await ctx.Channel.SendMessageAsync($"item {item.Name} succesfully Created!").ConfigureAwait(false);
 
         }
 
