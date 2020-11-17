@@ -2333,6 +2333,70 @@ namespace Edabit
                 }
                 return ret * 10 + (num % (total / 2));
             }
+
+            //The Major Sum 85
+
+            //Create a function that takes an integer array and return the biggest between positive sum, negative sum, or 0s count. The major is understood as the greatest absolute.
+
+            //arr = { 1,2,3,4,0,0,-3,-2}, the function has to return 10, because:
+
+            //            Positive sum = 1 + 2 + 3 + 4 = 10
+            //Negative sum = (-3) + (-2) = -5
+            //0s count = 2(there are two zeros in array)
+            //Examples
+            //MajorSum(1, 2, 3, 4, 0, 0, -3, -2) ➞ 10
+
+            //MajorSum(-4, -8, -12, -3, 4, 7, 1, 3, 0, 0, 0, 0) ➞ -27
+
+            //MajorSum(0, 0, 0, 0, 0, 1, 2, -3) ➞ 5
+            //// Because -3 < 1+2 < 0sCount = 5
+            //Notes
+            //All numbers are integers.
+            //There aren't empty arrays.
+            //All tests are made to return only one value.
+
+            static int BridgesII(string str)
+            {
+                string[] arr = str.Split('/');
+                int counter = arr.Where(x => !x.Contains(' ')).Count();
+                for (int i = 0; i < arr.Length; i++)
+                    if (arr.All(x => x[i] == '#'))
+                        counter++;
+                return counter;
+            }
+
+
+
+            //Wrap Around 86
+
+            //Create a function to reproduce the wrap around effect shown:
+
+            //Examples
+            //WrapAround("Hello, World!", 2) ➞ "llo, World!He"
+
+            //WrapAround("From what I gathered", -4) ➞ "eredFrom what I gath"
+
+            //WrapAround("Excelsior", 30) ➞ "elsiorExc"
+
+            //WrapAround("Nonscience", -116) ➞ "cienceNons"
+            //Notes
+            //The offset can be negative.
+            //The offset can be greater than string.
+
+            static string WrapAround(string input, int offset)
+            {
+                if (offset < 0)
+                    while (offset < 0)
+                        offset = offset + input.Length;
+                else if (offset > input.Length)
+                    while (offset > input.Length)
+                        offset = offset - input.Length;
+                return (input + input.Substring(0, offset)).Remove(0, offset);
+            }
+
+
+
+
         }
     }
 }
