@@ -1772,14 +1772,14 @@ namespace Edabit
 
             static bool Cons(int[] arr)
             {
-               Array.Sort(arr);
-               for (int i = 0, j = arr[0]; i < arr.Length; i++, j++)
-                  {
-               if (arr[i] != j)
-                  {
-                    return false;
-                  }
-               }
+                Array.Sort(arr);
+                for (int i = 0, j = arr[0]; i < arr.Length; i++, j++)
+                {
+                    if (arr[i] != j)
+                    {
+                        return false;
+                    }
+                }
                 return true;
             }
 
@@ -2396,7 +2396,175 @@ namespace Edabit
 
 
 
+            //Perfect Square Patch 87
 
+            //Create a function that takes an integer and outputs an n x n square solely consisting of the integer n.
+
+            //Examples
+            //SquarePatch(3) ➞ [
+            //  [3, 3, 3],
+            //  [3, 3, 3],
+            //  [3, 3, 3]
+            //]
+
+            //SquarePatch(5) ➞ [
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5]
+            //]
+
+            //SquarePatch(1) ➞ [
+            //  [1]
+            //]
+
+            //SquarePatch(0) ➞ []
+            //            Notes
+            //n >= 0.
+            //If n = 0, return an empty array.
+
+            static int[,] SquarePatch(int n)
+            {
+                if (n == 0)
+                {
+                    int[,] zeroArray = new int[0, 0];
+                    return zeroArray;
+                }
+                else
+                {
+                    int[,] nArray = new int[n, n];
+
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int y = 0; y < n; y++)
+                        {
+                            nArray[i, y] = n;
+                        }
+                    }
+                    return nArray;
+
+                }
+            }
+
+
+
+            //Wrap Around 88
+
+            //Create a function to reproduce the wrap around effect shown:
+
+            //Examples
+            //WrapAround("Hello, World!", 2) ➞ "llo, World!He"
+
+            //WrapAround("From what I gathered", -4) ➞ "eredFrom what I gath"
+
+            //WrapAround("Excelsior", 30) ➞ "elsiorExc"
+
+            //WrapAround("Nonscience", -116) ➞ "cienceNons"
+            //Notes
+            //The offset can be negative.
+            //The offset can be greater than string.
+
+            static string wrapAround(string input, int offset)
+            {
+                offset = offset % input.Length;
+                if (offset < 0)
+                {
+                    offset = input.Length + offset;
+                }
+                return input.Substring(offset) + input.Substring(0, offset);
+            }
+
+
+
+            //Recursion: Sum 89
+
+            //Write a function that recursively finds the sum of the first n natural numbers.
+
+            //Examples
+            //Sum(5) ➞ 15
+            //// 1 + 2 + 3 + 4 + 5 = 15
+
+            //Sum(1) ➞ 1
+
+            //Sum(12) ➞ 78
+            //Notes
+            //Assume the input number is always positive.
+            //Check the Resources tab for info on recursion.
+
+            static int Sum(int n)
+            {
+                if (n > 0)
+                {
+                    return n + Sum(n - 1);
+                }
+                return 0;
+            }
+
+
+
+            //Creating a Picture Frame 90
+
+            //Create a function that takes the width, height and character and returns a picture frame as an array of strings(string[]).
+
+            //Examples
+            //get_frame(4, 5, "#") ➞ [
+            //  "####",
+            //  "#  #",
+            //  "#  #",
+            //  "#  #",
+            //  "####"
+            //]
+            //// Frame is 4 characters wide and 5 characters tall.
+
+
+            //get_frame(10, 3, "*") ➞ [
+            //  "**********",
+            //  "*        *",
+            //  "**********"
+            //]
+            //// Frame is 10 characters and wide and 3 characters tall.
+
+
+            //get_frame(2, 5, "0") ➞ "invalid"
+            //// Frame"s width is less than 3.
+            //Notes
+            //Remember the gap.
+            //Return["invalid"] if width or height is less than 3(can't put anything inside).
+
+            static string[] GetFrame(int w, int h, char ch)
+            {
+                string[] frame = new string[h];
+                if (w > 2 && h > 2)
+                {
+                    for (int i = 0; i < h; i++)
+                    {
+                        string row = "";
+                        if (i == 0 || i == h - 1)
+                        {
+                            for (int y = 0; y < w; y++)
+                            {
+                                row += ch.ToString();
+                            }
+                        }
+                        else
+                        {
+                            row += ch.ToString();
+                            for (int y = 0; y < w - 2; y++)
+                            {
+                                row += " ";
+                            }
+                            row += ch.ToString();
+                        }
+                        frame[i] = row;
+                    }
+                }
+                else
+                {
+                    frame[0] = "invalid";
+                }
+                return frame;
+            }
         }
     }
 }
