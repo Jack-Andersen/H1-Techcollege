@@ -117,3 +117,5 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_dis
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot\bin\Debug\netcoreapp3.1\Hygge_discord_bot.Core.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot\bin\Debug\netcoreapp3.1\Hygge_discord_bot.Core.pdb

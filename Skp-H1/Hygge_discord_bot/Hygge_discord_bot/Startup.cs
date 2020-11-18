@@ -31,8 +31,8 @@ namespace Hygge_discord_bot
 
         public void configure(IApplicationBuilder app, IWebHostEnvironment env) { }
 
-        //$ dotnet-ef migrations add InitialCreate -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
-        //$ dotnet-ef database update -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
+        //$ dotnet-ef migrations add AddedProfiles -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
+        //$ dotnet-ef database update AddedProfiles -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
 
     }
 }

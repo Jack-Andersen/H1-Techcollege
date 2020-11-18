@@ -1,0 +1,12 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\bin\Debug\netcoreapp3.1\Hygge_discord_bot.Core.deps.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\bin\Debug\netcoreapp3.1\Hygge_discord_bot.Core.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\bin\Debug\netcoreapp3.1\Hygge_discord_bot.Core.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\bin\Debug\netcoreapp3.1\Hygge_discord_bot.DAL.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\bin\Debug\netcoreapp3.1\Hygge_discord_bot.DAL.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.csproj.CopyComplete
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H1\Hygge_discord_bot\Hygge_discord_bot.Core\obj\Debug\netcoreapp3.1\Hygge_discord_bot.Core.pdb
