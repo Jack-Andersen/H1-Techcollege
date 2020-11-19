@@ -2657,7 +2657,79 @@ namespace Edabit
 
 
 
+            //Mangle the String 93
 
+            //Create a function that takes a string and replaces every letter with the letter following it in the alphabet("c" becomes "d", "z" becomes "a", "b" becomes "c", etc). Then capitalize every vowel(a, e, i, o, u) and return the new modified string.
+
+            //Examples
+            //Mangle("Fun times!") ➞ "GvO Ujnft!"
+
+            //Mangle("The quick brown fox.") ➞ "UIf rvjdl cspxO gpy."
+
+            //Mangle("Omega") ➞ "Pnfhb"
+            //Notes
+            //If a letter is already uppercase, return it as uppercase (regardless of being a vowel).
+            //"y" is not considered a vowel.
+
+            static string Mangle(string str)
+            {
+                StringBuilder sb = new StringBuilder();
+                var nextLetter = ' ';
+                for (int i = 0; i < str.Length; i++)
+                {
+                    if (!char.IsLetterOrDigit(str[i]))
+                        nextLetter = str[i];
+                    else if (str[i] == 'z')
+                        nextLetter = 'a';
+                    else if (str[i] == 'Z')
+                        nextLetter = 'A';
+
+                    else nextLetter = (char)(((int)str[i]) + 1);
+                    sb.Append(nextLetter);
+                }
+
+                for (int i = 0; i < sb.Length; i++)
+                {
+                    if (sb[i] == 'a' || sb[i] == 'e' || sb[i] == 'i' || sb[i] == 'o' || sb[i] == 'u')
+                    {
+                        sb[i] = char.ToUpper(sb[i]);
+                    }
+                }
+                return sb.ToString();
+            }
+
+
+
+            //Rolling Cipher 94
+
+            //rite a function that accepts a string and an n and returns a cipher by rolling each character forward(n > 0) or backward(n< 0) n times.
+
+            //Note: Think of the letters as a connected loop, so rolling a backwards once will yield z, and rolling z forward once will yield a. If you roll 26 times in either direction, you should end up back where you started.
+
+            //Examples
+            //RollingCipher("abcd", 1) ➞ "bcde"
+
+            //RollingCipher("abcd", -1) ➞ "zabc"
+
+            //RollingCipher("abcd", 3) ➞ "defg"
+
+            //RollingCipher("abcd", 26) ➞ "abcd"
+            //Notes
+            //All letters are lower cased.
+            //No spacing.
+            //Each character is rotated the same number of times.
+
+            static string RollingCipher(string str, int n)
+            {
+                char[] alphabet = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
+                string result = "";
+                int index = Array.IndexOf(alphabet, str[0]);
+                index = index + n;
+                if (index < 0)
+                {
+                    index = 26 + n;
+                }
+            }
         }
     }
 }
