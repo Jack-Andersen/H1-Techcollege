@@ -17,12 +17,12 @@ using System.Transactions;
 
 namespace Hygge_discord_bot.Commands
 {
-    public class RPGCommands : BaseCommandModule
+    public class ItemCommands : BaseCommandModule
     {
         
         private readonly IItemService _ItemService;
 
-        public RPGCommands(IItemService itemService)
+        public ItemCommands(IItemService itemService)
         {
             _ItemService = itemService;
         }

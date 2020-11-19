@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using Hygge_discord_bot.Core.Services.Items;
 
+
 namespace Hygge_discord_bot
 {
     public class Startup
@@ -22,6 +23,7 @@ namespace Hygge_discord_bot
             });
 
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IProfileService, ProfileService>();
 
             var serviceprovider = services.BuildServiceProvider();
 
