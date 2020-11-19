@@ -2565,6 +2565,99 @@ namespace Edabit
                 }
                 return frame;
             }
+
+            //Moran Numbers 91
+
+            //A Harshad number is a number which is divisible by the sum of its digits.For example, 132 is divisible by 6(1 + 3 + 2).
+
+            //A subset of the Harshad numbers are the Moran numbers. Moran numbers yield a prime when divided by the sum of their digits.For example, 133 divided by 7(1 + 3 + 3) yields 19, a prime.
+
+            //Create a function that takes a number and returns "M" if the number is a Moran number, "H" if it is a(non - Moran) Harshad number, or "Neither".
+
+            //Examples
+            //Moran(132) ➞ "H"
+
+            //Moran(133) ➞ "M"
+
+            //Moran(134) ➞ "Neither"
+            //Notes
+            //N / A
+
+            static string Moran(int n)
+            {
+                int number = n.ToString().Sum(x => x - '0');
+                int number2;
+                if (n % number == 0)
+                {
+                    number2 = n / number;
+                    if (number2 <= 1)
+                        return "H";
+
+                    if (number2 == 2)
+                        return "M";
+
+                    if (number2 % 2 == 0)
+                        return "H";
+
+                    for (int i = 3; i <= (int)Math.Floor(Math.Sqrt(number2)); i += 2)
+                    {
+                        if (number2 % i == 0)
+                            return "H";
+                    }
+
+                    return "M";
+                }
+
+                return "Neither";
+            }
+
+
+
+            //Split the String into N Cases of Equal Length 92
+
+            //Create a function that accepts string input and int cases as parameters where the string is split into N distinct cases of equal length as shown:
+
+            //Examples
+            //SplitNCases("Strengthened", 6) ➞ { "St", "re", "ng", "th", "en", "ed" }
+
+            //SplitNCases("Unscrupulous", 2) ➞ { "Unscru", "pulous" }
+
+            //SplitNCases("Flavorless", 1) ➞ { "Flavorless" }
+            //Notes
+            //If it's not possible to split the string as described, return { "Error" }.
+
+            static string[] SplitNCases(string input, int cases)
+            {
+                List<string> final = new List<string>();
+                char[] arr = input.ToCharArray();
+
+                if (input.Length % cases != 0)
+                {
+                    final.Add("Error");
+                }
+
+                else
+                {
+                    for (int j = 0; j < input.Length; j = j + (input.Length / cases))
+                    {
+                        string s = string.Empty;
+
+                        for (int i = j; i < (j + (input.Length / cases)); i++)
+                        {
+                            s = s + arr[i];
+                        }
+
+                        final.Add(s);
+                    }
+                }
+
+                return (final.ToArray());
+
+            }
+
+
+
+
         }
     }
 }
