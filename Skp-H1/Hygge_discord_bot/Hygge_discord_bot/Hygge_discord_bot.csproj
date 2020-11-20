@@ -9,6 +9,7 @@
     <PackageReference Include="DSharpPlus" Version="4.0.0-nightly-00746" />
     <PackageReference Include="DSharpPlus.CommandsNext" Version="4.0.0-nightly-00746" />
     <PackageReference Include="DSharpPlus.Interactivity" Version="4.0.0-nightly-00746" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="4.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.2.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="microsoft.EntityFrameworkCore.Design" Version="3.1.9">

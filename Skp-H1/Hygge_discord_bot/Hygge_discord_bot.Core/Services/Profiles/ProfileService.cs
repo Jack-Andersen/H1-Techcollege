@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hygge_discord_bot.Core.Services.Profiles
 {
-    class ProfileServive
+    class ProfileService
     {
         public interface IProfileService
         {

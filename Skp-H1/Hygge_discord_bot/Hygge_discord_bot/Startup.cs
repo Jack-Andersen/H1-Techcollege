@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Text;
 using Hygge_discord_bot.Core.Services.Items;
 
-
 namespace Hygge_discord_bot
 {
     public class Startup
