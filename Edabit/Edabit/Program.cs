@@ -2729,7 +2729,72 @@ namespace Edabit
                 {
                     index = 26 + n;
                 }
+                for (int i = index; i < index + 4; i++)
+                {
+                    int index2 = i;
+                    if (index2 > 25)
+                    {
+                        index2 = index2 - 26;
+                    }
+                    result += alphabet[index2];
+                }
+                return result;
             }
+
+
+
+            //12 vs 24 Hours 95
+
+            //Create a function that converts 12 - hour time to 24 - hour time or vice versa. Return the output as a string.
+
+            //Examples
+            //ConvertTime("12:00 am") ➞ "0:00"
+
+            //ConvertTime("6:20 pm") ➞ "18:20"
+
+            //ConvertTime("21:00") ➞ "9:00 pm"
+
+            //ConvertTime("5:05") ➞ "5:05 am"
+            //Notes
+            //A 12 - hour time input will be denoted with an am or pm suffix.
+            //  A 24 - hour input time contains no suffix.
+
+            static string ConvertTime(string time)
+            {
+                string[] arr = time.Split(':');
+                int hours = int.Parse(arr[0]);
+                if (time.Length <= 5)
+                {
+                    if (hours < 12)
+                    {
+                        return time + " am";
+                    }
+                    else
+                    {
+                        hours = hours - 12;
+
+                        return hours.ToString() + ":" + arr[1] + " pm";
+                    }
+                }
+                else
+                {
+
+                    if (arr[1].Substring(3, 1) == "a")
+                    {
+                        hours = hours - 12;
+                        return hours.ToString() + ":" + arr[1].Substring(0, 2);
+                    }
+                    else
+                    {
+                        hours = hours + 12;
+                        return hours.ToString() + ":" + arr[1].Substring(0, 2);
+                    }
+                }
+            }
+
+
+
+
         }
     }
 }
