@@ -2794,7 +2794,86 @@ namespace Edabit
 
 
 
+            //Correct Inequality Signs 96
 
+            //Create a function that returns true if a given inequality expression is correct and false otherwise.
+
+            //Examples
+            //CorrectSigns("3 < 7 < 11") ➞ true
+
+            //CorrectSigns("13 > 44 > 33 > 1") ➞ false
+
+            //CorrectSigns("1 < 2 < 6 < 9 > 3") ➞ true
+            //Notes
+            //N / A
+
+            static bool CorrectSigns(string str)
+            {
+                string[] nums = str.Split(' ');
+                bool isRight = false;
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    if (nums[i] == ">")
+                    {
+                        if (Int32.Parse(nums[i - 1]) > Int32.Parse(nums[i + 1]))
+                        {
+                            isRight = true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else if (nums[i] == "<")
+                    {
+                        if (Int32.Parse(nums[i - 1]) < Int32.Parse(nums[i + 1]))
+                        {
+                            isRight = true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+
+                return isRight;
+
+            }
+
+
+
+            //Difference Cipher 97
+
+            //It's time to send and receive secret messages.
+
+            //Create two functions that take a string and an array and returns a coded or decoded message.
+
+            //The first letter of the string, or the first element of the array represents the Character Code of that letter.The next elements are the differences between the characters: e.g.A + 3-- > C or z -1-- > y.
+
+            //Examples
+            //Encrypt("Hello") ➞ [72, 29, 7, 0, 3]
+            //// H = 72, the difference between the H and e is 29 (upper- and lowercase).
+            //// The difference between the two l's is obviously 0.
+
+            //Decrypt([72, 33, -73, 84, -12, -3, 13, -13, -68]) ➞ "Hi there!"
+
+            //Encrypt("Sunshine") ➞ [83, 34, -7, 5, -11, 1, 5, -9]
+            //Notes
+            //The input of the encrypt function will always be a string.
+            //The input of the decrypt function will always be an array with numbers.
+
+            static int[] Encrypt(string str)
+            {
+
+            }
+
+            static string Decrypt(int[] arr)
+            {
+
+            }
         }
+
+    }
     }
 }
