@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Hygge_discord_bot.Core.Services.Items;
+using Hygge_discord_bot.Core.Services.Profiles;
 
 namespace Hygge_discord_bot
 {
@@ -22,7 +23,7 @@ namespace Hygge_discord_bot
             });
 
             services.AddScoped<IItemService, ItemService>();
-            services.AddScoped<IProfileService, ProfileService>();
+            services.AddScoped<IProfileService, Profileservice>();
 
             var serviceprovider = services.BuildServiceProvider();
 

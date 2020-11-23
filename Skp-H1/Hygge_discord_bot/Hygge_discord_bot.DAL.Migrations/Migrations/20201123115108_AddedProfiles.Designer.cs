@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Hygge_discord_bot.DAL.Migrations.Migrations
 {
     [DbContext(typeof(RPGContext))]
-    [Migration("20201118150821_AddedProfiles")]
+    [Migration("20201123115108_AddedProfiles")]
     partial class AddedProfiles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,6 +36,27 @@ namespace Hygge_discord_bot.DAL.Migrations.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("Hygge_discord_bot.DAL.Models.Profiles.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("DiscordID")
+                        .HasColumnType("decimal(20,0)");
+
+                    b.Property<decimal>("GuildID")
+                        .HasColumnType("decimal(20,0)");
+
+                    b.Property<int>("xp")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profiles");
                 });
 #pragma warning restore 612, 618
         }

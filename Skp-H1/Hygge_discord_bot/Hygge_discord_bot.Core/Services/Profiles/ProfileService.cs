@@ -9,43 +9,41 @@ using System.Threading.Tasks;
 
 namespace Hygge_discord_bot.Core.Services.Profiles
 {
-    class ProfileService
+
+    public interface IProfileService
     {
-        public interface IProfileService
+        Task<Profile> GetOrCreateProfileAsync(ulong discordId, ulong guildId);
+    }
+
+    public class Profileservice : IProfileService
+    {
+        private readonly RPGContext _context;
+
+        public Profileservice(RPGContext context)
         {
-            Task<Profile> GetOrCreateProfileAsync(ulong discordId, ulong guildId);
+            _context = context;
         }
 
-        public class Profileservice : IProfileService
+        public async Task<Profile> GetOrCreateProfileAsync(ulong discordId, ulong guildId)
         {
-            private readonly RPGContext _context;
+            var profile = await _context.Profiles
+                .Where(x => x.GuildID == guildId)
+                .FirstOrDefaultAsync(x => x.DiscordID == discordId).ConfigureAwait(false);
 
-            public Profileservice(RPGContext context)
+            if (profile != null) { return profile; }
+
+            profile = new Profile
             {
-                _context = context;
-            }
+                DiscordID = discordId,
+                GuildID = guildId
+            };
 
-            public async Task<Profile> GetOrCreateProfileAsync(ulong discordId, ulong guildId)
-            {
-                var profile = await _context.Profiles
-                    .Where(x => x.GuildID == guildId)
-                    .FirstOrDefaultAsync(x => x.DiscordID == discordId).ConfigureAwait(false);
+            _context.Add(profile);
 
-                if (profile != null) { return profile; }
+            await _context.SaveChangesAsync().ConfigureAwait(false);
 
-                profile = new Profile
-                {
-                    DiscordID = discordId,
-                    GuildID = guildId
-                };
+            return profile;
 
-                _context.Add(profile);
-
-                await _context.SaveChangesAsync().ConfigureAwait(false);
-
-                return profile;
-
-            }
         }
     }
 }

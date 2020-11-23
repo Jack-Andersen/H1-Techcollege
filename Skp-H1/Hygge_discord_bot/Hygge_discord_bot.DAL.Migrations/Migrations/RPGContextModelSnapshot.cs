@@ -35,6 +35,27 @@ namespace Hygge_discord_bot.DAL.Migrations.Migrations
 
                     b.ToTable("Items");
                 });
+
+            modelBuilder.Entity("Hygge_discord_bot.DAL.Models.Profiles.Profile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("DiscordID")
+                        .HasColumnType("decimal(20,0)");
+
+                    b.Property<decimal>("GuildID")
+                        .HasColumnType("decimal(20,0)");
+
+                    b.Property<int>("xp")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Profiles");
+                });
 #pragma warning restore 612, 618
         }
     }

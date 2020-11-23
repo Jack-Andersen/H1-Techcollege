@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Hygge_discord_bot.DAL.Models.Profiles
+﻿namespace Hygge_discord_bot.DAL.Models.Profiles
 {
     public class Profile : Entity
     {
@@ -10,6 +6,6 @@ namespace Hygge_discord_bot.DAL.Models.Profiles
 
         public ulong GuildID { get; set; }
 
-        public int xp { get; set }
+        public int xp { get; set; }
     }
 }
