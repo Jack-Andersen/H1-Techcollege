@@ -2,6 +2,7 @@
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
 using Hygge_discord_bot.Core.Services.Profiles;
+using Hygge_discord_bot.Core.ViewModels;
 using Hygge_discord_bot.DAL.Models.Profiles;
 using System.Threading.Tasks;
 
@@ -11,10 +12,12 @@ namespace Hygge_discord_bot.Commands
     {
 
         private readonly IProfileService _profileService;
+        private readonly IExperienceService _experienceService;
 
-        public ProfileCommands(IProfileService profileService)
+        public ProfileCommands(IProfileService profileService, IExperienceService experienceService)
         {
             _profileService = profileService;
+            _experienceService = experienceService;
         }
 
         [Command("profile")]
@@ -43,9 +46,23 @@ namespace Hygge_discord_bot.Commands
                 ImageUrl = member.AvatarUrl
             };
 
-            profileEmbed.AddField("xp", profile.xp.ToString());
+            profileEmbed.AddField("Level", profile.Xp.ToString());
+            profileEmbed.AddField("xp", profile.Xp.ToString());
 
             await ctx.Channel.SendMessageAsync(embed: profileEmbed).ConfigureAwait(false);
+
+            GrantXpViewModel viewModel = await _experienceService.GrantXpAsync(memberId, ctx.Guild.Id, 100).ConfigureAwait(false);
+
+            if (!viewModel.LevelledUp) { return; }
+
+            var levelUpEmbed = new DiscordEmbedBuilder
+            {
+                Title = $"{member.DisplayName} Is Now Level {viewModel.Profile.Level}",
+                ImageUrl = member.AvatarUrl
+            };
+
+            await ctx.Channel.SendMessageAsync(embed: levelUpEmbed).ConfigureAwait(false);
+
         }
     }
 }

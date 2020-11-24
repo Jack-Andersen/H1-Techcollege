@@ -1,10 +1,7 @@
 ﻿using Hygge_discord_bot.DAL;
 using Hygge_discord_bot.DAL.Models.Profiles;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Hygge_discord_bot.Core.Services.Profiles
@@ -17,17 +14,30 @@ namespace Hygge_discord_bot.Core.Services.Profiles
 
     public class Profileservice : IProfileService
     {
-        private readonly RPGContext _context;
+        private readonly DbContextOptions<RPGContext> _options;
 
-        public Profileservice(RPGContext context)
+        public Profileservice(DbContextOptions<RPGContext> options)
         {
-            _context = context;
+            _options = options;
+
+            //using var context = new RPGContext(_options);
+
+            //var profiles = context.Profiles.ToList();
+            //profiles.ForEach(x => x.Gold = 100);
+            //context.Profiles.UpdateRange(profiles);
+            //context.SaveChanges();
+
         }
 
         public async Task<Profile> GetOrCreateProfileAsync(ulong discordId, ulong guildId)
         {
-            var profile = await _context.Profiles
+
+            using var context = new RPGContext(_options);
+
+            var profile = await context.Profiles
                 .Where(x => x.GuildID == guildId)
+                .Include(x => x.Items)
+                .Include(x => x.Items).ThenInclude(x => x.Item)
                 .FirstOrDefaultAsync(x => x.DiscordID == discordId).ConfigureAwait(false);
 
             if (profile != null) { return profile; }
@@ -35,12 +45,13 @@ namespace Hygge_discord_bot.Core.Services.Profiles
             profile = new Profile
             {
                 DiscordID = discordId,
-                GuildID = guildId
+                GuildID = guildId,
+                Gold = 100
             };
 
-            _context.Add(profile);
+            context.Add(profile);
 
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            await context.SaveChangesAsync().ConfigureAwait(false);
 
             return profile;
 

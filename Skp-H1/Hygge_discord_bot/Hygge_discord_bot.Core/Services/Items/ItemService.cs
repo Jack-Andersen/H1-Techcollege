@@ -1,10 +1,8 @@
-﻿using Hygge_discord_bot.DAL;
+﻿using Hygge_discord_bot.Core.Services.Profiles;
+using Hygge_discord_bot.DAL;
 using Hygge_discord_bot.DAL.Models.Items;
+using Hygge_discord_bot.DAL.Models.Profiles;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Hygge_discord_bot.Core.Services.Items
@@ -13,31 +11,65 @@ namespace Hygge_discord_bot.Core.Services.Items
     public interface IItemService
     {
         Task CreateNewItemAsync(Item item);
-        Task<Item> GetItemByName(string itemName);
+        Task<Item> GetItemByNameAsync(string itemName);
+        Task<bool> PurchaseItemAsync(ulong discordId, ulong guildId, string itemName);
     }
 
     public class ItemService : IItemService
     {
 
-        private readonly RPGContext _context;
+        private readonly DbContextOptions<RPGContext> _options;
+        private readonly IProfileService _profileService;
 
-        public ItemService(RPGContext context)
+        public ItemService(DbContextOptions<RPGContext> options, IProfileService profileService)
         {
-            _context = context;
+            _options = options;
+            _profileService = profileService;
         }
 
         public async Task CreateNewItemAsync(Item item)
         {
-            await _context.AddAsync(item).ConfigureAwait(false);
+            using var context = new RPGContext(_options);
 
-            await _context.SaveChangesAsync().ConfigureAwait(false);
+            context.Add(item);
+
+            await context.SaveChangesAsync().ConfigureAwait(false);
         }
 
-        public async Task<Item> GetItemByName(string itemName)
+        public async Task<Item> GetItemByNameAsync(string itemName)
         {
-            itemName = itemName.ToLower();
-            return await _context.Items
-                .FirstOrDefaultAsync(x => x.Name.ToLower() == itemName).ConfigureAwait(false);
+
+            using var context = new RPGContext(_options);
+
+            
+            return await context.Items
+                .FirstOrDefaultAsync(x => x.Name.ToLower() == itemName.ToLower()).ConfigureAwait(false);
+        }
+
+        public async Task<bool> PurchaseItemAsync(ulong discordId, ulong guildId, string itemName)
+        {
+            using var context = new RPGContext(_options);
+
+            Item item = await GetItemByNameAsync(itemName).ConfigureAwait(false);
+
+            if (item == null) { return false; }
+
+            Profile profile = await _profileService.GetOrCreateProfileAsync(discordId, guildId).ConfigureAwait(false);
+
+            if (profile.Gold < item.Price) { return false; }
+
+            profile.Gold -= item.Price;
+            profile.Items.Add(new ProfileItem
+            {
+                ItemID = item.Id,
+                ProfileID = profile.Id
+            });
+
+            context.Profiles.Update(profile);
+
+            await context.SaveChangesAsync().ConfigureAwait(false);
+
+            return true;
         }
     }
 }

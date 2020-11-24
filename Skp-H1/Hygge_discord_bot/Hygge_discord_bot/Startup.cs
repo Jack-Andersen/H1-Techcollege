@@ -1,13 +1,10 @@
-﻿using Hygge_discord_bot.DAL;
+﻿using Hygge_discord_bot.Core.Services.Items;
+using Hygge_discord_bot.Core.Services.Profiles;
+using Hygge_discord_bot.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Hygge_discord_bot.Core.Services.Items;
-using Hygge_discord_bot.Core.Services.Profiles;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Hygge_discord_bot
 {
@@ -23,6 +20,7 @@ namespace Hygge_discord_bot
             });
 
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<IExperienceService, ExperienceService>();
             services.AddScoped<IProfileService, Profileservice>();
 
             var serviceprovider = services.BuildServiceProvider();
@@ -33,8 +31,8 @@ namespace Hygge_discord_bot
 
         public void configure(IApplicationBuilder app, IWebHostEnvironment env) { }
 
-        //$ dotnet-ef migrations add AddedProfiles -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
-        //$ dotnet-ef database update AddedProfiles -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
+        //$ dotnet-ef migrations add AddedInventoryAndGold -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
+        //$ dotnet-ef database update AddedInventoryAndGold -p ../Hygge_discord_bot.DAL.Migrations/Hygge_discord_bot.DAL.Migrations.csproj --context Hygge_discord_bot.DAL.RPGContext
 
     }
 }

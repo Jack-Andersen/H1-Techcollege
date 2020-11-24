@@ -31,9 +31,34 @@ namespace Hygge_discord_bot.DAL.Migrations.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.ToTable("Items");
+                });
+
+            modelBuilder.Entity("Hygge_discord_bot.DAL.Models.Items.ProfileItem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ItemID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProfileID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ItemID");
+
+                    b.HasIndex("ProfileID");
+
+                    b.ToTable("ProfileItems");
                 });
 
             modelBuilder.Entity("Hygge_discord_bot.DAL.Models.Profiles.Profile", b =>
@@ -46,15 +71,33 @@ namespace Hygge_discord_bot.DAL.Migrations.Migrations
                     b.Property<decimal>("DiscordID")
                         .HasColumnType("decimal(20,0)");
 
+                    b.Property<int>("Gold")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("GuildID")
                         .HasColumnType("decimal(20,0)");
 
-                    b.Property<int>("xp")
+                    b.Property<int>("Xp")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Profiles");
+                });
+
+            modelBuilder.Entity("Hygge_discord_bot.DAL.Models.Items.ProfileItem", b =>
+                {
+                    b.HasOne("Hygge_discord_bot.DAL.Models.Items.Item", "Item")
+                        .WithMany()
+                        .HasForeignKey("ItemID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Hygge_discord_bot.DAL.Models.Profiles.Profile", "Profile")
+                        .WithMany("Items")
+                        .HasForeignKey("ProfileID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
