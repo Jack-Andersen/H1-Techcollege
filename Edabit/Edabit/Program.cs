@@ -2863,17 +2863,160 @@ namespace Edabit
             //The input of the encrypt function will always be a string.
             //The input of the decrypt function will always be an array with numbers.
 
-            static int[] Encrypt(string str)
+            static int[] EncryptCipher(string str)
             {
+                List<int> nums = new List<int>();
+
+                foreach (char character in str)
+                {
+                    if (nums.Count == 0) nums.Add((int)character);
+                    else nums.Add(character - nums.Sum());
+                }
+
+                return nums.ToArray();
 
             }
 
-            static string Decrypt(int[] arr)
+            static string DecryptCipher(int[] arr)
             {
+                StringBuilder builder = new StringBuilder();
+                char currentChar = (char)0;
 
+                foreach (int item in arr)
+                {
+                    if (currentChar == (char)0) currentChar = (char)item;
+                    else currentChar = (char)(currentChar + item);
+                    builder.Append(currentChar);
+                }
+
+                return builder.ToString();
+                
             }
+
+
+
+            //Count the Arguments 98
+
+            //Create a method that returns the number of arguments it was called with.
+
+            //Examples
+            //NumArgs() ➞ 0
+
+            //NumArgs("foo") ➞ 1
+
+            //NumArgs("foo", "bar") ➞ 2
+
+            //NumArgs(true, false) ➞ 2
+
+            //NumArgs({ }) ➞ 1
+            //Notes
+            //If you get stuck on a challenge, find help in the Resources tab.
+            //If you're really stuck, unlock solutions in the Solutions tab.
+
+            static int NumArgs(params object[] p)
+            {
+                return p.Length;
+            }
+
+
+
+            //Convert Age to Days 99
+
+            //Create a function that takes an age in years and returns the age in days.
+
+            //Examples
+            //CalcAge(65) ➞ 23725
+
+            //CalcAge(0) ➞ 0
+
+            //CalcAge(20) ➞ 7300
+            //Notes
+            //Use 365 days as the length of a year for this challenge.
+            //Ignore leap years and days between last birthday and now.
+            //Expect only positive integer inputs.
+
+            static int CalcAge(int age)
+            {
+                return age * 365;
+            }
+
+
+
+            //Perfect Square Patch 100
+
+            //Create a function that takes an integer and outputs an n x n square solely consisting of the integer n.
+
+            //Examples
+            //SquarePatch(3) ➞ [
+            //  [3, 3, 3],
+            //  [3, 3, 3],
+            //  [3, 3, 3]
+            //]
+
+            //SquarePatch(5) ➞ [
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5],
+            //  [5, 5, 5, 5, 5]
+            //]
+
+            //SquarePatch(1) ➞ [
+            //  [1]
+            //]
+
+            //SquarePatch(0) ➞ []
+            //            Notes
+            //n >= 0.
+            //If n = 0, return an empty array.
+
+            static int[,] SquarePatchs(int n)
+            {
+                if (n == 0)
+                {
+                    int[,] zeroArray = new int[0, 0];
+                    return zeroArray;
+                }
+                else
+                {
+                    int[,] nArray = new int[n, n];
+
+                    for (int i = 0; i < n; i++)
+                    {
+                        for (int y = 0; y < n; y++)
+                        {
+                            nArray[i, y] = n;
+                        }
+                    }
+                    return nArray;
+
+                }
+            }
+
+
+
+            //Possible Palindrome 1001
+
+            //Create a function that determines whether it is possible to build a palindrome from the characters in a string.
+
+            //Examples
+            //PossiblePalindrome("acabbaa") ➞ true
+            //// Can make the following palindrome: "aabcbaa"
+
+            //PossiblePalindrome("aacbdbc") ➞ true
+            //// Can make the following palindrome: "abcdcba"
+
+            //PossiblePalindrome("aacbdb") ➞ false
+
+            //PossiblePalindrome("abacbb") ➞ false
+            //Notes
+            //N / A
+
+            static bool PossiblePalindrome(string str)
+            {
+                
+            }
+
         }
-
-    }
     }
 }
