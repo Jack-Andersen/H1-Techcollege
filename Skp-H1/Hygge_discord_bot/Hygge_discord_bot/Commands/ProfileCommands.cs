@@ -4,6 +4,7 @@ using DSharpPlus.Entities;
 using Hygge_discord_bot.Core.Services.Profiles;
 using Hygge_discord_bot.Core.ViewModels;
 using Hygge_discord_bot.DAL.Models.Profiles;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Hygge_discord_bot.Commands
@@ -48,6 +49,11 @@ namespace Hygge_discord_bot.Commands
 
             profileEmbed.AddField("Level", profile.Xp.ToString());
             profileEmbed.AddField("xp", profile.Xp.ToString());
+            profileEmbed.AddField("Gold", profile.Xp.ToString());
+            if (profile.Items.Count > 0)
+            {
+                profileEmbed.AddField("Items", string.Join(",", profile.Items.Select(x => x.Item.Name)));
+            }
 
             await ctx.Channel.SendMessageAsync(embed: profileEmbed).ConfigureAwait(false);
 

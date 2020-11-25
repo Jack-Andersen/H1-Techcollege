@@ -22,6 +22,7 @@ namespace Hygge_discord_bot.Commands
         [RequireRoles(RoleCheckMode.Any, "Admin")]
         public async Task CreateItem(CommandContext ctx)
         {
+            var itemPriceStep = new IntStep("How much does the tiem cost?", null, 1); 
             var itemDescriptionStep = new TextStep("What is the item about?", null);
             var itemNameStep = new TextStep("What will the item be called?", itemDescriptionStep);
 
@@ -29,6 +30,7 @@ namespace Hygge_discord_bot.Commands
 
             itemNameStep.OnValidResult += (result) => item.Name = result;
             itemDescriptionStep.OnValidResult += (result) => item.Description = result;
+            itemPriceStep.OnValidResult += (result) => item.Price = result;
 
             var userChannel = await ctx.Member.CreateDmChannelAsync().ConfigureAwait(false);
 
@@ -72,7 +74,7 @@ namespace Hygge_discord_bot.Commands
 
             if (!succeeded) { return; }
 
-            var item = await _ItemService.GetItemByName(itemName).ConfigureAwait(false);
+            var item = await _ItemService.GetItemByNameAsync(itemName).ConfigureAwait(false);
 
             if (item == null)
             {
@@ -83,5 +85,15 @@ namespace Hygge_discord_bot.Commands
             await ctx.Channel.SendMessageAsync($"Name: {item.Name}, Description {item.Description} ");
 
         }
+
+        [Command("buy")]
+
+        public async Task Buy(CommandContext ctx, params string[] itemNameSplit)
+        {
+            string itemName = string.Join(' ', itemNameSplit);
+
+            await _ItemService.PurchaseItemAsync(ctx.Member.Id, ctx.Guild.Id, itemName);
+        }
+
     }
 }
