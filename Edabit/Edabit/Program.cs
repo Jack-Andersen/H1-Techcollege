@@ -2995,7 +2995,7 @@ namespace Edabit
 
 
 
-            //Possible Palindrome 1001
+            //Possible Palindrome 101
 
             //Create a function that determines whether it is possible to build a palindrome from the characters in a string.
 
@@ -3014,7 +3014,81 @@ namespace Edabit
 
             static bool PossiblePalindrome(string str)
             {
-                
+                int count = 0;
+                while (str.Length != 0)
+                {
+                    string result = str[0] + "";
+                    str = str.Remove(0, 1);
+                    if (str.Contains(result))
+                    {
+                        str = str.Remove(str.IndexOf(result), 1);
+                    }
+                    else
+                    {
+                        count++;
+                        if (count == 2) return false;
+                    }
+                }
+                return true;
+            }
+
+
+
+            //Average Word Length 102
+
+            //Create a function that takes in a sentence and returns the average length of each word in that sentence. Round your result to two decimal places.
+
+            //Examples
+            //AverageWordLength("A B C.") ➞ 1.00
+
+            //AverageWordLength("What a gorgeous day.") ➞ 4.00
+
+            //AverageWordLength("Dude, this is so awesome!") ➞ 3.80
+            //Notes
+            //Ignore punctuation when counting the length of a word.
+
+            static double AverageWordLength(string str)
+            {
+                string newstr = Regex.Replace(str, "[^A-Za-z ]", "");
+                double average = newstr.Split(' ').Select(x => x.Length).Average();
+
+                return Math.Round(average, 2);
+            }
+
+
+
+            //Rhyme Time 103
+
+            //Create a function that returns true if two lines rhyme and false otherwise.For the purposes of this exercise, two lines rhyme if the last word from each sentence contains the same vowels.
+
+            //Examples
+            //DoesRhyme("Sam I am!", "Green eggs and ham.") ➞ true
+
+            //DoesRhyme("Sam I am!", "Green eggs and HAM.") ➞ true
+            //// Capitalization and punctuation should not matter.
+
+            //DoesRhyme("You are off to the races", "a splendid day.") ➞ false
+
+            //DoesRhyme("and frequently do?", "you gotta move.") ➞ false
+            //Notes
+            //Case insensitive.
+            //Here we are disregarding cases like "thyme" and "lime".
+            //We are also disregarding cases like "away" and "today"(which technically rhyme, even though they contain different vowels).
+
+            static bool DoesRhyme(string str1, string str2)
+            {
+                string[] vowels = { "a", "e", "i", "o", "u" };
+                bool result = false;
+                foreach (string v in vowels)
+                {
+                    if (str1.Split(' ').Last().ToLower().Contains(v) || str2.Split(' ').Last().ToLower().Contains(v))
+                    {
+                        result = (str1.Split(' ').Last().ToLower().Contains(v) && str2.Split(' ').Last().ToLower().Contains(v));
+                        if (!result)
+                            break;
+                    }
+                }
+                return (result);
             }
 
         }
