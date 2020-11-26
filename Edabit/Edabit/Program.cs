@@ -3088,8 +3088,149 @@ namespace Edabit
                             break;
                     }
                 }
+
                 return (result);
             }
+
+
+
+            //Recursion: Sum 104
+
+            //Write a function that recursively finds the sum of the first n natural numbers.
+
+            //Examples
+            //Sum(5) ➞ 15
+            //// 1 + 2 + 3 + 4 + 5 = 15
+
+            //Sum(1) ➞ 1
+
+            //Sum(12) ➞ 78
+            //Notes
+            //Assume the input number is always positive.
+            //Check the Resources tab for info on recursion.
+
+            static int Sum2(int n)
+            {
+                if (n == 1)
+                {
+                    return 1;
+                }
+                return n + Sum(n - 1);
+            }
+
+
+
+            //Power Calculator 105
+
+            //Create a function that takes voltage and current and returns the calculated power.
+
+            //Examples
+            //CircuitPower(230, 10) ➞ 2300
+
+            //CircuitPower(110, 3) ➞ 330
+
+            //CircuitPower(480, 20) ➞ 9600
+            //Notes
+            //N / A
+
+            static int CircuitPower(int voltage, int current)
+            {
+                return voltage * current;
+            }
+
+
+
+            //Next Number Greater Than A and B and Divisible by B 106
+
+            //You are given two numbers a and b. Create a function that returns the next number greater than a and b and divisible by b.
+
+            //Examples
+            //DivisibleByB(17, 8) ➞ 24
+
+            //DivisibleByB(98, 3) ➞ 99
+
+            //DivisibleByB(14, 11) ➞ 22
+            //Notes
+            //a will always be greater than b.
+
+            static int DivisibleByB(int a, int b)
+            {
+                int result = a;
+
+                while (true)
+                {
+                    if (result % b == 0)
+                    {
+                        return result;
+                    }
+                    else
+                    {
+                        result++;
+                    }
+                }
+            }
+
+
+
+            //Break Point 107
+
+            //A number has a breakpoint if it can be split in a way where the digits on the left side and the digits on the right side sum to the same number.
+
+            //For instance, the number 35190 can be sliced between the digits 351 and 90, since 3 + 5 + 1 = 9 and 9 + 0 = 9.On the other hand, the number 555 does not have a breakpoint(you must split between digits).
+
+            //Create a function that returns true if a number has a breakpoint, and false otherwise.
+
+            //Examples
+            //BreakPoint(159780) ➞ true
+
+            //BreakPoint(112) ➞ true
+
+            //BreakPoint(1034) ➞ true
+
+            //BreakPoint(10) ➞ false
+
+            //BreakPoint(343)  ➞ false
+            //Notes
+            //Read each digit as only one number.
+            //Check the resources tab for a hint.
+
+            static bool BreakPoint(int num)
+            {
+                char[] nums = num.ToString().ToCharArray();
+                int suma = 0;
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    suma += int.Parse(nums[i].ToString());
+                }
+                int sumb = 0;
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    sumb += int.Parse(nums[i].ToString());
+                    suma -= int.Parse(nums[i].ToString());
+                    if (sumb == suma) { return true; }
+                }
+                return false;
+            }
+
+
+
+            //Fix the Error: Check Whether a Given Number Is Odd 108
+
+            //Éowyn has written the function IsOdd() to check if a given number is odd or not.Unfortunately, the function does not return the correct result for all the inputs.Help her fix the error.
+
+
+            //Examples
+            //IsOdd(-5) ➞ true
+
+
+            //IsOdd(25) ➞ true
+
+
+            //IsOdd(0) ➞ false
+            //Notes
+            //All the inputs will only be integers.
+
+
 
         }
     }
