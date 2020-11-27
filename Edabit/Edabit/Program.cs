@@ -2890,7 +2890,7 @@ namespace Edabit
                 }
 
                 return builder.ToString();
-                
+
             }
 
 
@@ -3230,8 +3230,182 @@ namespace Edabit
             //Notes
             //All the inputs will only be integers.
 
+            static bool IsOdd(int num)
+            {
+                if (num % 2 == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
 
 
+
+            //Is One String in the Other? 109
+
+            //Create a function that takes two strings and returns true if either of the strings appears at the very end of the other string.Return false otherwise.The character * is a wildcard, so it can take the place of any character.
+
+            //Examples
+            //Overlap("ABC", "Ican'tsingmyABC") ➞ true
+
+            //Overlap("abc", "Ican'tsingmyABC") ➞ true
+
+            //Overlap("Ican'tsingmyABC", "abc") ➞ true
+
+            //Overlap("hello world", "hello") ➞ false
+
+            //Overlap("+=", "this should work too +=") ➞ true
+
+            //Overlap("hey", "*********") ➞ true
+            //Notes
+            //Your function should NOT be case sensitive(see example #2).
+
+            static bool Overlap(string str1, string str2)
+            {
+                int i = 0, j = 0;
+                if (str1.Length < str2.Length)
+                {
+                    j = str2.Length - str1.Length;
+                }
+                else
+                {
+                    i = str1.Length - str2.Length;
+                }
+                while (i < str1.Length)
+                {
+                    if (str1[i] != '*' && str2[j] != '*' && char.ToLower(str1[i]) != char.ToLower(str2[j]))
+                    {
+                        return false;
+                    }
+
+                    i++; j++;
+
+                }
+
+                return true;
+            }
+
+
+
+            //Need Help With Your Packing ? 110
+
+            //You arrive at the supermarket checkout and you've only got a limited number of shopping bags with you. Miser that you are, you hate buying extra bags when you've got dozens at home that you forgot to bring with you!!Can you fit all your shopping into the bags you've got with you?
+
+            //Each bag can carry a maximum of 10kg and each item you've purchased weighs between 1 and 10kg.
+
+            //Create a function that takes two parameters, a list of the weights of each item and the number of bags you are carrying. Return True if there are enough bags to contain all the items, otherwise False.
+
+            //Example
+            //CanFit(new int[] { 2, 1, 2, 5, 4, 3, 6, 1, 1, 9, 3, 2 }, 4) ➞ True
+            //// Bag 1 = [2, 1, 2, 5] (10kg)
+            //// Bag 2 = [4, 3, 3] (10kg)
+            //// Bag 3 = [6, 2, 1, 1] (10kg)
+            //// Bag 4 = [9] (9kg)
+
+            //            CanFit(new int[] { 2, 7, 1, 3, 3, 4, 7, 4, 1, 8, 2 ], 4) ➞ False
+            //// Bag 1 = [2, 8] (10kg)
+            //// Bag 2 = [3, 7] (10kg)
+            //// Bag 3 = [2, 4, 4] (10kg)
+            //// Bag 4 = [7, 3] (10kg)
+            //// two 1kg items left over!
+            //Notes
+            //All weights will be integers between 1 and 10kg inclusive
+            //Items can be packed in any order
+            //There may be more than one way to fit all the items in the available bags
+            //Based on an easier challenge How Many Boxes? by @zatoichi49.
+
+            static bool CanFit(int[] weights, int bags)
+            {
+                int capacity = bags * 10;
+                int weight = 0;
+                for (int i = 0; i < weights.Length; i++)
+                {
+                    weight = weight + weights[i];
+                }
+
+                return (weight > capacity) ? false : true;
+            }
+
+
+
+            //Smallest Transform 111
+
+            //Create a function that returns the smallest number of changes it takes to transform one number into one with identical digits.A step is incrementing or decrementing a digit by one.
+
+            //Examples
+            //SmallestTransform(399) ➞ 6
+            //// 399 transformed to 999 in 6 steps.
+
+            //SmallestTransform(1234) ➞ 4
+            //// 1234 can be transformed to either 2222 or 3333 using 4 steps.
+
+            //SmallestTransform(153) ➞ 4
+
+            //SmallestTransform(33338) ➞ 5
+
+            //SmallestTransform(7777) ➞ 0
+            //Notes
+            //If a number already has identical digits, return 0.
+
+            static int SmallestTransform(int num)
+            {
+                int steps;
+                int i = 0;
+                int maxSteps = 999;
+                string numStr = num.ToString();
+                int[] digits = new int[numStr.Length];
+
+                while (num != 0)
+                {
+                    digits[i] = num % 10;
+                    num /= 10;
+                    i++;
+                }
+
+                for (int j = 0; j < digits.Length; j++)
+                {
+                    steps = 0;
+                    for (int k = 0; k < digits.Length; k++)
+                    {
+                        steps += Math.Abs(digits[k] - digits[j]);
+                    }
+                    if (steps < maxSteps)
+                    {
+                        maxSteps = steps;
+                    }
+                }
+                return maxSteps;
+            }
+
+
+
+            //Needle in a Hex String 112
+
+            //Find the index of a string within a hex encoded string.
+
+            //You will be given a string which needs to be found in another string which has previously been translated into hex. You will need to return the first index of the needle within the hex encoded string.
+
+            //Examples
+            //FirstIndex("68 65 6c 6c 6f 20 77 6f 72 6c 64", "world") ➞ 6
+
+            //FirstIndex("47 6f 6f 64 62 79 65 20 77 6f 72 6c 64", "world") ➞ 8
+
+            //FirstIndex("42 6f 72 65 64 20 77 6f 72 6c 64", "Bored") ➞ 0
+            //Notes
+            //N / A
+
+            static int FirstIndex(string hexString, string needle)
+            {
+                string check = string.Empty;
+                string[] hex = hexString.Split(' ');
+                foreach (string w in hex)
+                {
+
+                }
+            }
         }
     }
 }
