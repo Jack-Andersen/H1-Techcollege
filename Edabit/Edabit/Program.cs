@@ -3382,30 +3382,212 @@ namespace Edabit
 
 
 
-            //Needle in a Hex String 112
+            //Briefcase Lock 112
 
-            //Find the index of a string within a hex encoded string.
+            //A briefcase has a 4 - digit rolling -lock.Each digit is a number from 0 - 9 that can be rolled either forwards or backwards.
 
-            //You will be given a string which needs to be found in another string which has previously been translated into hex. You will need to return the first index of the needle within the hex encoded string.
+            //Create a function that returns the smallest number of turns it takes to transform the lock from the current combination to the target combination. One turn is equivalent to rolling a number forwards or backwards by one.
+
+            //To illustrate:
+
+            //current -lock: 4089
+            //target -lock: 5672
+            //What is the minimum number of turns it takes to transform 4089 to 5672 ?
+
+            //4 ➞ 5
+            //4 ➞ 5  // Forward Turns: 1 <- Min
+            //4 ➞ 3 ➞ 2 ➞ 1 ➞ 0 ➞ 9 ➞ 8 ➞ 7 ➞ 6 ➞ 5  // Backward Turns: 9
+
+            //0 ➞ 6
+            //0 ➞ 1 ➞ 2 ➞ 3 ➞ 4 ➞ 5 ➞ 6  // Forward Turns: 6
+            //0 ➞ 9 ➞ 8 ➞ 7 ➞ 6  // Backward Turns: 4  <- Min
+
+            //8 ➞ 7
+            //8 ➞ 9 ➞ 0 ➞ 1 ➞ 2 ➞ 3 ➞ 4 ➞ 5 ➞ 6 ➞ 7  // Forward Turns: 9
+            //8 ➞ 7  // Backward Turns: 1  <- Min
+
+            //9 ➞ 2
+            //9 ➞ 0 ➞ 1 ➞ 2  // Forward Turns: 3  <- Min
+            //9 ➞ 8 ➞ 7 ➞ 6 ➞ 5 ➞ 4 ➞ 3 ➞ 2  // Backward Turns: 7
+            //It takes 1 + 4 + 1 + 3 = 9 minimum turns to change the lock from 4089 to 5672.
 
             //Examples
-            //FirstIndex("68 65 6c 6c 6f 20 77 6f 72 6c 64", "world") ➞ 6
+            //MinTurns("4089", "5672") ➞ 9
 
-            //FirstIndex("47 6f 6f 64 62 79 65 20 77 6f 72 6c 64", "world") ➞ 8
+            //MinTurns("1111", "1100") ➞ 2
 
-            //FirstIndex("42 6f 72 65 64 20 77 6f 72 6c 64", "Bored") ➞ 0
+            //MinTurns("2391", "4984") ➞ 10
             //Notes
-            //N / A
+            //Both locks are in string format.
+            //A 9 rolls forward to 0, and a 0 rolls backwards to a 9.
 
-            static int FirstIndex(string hexString, string needle)
+            static int MinTurns(string current, string target)
             {
-                string check = string.Empty;
-                string[] hex = hexString.Split(' ');
-                foreach (string w in hex)
-                {
+                int total = 0;
 
+                for (int index = 0; index < 4; index += 1)
+                {
+                    int largest = Math.Max(current[index], target[index]);
+                    int smallest = Math.Min(current[index], target[index]);
+
+                    total += Math.Min(
+                            Math.Abs(largest - smallest),
+                            Math.Abs(largest - (smallest + 10)));
                 }
+
+                return total;
+
+            }
+
+
+
+            //Encode Morse 113
+
+            //Create a function that takes a string as an argument and returns the Morse code equivalent.
+
+            //Examples
+            //EncodeMorse("EDABBIT CHALLENGE") ➞ ". -.. .- -... -... .. -   -.-. .... .- .-.. .-.. . -. --. ."
+
+            //EncodeMorse("HELP ME !") ➞ ".... . .-.. .--.   -- .   -.-.--"
+            //Notes
+            //Ouput should be International Morse Code, and use the standard conventions for symbols not defined inside the ITU recommendation(see Resources).
+            //Input value can be lower or upper case.
+            //Input string can have digits.
+            //Input string can have some special characters(e.g.comma, colon, apostrophe, period, question mark, exclamation mark).
+            //One space " " is expected after each character.
+
+            static string EncodeMorse(string str)
+            {
+                var morse = new Dictionary<char, string>()
+                {
+                  {'a', ".-"},
+                  {'b', "-..."},
+                  {'c', "-.-."},
+                  {'d', "-.."},
+                  {'e', "."},
+                  {'f', "..-."},
+                  {'g', "--."},
+                  {'h', "...."},
+                  {'i', ".."},
+                  {'j', ".---"},
+                  {'k', "-.-"},
+                  {'l', ".-.."},
+                  {'m', "--"},
+                  {'n', "-."},
+                  {'o', "---"},
+                  {'p', ".--."},
+                  {'q', "--.-"},
+                  {'r', ".-."},
+                  {'s', "..."},
+                  {'t', "-"},
+                  {'u', "..-"},
+                  {'v', "...-"},
+                  {'w', ".--"},
+                  {'x', "-..-"},
+                  {'y', "-.--"},
+                  {'z', "--.."},
+                  {'0', "-----"},
+                  {'1', ".----"},
+                  {'2', "..---"},
+                  {'3', "...--"},
+                  {'4', "....-"},
+                  {'5', "....."},
+                  {'6', "-...."},
+                  {'7', "--..."},
+                  {'8', "---.."},
+                  {'9', "----."},
+                  {' ', " "},
+                  {':', "---..."},
+                  {'!', "-.-.--"},
+                  {'?', "..--.."},
+                  {',', "--..--"},
+                  {'.', ".-.-.-"},
+                  {'\'', ".----."}
+                };
+
+                var parts = new List<string>();
+
+                foreach (char c in str.ToLower())
+                {
+                    parts.Add(morse[c]);
+                }
+
+                return string.Join(" ", parts);
+            }
+
+
+
+            //Knights on a Board 114
+
+            //Write a function that returns true if the knights are placed on a chessboard such that no knight can capture another knight. Here, 0s represent empty squares and 1s represent knights.
+
+            //Examples
+            //CannotCapture(new int[,] {
+            //  { 0, 0, 0, 1, 0, 0, 0, 0 },
+            //  { 0, 0, 0, 0, 0, 0, 0, 0 },
+            //  { 0, 1, 0, 0, 0, 1, 0, 0 },
+            //  { 0, 0, 0, 0, 1, 0, 1, 0 },
+            //  { 0, 1, 0, 0, 0, 1, 0, 0 },
+            //  { 0, 0, 0, 0, 0, 0, 0, 0 },
+            //  { 0, 1, 0, 0, 0, 0, 0, 1 },
+            //  { 0, 0, 0, 0, 1, 0, 0, 0 }
+            //}) ➞ True
+
+            //CannotCapture(new int[,] {
+            //  {1, 0, 1, 0, 1, 0, 1, 0},
+            //  {0, 1, 0, 1, 0, 1, 0, 1},
+            //  {1, 0, 1, 0, 1, 0, 1, 0},
+            //  {0, 0, 0, 1, 0, 1, 0, 1},
+            //  {1, 0, 0, 0, 1, 0, 1, 0},
+            //  {0, 0, 0, 0, 0, 1, 0, 1},
+            //  {1, 0, 1, 0, 1, 0, 1, 0},
+            //  {1, 0, 0, 1, 0, 0, 0, 1}
+            //}) ➞ False
+            //Notes
+            //Knights can be present in any of the 64 squares.
+            //No other pieces except knights exist.
+
+            static bool CannotCapture(int[,] board)
+            {
+                for (int column = 0; column < 8; ++column)
+                {
+                    for (int row = 0; row < 8; ++row)
+                    {
+                        if (board[column, row] == 1)
+                        {
+                            if (LandedOnOne(column, row, board))
+                                return false;
+                        }
+                    }
+                }
+
+                return true;
+
+            }
+
+
+            static bool LandedOnOne(int column, int row, int[,] board)
+            {
+                if ((column - 1 >= 0 && row - 2 >= 0) && board[column - 1, row - 2] == 1)
+                    return true;
+                if ((column - 2 >= 0 && row - 1 >= 0) && board[column - 2, row - 1] == 1)
+                    return true;
+                if ((column - 2 >= 0 && row + 1 <= 7) && board[column - 2, row + 1] == 1)
+                    return true;
+                if ((column - 1 >= 0 && row + 2 <= 7) && board[column - 1, row + 2] == 1)
+                    return true;
+                if ((column + 1 <= 7 && row + 2 <= 7) && board[column + 1, row + 2] == 1)
+                    return true;
+                if ((column + 2 <= 7 && row + 1 <= 7) && board[column + 2, row + 1] == 1)
+                    return true;
+                if ((column + 2 <= 7 && row - 1 >= 0) && board[column + 2, row - 1] == 1)
+                    return true;
+                if ((column + 1 <= 7 && row - 2 >= 0) && board[column + 1, row - 2] == 1)
+                    return true;
+
+                return false;
             }
         }
     }
 }
+
