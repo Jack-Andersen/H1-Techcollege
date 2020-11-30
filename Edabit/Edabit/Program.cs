@@ -3587,6 +3587,125 @@ namespace Edabit
 
                 return false;
             }
+
+
+
+            //IPv4 Validation 115
+
+            //Create a function that takes a string(IPv4 address in standard dot - decimal format) and returns true if the IP is valid or false if it's not. For information on IPv4 formatting, please refer to the resources in the Resources tab.
+
+            //Examples
+            //IsValidIP("1.2.3.4") ➞ true
+
+            //IsValidIP("1.2.3") ➞ false
+
+            //IsValidIP("1.2.3.4.5") ➞ false
+
+            //IsValidIP("123.45.67.89") ➞ true
+
+            //IsValidIP("123.456.78.90") ➞ false
+
+            //IsValidIP("123.045.067.089") ➞ false
+            //Notes
+            //IPv6 addresses are not valid.
+            //Leading zeros are not valid("123.045.067.089" should return false).
+            //You can expect a single string for every test case.
+            //Numbers may only be between 1 and 255.
+            //The last digit may not be zero, but any other might.
+
+            static bool IsValidIP(string IP)
+            {
+                string[] nums = IP.Split('.');
+
+                if (nums.Length != 4)
+                    return false;
+
+
+                string digits = "0123456789";
+
+                for (int i = 0; i < nums.Length; i++)
+                {
+                    for (int j = 0; j < nums[i].Length; j++)
+                    {
+
+                        //first digit
+                        if (i != 0 && j == 0 && nums[i][j] == '0')
+                            return false;
+
+                        //last digit
+                        if (i == 3 && j == nums[i].Length - 1 && nums[i][j] == '0')
+                            return false;
+
+
+                        if (!digits.Contains(nums[i][j].ToString()))
+                            return false;
+
+                    }
+                }
+
+                return true;
+
+            }
+
+
+
+            //Among Us Imposter Formula 116
+
+            //Matt wants you to create a function that calculates the chance of being an imposter.The formula for the chances of being an imposter is 100 × (i / p) where i is the imposter count and p is the player count.Make sure to round the value to the nearest integer and return the value as a percentage.
+
+            //Examples
+            //ImposterFormula(1, 10) ➞ "10%"
+
+            //ImposterFormula(2, 5) ➞ "40%"
+
+            //ImposterFormula(1, 8) ➞ "13%"
+            //Notes
+            //The player limit is 10 and the imposter count can only go up to 3.
+
+            static string ImposterFormula(int i, int p)
+            {
+                return Math.Round(((double)i / p) * 100).ToString() + "%";
+            }
+
+
+
+            //Find an Anagram of a String in Another String 117
+
+            //Create a function that takes two strings and determines if an anagram of the first string is in the second string.Anagrams of "bag" are "bag", "bga", "abg", "agb", "gab", "gba".Since none of those anagrams are in "grab", the answer is false.A "g", "a", and "b" are in the string "grab", but they're split up by the "r".
+
+            //Examples
+            //AnagramStrStr("car", "race") ➞ true
+
+            //AnagramStrStr("nod", "done") ➞ true
+
+            //AnagramStrStr("bag", "grab") ➞ false
+            //Notes
+            //Inputs will be valid strings in all lowercase letters.
+            //There exists a linear time algorithm for this.
+
+            static bool AnagramStrStr(string needle, string haystack)
+            {
+                int c;
+                for (int h = 0; h < haystack.Length - needle.Length; h++)
+                {
+                    c = 0;
+                    for (int n = 0; n < needle.Length; n++)
+                    {
+                        if (!needle.Contains(haystack[h + n]))
+                            break;
+
+                        c++;
+                    }
+
+                    if (c == needle.Length)
+                        return true;
+
+                }
+
+                return false;
+
+            }
+
         }
     }
 }
