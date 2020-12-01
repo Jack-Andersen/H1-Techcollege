@@ -3859,6 +3859,112 @@ namespace Edabit
                 return str;
             }
 
+
+
+            //Simplified Fractions 120
+
+            //Create a function that returns the simplified version of a fraction.
+
+            //Examples
+            //Simplify("4/6") ➞ "2/3"
+
+            //Simplify("10/11") ➞ "10/11"
+
+            //Simplify("100/400") ➞ "1/4"
+
+            //Simplify("8/4") ➞ "2"
+            //Notes
+            //A fraction is simplified if there are no common factors(except 1) between the numerator and the denominator. For example, 4 / 6 is not simplified, since 4 and 6 both share 2 as a factor.
+            //If improper fractions can be transformed into integers, do so in your code(see example #4).
+
+            static string Simplify(string str)
+            {
+                string[] splited = str.Split('/');
+                string result = "";
+                int first = int.Parse(splited[0]);
+                int second = int.Parse(splited[1]);
+                int divideby = first <= second ? first : second;
+
+                if (first % second == 0)
+                {
+                    result = (first / second).ToString();
+                }
+                else
+                {
+                    for (int i = 2; i <= divideby; i++)
+                    {
+                        if (first % i == 0 && second % i == 0)
+                        {
+                            first = first / i;
+                            second = second / i;
+                        }
+                    }
+                    result = (first + "/" + second).ToString();
+                }
+
+                return result;
+
+            }
+
+
+
+            //Amazing Edabit! 121
+
+            //Create a function that takes a string and changes the word amazing to not amazing.Return the string without any change if the word edabit is part of the string.
+
+            //Examples
+            //AmazingEdabit("edabit is amazing.") ➞ "edabit is amazing."
+
+            //AmazingEdabit("Mubashir is amazing.") ➞ "Mubashir is not amazing."
+
+            //AmazingEdabit("Infinity is amazing.") ➞ "Infinity is not amazing."
+            //Notes
+            //Edabit is amazing :)
+
+            static string AmazingEdabit(string str)
+            {
+                if (!str.Contains("edabit"))
+                {
+                    return str.Replace("amazing", "not amazing");
+                }
+
+                return str;
+
+            }
+
+
+
+            //Amount of Unique Fractions 122
+
+            //Create a function double UniqueFract(), which should sum all irreducible regular fractions between 0 and 1, in the numerator and denominator of which there are only single-digit numbers: 1 / 2, 1 / 3, 1 / 4, ... 2 / 3, 2 / 4, ... 8 / 9.
+
+            //Task
+            //UniqueFract() ➞ sum
+            //Notes
+            //Of the fractions 1 / 2 2 / 4 3 / 6 4 / 8, only 1 / 2 is included in the sum.
+            //Don't include any values >= 1.
+            //Both the numerator and denominator are single digit.
+
+            static double UniqueFract()
+            {
+                var parts = new List<double>();
+
+                for (var i = 2; i <= 9; i++)
+                {
+                    for (var j = 1; j < i; j++)
+                    {
+                        if (!parts.Contains((double)j / i))
+                            parts.Add((double)j / i);
+                    }
+                }
+
+                return parts.Sum();
+
+            }
+            
+
+
+
         }
     }
 }
