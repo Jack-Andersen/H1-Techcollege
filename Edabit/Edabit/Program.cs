@@ -17,10 +17,14 @@ namespace Edabit
 {
     class Program
     {
-        private static IEnumerable<bool> testArray;
 
         static void Main(string[] args)
         {
+
+
+
+
+
             // Return Something to Me! 1
 
             // Write a function that returns the string "something" joined with a space " " and the given argument a.
@@ -3704,6 +3708,155 @@ namespace Edabit
 
                 return false;
 
+            }
+
+
+
+            //Contact List 117
+
+            //Write a sorting function that takes in an array of names and sorts them by last name either alphabetically(ASC) or reverse-alphabetically(DESC).
+
+            //Examples
+            //SortContacts(new string[] {
+            //  "John Locke",
+            //  "Thomas Aquinas",
+            //  "David Hume",
+            //  "Rene Descartes"
+            //}, "ASC") ➞ {
+            //                "Thomas Aquinas",
+            //  "Rene Descartes",
+            //  "David Hume",
+            //  "John Locke"
+            //}
+
+            //// Aquinas (A) < Descartes (D) < Hume (H) < Locke (L)
+
+            //  SortContacts(new string[] {
+            //  "Paul Erdos",
+            //  "Leonhard Euler",
+            //  "Carl Gauss"
+            //}, "DESC") ➞ {
+            //                "Carl Gauss",
+            //  "Leonhard Euler",
+            //  "Paul Erdos"
+            //}
+
+            //// Gauss (G) > Erdos (ER) > Euler (EU)
+
+            //SortContacts([], "DESC") ➞ { }
+
+            //SortContacts(null, "DESC") ➞ { }
+            //Notes
+            //An array with a single name should be trivially returned.
+            //An empty array, or an input of null should return an empty array.
+
+            static string[] SortContacts(string[] names, string sort)
+            {
+                if (names == null)
+                {
+                    return new string[0];
+                }
+
+                if (sort == "ASC")
+                {
+                    return names.OrderBy(c => c.Split().Last()).ToArray();
+                }
+
+                else if (sort == "DESC")
+                {
+                    return names.OrderByDescending(c => c.Split().Last()).ToArray();
+                }
+
+                return names;
+
+            }
+
+
+
+            //Complete the Word 118
+
+            //An input string can be completed if additional letters can be added and no letters need to be taken away to match the word. Furthermore, the order of the letters in the input string must be the same as the order of letters in the final word.
+
+            //Create a function that, given an input string, determines if the word can be completed.
+
+            //Examples
+            //CanComplete("butl", "beautiful") ➞ true
+            //// We can add "ea" between "b" and "u", and "ifu" between "t" and "l".
+
+            //CanComplete("butlz", "beautiful") ➞ false
+            //// "z" does not exist in the word beautiful.
+
+            //CanComplete("tulb", "beautiful") ➞ false
+            //// Although "t", "u", "l" and "b" all exist in "beautiful", they are incorrectly ordered.
+
+            //CanComplete("bbutl", "beautiful") ➞ false
+            //// Too many "b"s, beautiful has only 1.
+            //Notes
+            //Both string input and word will be lowercased.
+
+            static bool CanComplete(string initial, string word)
+            {
+                bool canComplete = true;
+
+                int counter = 0;
+
+                for (int i = 0; i < word.Length; i++)
+                {
+                    if (word[i].Equals(initial[counter])) counter++;
+                }
+
+                if (counter != initial.Length) canComplete = false;
+
+                return canComplete;
+            }
+
+
+
+            //Find Number of Repetitions of Substring 119
+
+            //Create a function that takes a string as an argument and returns the number of repitions of a substring. This the opposite of creating a string by repeating a smaller string n times.For example "abc" repeated4 times would be "abcabcabcabc"
+
+            //In this challenge, we do the opposite. Given the final string, and ask the number of times the substring is repeated.
+
+            //Examples
+            //NumberOfRepeats("abcabcabcabc") ➞ 4
+
+            //NumberOfRepeats("bcbcbc") ➞ 3
+
+            //NumberOfRepeats("llbllbllbllbllbllb") ➞ 6
+
+            //NumberOfRepeats("kc") ➞ 1
+            //Notes
+            //Assume that the substring length is always greater than 1.
+            //Assume that the string length is always greater than 1.
+            //Assume that the substring is not always the same.
+
+            static int NumberOfRepeats(string str)
+            {
+                string substring = FindSubstring(str);
+                return str.Length / substring.Length;
+            }
+
+            static string FindSubstring(string str)
+            {
+                for (int i = 2; i <= str.Length / 2; i++)
+                {
+                    if (str.Length % i != 0)
+                    {
+                        continue;
+                    }
+
+                    string first = str.Substring(0, i);
+                    string second = str.Substring(i, i);
+                    string last = str.Substring(str.Length - i);
+
+                    if (first == second && second == last)
+                    {
+                        return first;
+                    }
+                }
+
+                return str;
             }
 
         }

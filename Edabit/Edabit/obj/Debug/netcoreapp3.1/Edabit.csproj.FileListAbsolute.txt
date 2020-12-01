@@ -10,3 +10,4 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\bin\Debug\netcoreapp
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.pdb
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.genruntimeconfig.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Edabit\Edabit\obj\Debug\netcoreapp3.1\Edabit.csproj.CoreCompileInputs.cache
