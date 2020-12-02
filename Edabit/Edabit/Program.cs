@@ -3961,9 +3961,139 @@ namespace Edabit
                 return parts.Sum();
 
             }
-            
 
 
+
+            //Password Validation 123
+
+            //Create a function that validates a password to conform to the following rules:
+
+            //            Length between 6 and 24 characters.
+            //At least one uppercase letter(A - Z).
+            //At least one lowercase letter(a - z).
+            //At least one digit(0 - 9).
+            //Maximum of 2 repeated characters.
+            //"aa" is OK
+            //"aaa" is NOT OK
+            //Supported special characters:
+            //            ! @ # $ % ^ & * ( ) + = _ - { } [ ] : ; " ' ? < > , .
+            //Examples
+            //ValidatePassword("P1zz@") ➞ false
+            //// Too short.
+
+            //ValidatePassword("iLoveYou") ➞ false
+            //// Missing a number.
+
+            //ValidatePassword("Fhg93@") ➞ true
+            //// OK!
+            //Notes
+            //N / A
+
+            static bool ValidatePassword(string password)
+            {
+                var paswordRegex = new Regex(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{6,24}$");
+
+                if (!paswordRegex.IsMatch(password))
+                {
+                    return false;
+                }
+
+                if (password.IndexOf("è") > 0)
+                {
+                    return false;
+                }
+
+                int repeatingNumber = 0;
+                for (int i = 0; i < password.Length - 1; i++)
+                {
+                    if (password[i] == password[i + 1])
+                    {
+                        repeatingNumber++;
+                    }
+                    else
+                    {
+                        repeatingNumber = 0;
+                    }
+
+                    if (repeatingNumber > 1)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
+
+
+            //Meme Sum :) 124
+
+            //For this challenge, forget how to add two numbers together.The best explanation on what to do for this function is this meme:
+
+            //            Examples
+            //MemeSum(26, 39) ➞ 515
+            //// 2+3 = 5, 6+9 = 15
+            //// 26 + 39 = 515
+
+            //MemeSum(122, 81) ➞ 1103
+            //// 1+0 = 1, 2+8 = 10, 2+1 = 3
+            //// 122 + 81 = 1103
+
+            //MemeSum(1222, 30277) ➞ 31499
+            //Notes
+            //N / A
+
+            static int MemeSum(int a, int b)
+            {
+                if (b >= a)
+                {
+                    int Tal = a;
+                    a = b;
+                    b = Tal;
+                }
+
+                string stra = a.ToString();
+                string strb = b.ToString();
+
+                for (int i = strb.Length; i < stra.Length; i++)
+                {
+                    strb = "0" + strb;
+                }
+
+                string result = "";
+
+                for (int i = 0; i <= a.ToString().Length - 1; i++)
+                {
+                    result += (int.Parse(stra[i].ToString()) + int.Parse(strb[i].ToString())).ToString();
+                }
+
+                return int.Parse(result);
+            }
+
+
+
+            //String Incrementer 125
+
+            //Write a function which increments a string to create a new string.
+
+            //If the string ends with a number, the number should be incremented by 1.
+            //If the string doesn't end with a number, 1 should be added to the new string.
+            //If the number has leading zeros, the amount of digits should be considered.
+            //Examples
+            //IncrementString("foo") ➞ "foo1"
+
+            //IncrementString("foobar0009") ➞ "foobar0010"
+
+            //IncrementString("foo099") ➞ "foo100"
+
+            //IncrementString("foo9") ➞ "foo10"
+            //Notes
+            //N / A
+
+            static string IncrementString(string txt)
+            {
+                
+            }
 
         }
     }
