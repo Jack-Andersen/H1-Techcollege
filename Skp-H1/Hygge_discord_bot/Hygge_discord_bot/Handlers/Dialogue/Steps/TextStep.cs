@@ -34,9 +34,9 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
 
         public override IDialogueStep NextStep => _nextStep;
 
-        public void SetNextStep(IDialogueStep nextstep)
+        public void SetNextStep(IDialogueStep nextStep)
         {
-            _nextStep = nextstep;
+            _nextStep = nextStep;
         }
 
         public override async Task<bool> ProcessStep(DiscordClient client, DiscordChannel channel, DiscordUser user)
@@ -48,16 +48,16 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
                 Description = $"{user.Mention}, {_content}",
             };
 
-            embedBuilder.AddField("To stop the Dialogue", "Use the ?cancel command");
+            embedBuilder.AddField("To stop the Dialogue", "Use the hcancel command");
 
             if (_minLength.HasValue)
             {
                 embedBuilder.AddField("Min Length ", $"{_minLength.Value} charaters");
 
             }
-            if (_minLength.HasValue)
+            if (_maxLength.HasValue)
             {
-                embedBuilder.AddField("max Length ", $"{_minLength.Value} charaters");
+                embedBuilder.AddField("Max Length ", $"{_maxLength.Value} charaters");
 
             }
 
@@ -74,12 +74,12 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
 
                 OnMessageAdded(messageResult.Result);
 
-                if (messageResult.Result.Content.Equals("?cancel", StringComparison.OrdinalIgnoreCase))
+                if (messageResult.Result.Content.Equals("hcancel", StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
 
-                if(_minLength.HasValue)
+                if (_minLength.HasValue)
                 {
                     if (messageResult.Result.Content.Length < _minLength.Value)
                     {
@@ -88,7 +88,7 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
                     }
                 }
 
-                if (_minLength.HasValue)
+                if (_maxLength.HasValue)
                 {
                     if (messageResult.Result.Content.Length > _maxLength.Value)
                     {

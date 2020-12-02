@@ -14,7 +14,7 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
 {
     public class IntStep : DialogueStepBase
     {
-        private readonly IDialogueStep _nextStep;
+        private IDialogueStep _nextStep;
         private readonly int? _minValue;
         private readonly int? _maxValue;
 
@@ -33,6 +33,11 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
 
         public override IDialogueStep NextStep => _nextStep;
 
+        public void SetNextStep(IDialogueStep nextStep)
+        {
+            _nextStep = nextStep;
+        }
+
         public override async Task<bool> ProcessStep(DiscordClient client, DiscordChannel channel, DiscordUser user)
         {
 
@@ -42,16 +47,16 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
                 Description = $"{user.Mention}, {_content}",
             };
 
-            embedBuilder.AddField("To stop the Dialogue", "Use the ?cancel command");
+            embedBuilder.AddField("To stop the Dialogue", "Use the hcancel command");
 
             if (_minValue.HasValue)
             {
                 embedBuilder.AddField("Min Value ", $"{_minValue.Value}");
 
             }
-            if (_minValue.HasValue)
+            if (_maxValue.HasValue)
             {
-                embedBuilder.AddField("max Value ", $"{_minValue.Value}");
+                embedBuilder.AddField("Max Value ", $"{_maxValue.Value}");
 
             }
 
@@ -68,7 +73,7 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
 
                 OnMessageAdded(messageResult.Result);
 
-                if (messageResult.Result.Content.Equals("?cancel", StringComparison.OrdinalIgnoreCase))
+                if (messageResult.Result.Content.Equals("hcancel", StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
@@ -88,11 +93,11 @@ namespace Hygge_discord_bot.Handlers.Dialogue.Steps
                     }
                 }
 
-                if (_minValue.HasValue)
+                if (_maxValue.HasValue)
                 {
-                    if (messageResult.Result.Content.Length > _maxValue.Value)
+                    if (inputValue > _maxValue.Value)
                     {
-                        await TryAgain(channel, $"your input value {inputValue} is larger than {_maxValue} ").ConfigureAwait(false);
+                        await TryAgain(channel, $"your input value {inputValue} is larger than {_maxValue}").ConfigureAwait(false);
                         continue;
                     }
                 }

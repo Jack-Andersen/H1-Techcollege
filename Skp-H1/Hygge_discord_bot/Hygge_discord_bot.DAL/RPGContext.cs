@@ -1,4 +1,5 @@
-﻿using Hygge_discord_bot.DAL.Models.Items;
+﻿using Hygge_discord_bot.DAL.Models.Bot;
+using Hygge_discord_bot.DAL.Models.Items;
 using Hygge_discord_bot.DAL.Models.Profiles;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,5 +14,7 @@ namespace Hygge_discord_bot.DAL
         public DbSet<Item> Items { get; set; }
 
         public DbSet<ProfileItem> ProfileItems { get; set; }
+
+        public DbSet<Countmessage> CountMessages { get; set; }
     }
 }

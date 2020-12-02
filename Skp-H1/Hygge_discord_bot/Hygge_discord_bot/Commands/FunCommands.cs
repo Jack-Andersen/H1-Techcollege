@@ -47,7 +47,7 @@ namespace Hygge_discord_bot.Commands
         [Command("dialogue")]
         public async Task Dialogue(CommandContext ctx)
         {
-            var inputStep = new TextStep("Enter Something interesting!", null);
+            var inputStep = new TextStep("Enter Something interesting!", null , null, 10);
             var funnyStep = new IntStep("Haha, funny", null, maxValue: 100);
 
             string input = string.Empty;
