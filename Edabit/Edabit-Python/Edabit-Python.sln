@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Edabit-Python", "Edabit-Python\Edabit-Python.pyproj", "{5949DAED-B65A-41D0-9A1D-FF36EB0AD5BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5949DAED-B65A-41D0-9A1D-FF36EB0AD5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5949DAED-B65A-41D0-9A1D-FF36EB0AD5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5F09384-4189-4666-9DF2-CE797C7FE989}
+	EndGlobalSection
+EndGlobal
