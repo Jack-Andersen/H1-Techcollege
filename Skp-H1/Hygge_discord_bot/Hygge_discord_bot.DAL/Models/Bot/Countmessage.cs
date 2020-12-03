@@ -9,9 +9,12 @@ namespace Hygge_discord_bot.DAL.Models.Bot
 
         public ulong DiscordID { get; set; }
 
+        public ulong GuildID { get; set; }
+
         public string word { get; set; }
 
         public int cNumber { get; set; }
+
 
     }
 }

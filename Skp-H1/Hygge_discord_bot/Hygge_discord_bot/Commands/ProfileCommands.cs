@@ -68,7 +68,7 @@ namespace Hygge_discord_bot.Commands
             };
 
             await ctx.Channel.SendMessageAsync(embed: levelUpEmbed).ConfigureAwait(false);
-
+            
         }
     }
 }
