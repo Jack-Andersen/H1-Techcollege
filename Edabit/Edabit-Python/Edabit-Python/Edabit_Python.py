@@ -836,3 +836,662 @@ def list_less_than_100(lst):
 #N/A
 
 def difference(nums):
+	 return max(nums) - min(nums)
+
+
+
+#Indexing with Integer Division 42
+
+#Given an index using INTEGER division and a list, return the value of the list with the given index.
+
+#Examples
+#value_at([1, 2, 3, 4, 5, 6], 10 // 2) ➞ 6
+
+#value_at([1, 2, 3, 4, 5, 6], 8.0 // 2) ➞ 5
+
+#value_at([1, 2, 3, 4], 6.535355314 // 2) ➞ 4
+#Notes
+#N/A
+
+def value_at(lst, index):
+	return lst[int(index)]
+
+
+
+#Testing K^K == N? 43
+
+#Write a function that returns True if k^k == n for input (n, k) and return False otherwise.
+
+#Examples
+#k_to_k(4, 2) ➞ True
+
+#k_to_k(387420489, 9) ➞ True
+## 9^9 == 387420489
+
+#k_to_k(3124, 5) ➞ False
+
+#k_to_k(17, 3) ➞ False
+#Notes
+#The ^ operator refers to exponentiation operation **, not the bitwise XOR operation.
+
+def k_to_k(n, k):
+	if (k ** k == n):
+		return True
+	else:
+		return False
+
+
+
+#Difference of Max and Min Numbers in List 44
+
+#Create a function that takes a list and returns the difference between the biggest and smallest numbers.
+
+#Examples
+#difference_max_min([10, 4, 1, 4, -10, -50, 32, 21]) ➞ 82
+## Smallest number is -50, biggest is 32.
+
+#difference_max_min([44, 32, 86, 19]) ➞ 67
+## Smallest number is 19, biggest is 86.
+#Notes
+#N/A
+
+def difference_max_min(lst):
+	return max(lst) - min(lst)
+
+
+
+#s the String Odd or Even? 45
+
+#Given a string, return True if its length is even or False if the length is odd.
+
+#Examples
+#odd_or_even("apples") ➞ True
+
+#odd_or_even("pears") ➞ False
+
+#odd_or_even("cherry") ➞ True
+#Notes
+#N/A
+
+def odd_or_even(word):
+	return len(word) % 2 == 0
+
+
+
+#Compare Strings by Count of Characters 46
+
+#Create a function that takes two strings as arguments and return either True or False depending on whether the total number of characters in the first string is equal to the total number of characters in the second string.
+
+#Examples
+#comp("AB", "CD") ➞ True
+
+#comp("ABC", "DE") ➞ False
+
+#comp("hello", "edabit") ➞ False
+#Notes
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def comp(txt1, txt2):
+	return len(txt1) == len(txt2)
+
+
+
+#Return the Last Element in a List 47
+
+#Create a function that accepts a list and returns the last item in the list. The list can be either homogeneous or heterogeneous.
+
+#Examples
+#get_last_item([1, 2, 3]) ➞ 3
+
+#get_last_item(["cat", "dog", "duck"]) ➞ "duck"
+
+#get_last_item([True, False, True]) ➞ True
+
+#get_last_item([7, "String", False]) ➞ False
+#Notes
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def get_last_item(lst):
+	return lst[-1]
+
+
+
+#Divides Evenly 48
+
+#Given two integers, a and b, return True if a can be divided evenly by b. Return False otherwise.
+
+#Examples
+#divides_evenly(98, 7) ➞ True
+## 98/7 = 14
+
+#divides_evenly(85, 4) ➞ False
+## 85/4 = 21.25
+#Notes
+#a will always be greater than or equal to b.
+
+def divides_evenly(a, b):
+	return a % b == 0
+
+
+
+#On/Off Switches 49
+
+#Create a function that returns how many possible outcomes can come from a certain number of switches (on / off). In other words, for a given number of switches, how many different combinations of on and off can we have?
+
+#Examples
+#pos_com(1) ➞ 2
+
+#pos_com(3) ➞ 8
+
+#pos_com(10) ➞ 1024
+#Notes
+#All numbers will be whole and positive.
+
+def pos_com(num):
+	return 2 ** num
+
+
+
+#Miserable Parody of a Calculator 50
+
+#Create a function that will handle simple math expressions. The input is an expression in the form of a string.
+
+#Examples
+#calculator("23+4") ➞ 27
+
+#calculator("45-15") ➞ 30
+
+#calculator("13+2-5*2") ➞ 5
+
+#calculator("49/7*2-3") ➞ 11
+#Notes
+#There will be no brackets in the input line.
+#No need to calculate mathematical functions (sin, cos, ln...).
+#There are no gaps in the expression.
+
+def calculator(txt):
+	return eval(txt)
+
+
+
+#Concatenating First and Last Character of a String 51
+
+#Creates a function that takes a string and returns the concatenated first and last character.
+
+#Examples
+#first_last("ganesh") ➞ "gh"
+
+#first_last("kali") ➞ "ki"
+
+#first_last("shiva") ➞ "sa"
+
+#first_last("vishnu") ➞ "vu"
+
+#first_last("durga") ➞ "da"
+#Notes
+#There is no empty string.
+
+def first_last(name):
+	return name[0] + name[-1]
+
+
+
+#Is the Number Even or Odd? 52
+
+#Create a function that takes a number as an argument and returns "even" for even numbers and "odd" for odd numbers.
+
+#Examples
+#isEvenOrOdd(3) ➞ "odd"
+
+#isEvenOrOdd(146) ➞ "even"
+
+#isEvenOrOdd(19) ➞ "odd"
+#Notes
+#Dont forget to return the result.
+#Input will always be a valid integer.
+#Expect negative integers (whole numbers).
+#Tests are case sensitive (return "even" or "odd" in lowercase).
+
+def isEvenOrOdd(num):
+	return ["even", "odd"][num % 2]
+
+
+
+#Burrrrrrrp 53
+
+#Create a function that returns the string "Burp" with the amount of "r's" determined by the input parameters of the function.
+
+#Examples
+#long_burp(3) ➞ "Burrrp"
+
+#long_burp(5) ➞ "Burrrrrp"
+
+#long_burp(9) ➞ "Burrrrrrrrrp"
+#Notes
+#Expect num to always be >= 1.
+#Remember to use a capital "B".
+#Don't forget to return the result.
+
+def long_burp(num):
+	return "Bu" + "r" * num + "p"
+
+
+
+#Buggy Code (Part 2) 54
+
+#Fix the code in the code tab to pass this challenge (only syntax errors). Look at the examples below to get an idea of what the function should do.
+
+#Examples
+#max_num(3, 7) ➞ 7
+
+#max_num(-1, 0) ➞ 0
+
+#max_num(1000, 400) ➞ 1000
+#Notes
+#READ EVERY WORD CAREFULLY, CHARACTER BY CHARACTER!
+#Don't overthink this challenge; it's not supposed to be hard.
+
+def max_num(n1, n2):
+	if n1 < n2:
+		return n2
+	else:
+		return n1
+
+
+
+#Fix the Error: Check Whether a Given Number Is Odd 55
+
+#Éowyn has written the function is_odd() to check if a given number is odd or not. Unfortunately, the function does not return the correct result for all the inputs. Help her fix the error.
+
+#def is_odd(num):
+#  return num % 1 == 1 or 2
+#Examples
+#is_odd(-5) ➞ True
+
+#is_odd(25) ➞ True
+
+#is_odd(0) ➞ False
+#Notes
+#All the inputs will only be integers.
+
+def is_odd(num):
+	return num % 2 != 0
+
+
+
+#Is the Word Singular or Plural? 56
+
+#Create a function that takes in a word and determines whether or not it is plural. A plural word is one that ends in "s".
+
+#Examples
+#is_plural("changes") ➞ True
+
+#is_plural("change") ➞ False
+
+#is_plural("dudes") ➞ True
+
+#is_plural("magic") ➞ False
+#Notes
+#Don't forget to return the result.
+#Remember that return True (boolean) is not the same as return "True" (string).
+#This is an oversimplification of the English language. We are ignoring edge cases like "goose" and "geese", "fungus" and "fungi", etc.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def is_plural(word):
+	return word[-1] == "s"
+
+
+
+#Convert Number to String of Dashes 57
+
+#Create a function that takes a number (from 1 - 60) and returns a corresponding string of hyphens.
+
+#Examples
+#num_to_dashes(1) ➞ "-"
+
+#num_to_dashes(5) ➞ "-----"
+
+#num_to_dashes(3) ➞ "---"
+#Notes
+#You will be provided integers ranging from 1 to 60.
+#Don't forget to return your result as a string.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def num_to_dashes(num):
+	return "-" * num
+
+
+
+#Char-to-ASCII 58
+
+#Create a function that returns the ASCII value of the passed in character.
+
+#Examples
+#ctoa("A") ➞ 65
+
+#ctoa("m") ➞ 109
+
+#ctoa("[") ➞ 91
+
+#ctoa("\") ➞ 92
+#Notes
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def ctoa(char):
+	return ord(char)
+
+
+
+#Solve the Equation 59
+#Create a function that takes an equation (e.g. "1+1"), and returns the answer.
+
+#Examples
+#equation("1+1") ➞ 2
+
+#equation("7*4-2") ➞ 26
+
+#equation("1+1+1+1+1") ➞ 5
+#Notes
+#N/A
+
+def equation(s):
+	return eval(s)
+
+
+
+#Fix the Error: Value vs. Reference Types 60
+
+#Create a function that returns True if two lists contain identical values, and False otherwise.
+
+#To solve this question, your friend writes the following code:
+
+#def check_equals(lst1, lst2):
+#    if lst1 is lst2:
+#        return True
+#    else:
+#        return False
+#But testing the code, you see that something is not quite right. Running the code yields the following results:
+
+#check_equals([1, 2], [1, 3]) ➞ False
+## Good so far...
+
+#check_equals([1, 2], [1, 2]) ➞ False
+## Yikes! What happened?
+#Rewrite your friend's code so that it correctly checks if two lists are equal. The tests below should pass:
+
+#Examples
+#check_equals([1, 2], [1, 3]) ➞ False
+
+#check_equals([1, 2], [1, 2]) ➞ True
+
+#check_equals([4, 5, 6], [4, 5, 6]) ➞ True
+
+#check_equals([4, 7, 6], [4, 5, 6]) ➞ False
+#Notes
+#Hint: This has to do with value vs. reference types.
+
+def check_equals(lst1, lst2):
+	if lst1 == lst2:
+		return True
+	else:
+		return False
+
+
+
+#Check if a List Contains a Given Number 61
+
+#Write a function to check if a list contains a particular number.
+
+#Examples
+#check([1, 2, 3, 4, 5], 3) ➞ True
+
+#check([1, 1, 2, 1, 1], 3) ➞ False
+
+#check([5, 5, 5, 6], 5) ➞ True
+
+#check([], 5) ➞ False
+#Notes
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def check(lst, el): 
+	return el in lst
+
+
+
+#Inches to Feet 62
+
+#Create a function that accepts a measurement value in inches and returns the equivalent of the measurement value in feet.
+
+#Examples
+#inches_to_feet(324) ➞ 27
+
+#inches_to_feet(12) ➞ 1
+
+#inches_to_feet(36) ➞ 3
+#Notes
+#If inches are under 12, return 0.
+
+def inches_to_feet(inches):
+	if inches < 12:
+		return 0
+	return inches/12
+
+
+
+#Flip the Boolean 63
+
+#Due to a programming concept known as truthiness, certain values can be evaluated to (i.e. take the place of) booleans. For example, 1 (or any number other than 0) is often equivalent to True, and 0 is often equivalent to False.
+
+#Create a function that returns the opposite of the given boolean, as a number.
+
+#Examples
+#flip_bool(True) ➞ 0
+
+#flip_bool(False) ➞ 1
+
+#flip_bool(1) ➞ 0
+
+#flip_bool(0) ➞ 1
+#Notes
+#N/A
+
+def flip_bool(b):
+	if b == 1:
+		return 0
+	elif b == 0:
+		return 1
+
+
+
+#Minimal I: If Boolean Then Boolean 64
+
+#In this series we're going to see common redundancies and superfluities that make our code unnecessarily complicated and less readable, and we're going to learn how to avoid them.
+
+#In line with the spirit of the series, we can summarize the general rules of minimalist code in two simple principles:
+
+#Keep your code clean and readable.
+#While not violating the first principle: get rid of everything superfluous.
+#In order to achieve this you should:
+
+#Deepen your knowledge of logics.
+#Deepen your understanding of the particular language you're coding with.
+#I would also add: observe and learn from the pros. Make a habit of checking the Solutions tab after solving a challenge on Edabit. There is absolutely nothing wrong in assimilating features of someone else's coding style, especially if yours is not yet fully developed.
+
+#Goal
+#In the Code tab you will find a code that is missing a single character in order to pass the tests. However, YOUR GOAL is to submit a function as minimalist as possible. Use the tips in the Tips section down below.
+
+#Write a function that returns True if the given integer is even, and False if it's odd.
+
+#Tips
+#Using an if statement in order to return boolean or to set a variable to a boolean is redundant.
+
+#A function that returns True if a person's age is 18 or greater and False otherwise, could be written as:
+
+#def legal_age(age):
+#  if age >= 18:
+#    return True
+#  else:
+#      return False
+#Notice that age >= 18 will already give us a boolean (True or False). This means that the function can be written in a much simpler and cleaner way:
+
+#def legal_age(age):
+#  return age >= 18
+#Notes
+#This is an open series: there isn't a definite list of features for the challenges. Please, do not hesitate to leave your suggestions in the Comment tab.
+#Readability is indeed a subjective concept. Let's discuss it! Feel free to leave your opinion in the Comments tab.
+
+def is_even(n):
+	return n % 2 == 0
+
+
+
+#Tile Teamwork Tactics 65
+
+#In a board game, a piece may advance 1-6 tiles forward depending on the number rolled on a six-sided dice. If you advance your piece onto the same tile as another player's piece, both of you earn a bonus.
+
+#Given you and your friend's tile number, create a function that returns if it's possible to earn a bonus when you roll the dice.
+
+#Examples
+#possible_bonus(3, 7) ➞ True
+
+#possible_bonus(1, 9) ➞ False
+
+#possible_bonus(5, 3) ➞ False
+#Notes
+#You cannot move backward (which is why example #3 doesn't work).
+#If you are already on the same tile, return False, as you would be advancing away.
+#Expect only positive integer inputs.
+
+def possible_bonus(a, b):
+	return b-a in range(1, 7)
+
+
+
+#Find the Bug: Returning the Container 66
+
+#The packaging system is running wild! The candy is lying loose all over in the warehouse, the cereal is missing, and bread is stuffed in a bottle. What is going on here? The candy should be in plastic and the bread should be in a bag.
+
+#The packaging machine is running the get_container() function to retrieve the container of a product. But something is not right...
+
+#Examples
+#get_container("Bread") ➞ "bag"
+
+#get_container("Beer") ➞ "bottle"
+
+#get_container("Candy") ➞ "plastic"
+
+#get_container("Cheese") ➞ None
+#Notes
+#Think about what the object's packaging should be.
+
+def get_container(product):
+	matches = {
+	"Bread" : "bag",
+	"Milk" : "bottle",
+	"Beer" : "bottle",
+	"Eggs" : "carton",
+	"Cereal" : "box",
+	"Candy" : "plastic",
+	"Cheese" : None
+	}
+	return matches[product]
+
+
+
+#WordCharWord 67
+#Create a function that will put the first argument, a character, between every word in the second argument, a string.
+
+#Examples
+#add("R", "python is fun") ➞ "pythonRisRfun"
+
+#add("#", "hello world!") ➞ "hello#world!"
+
+#add("#", " ") ➞ "#"
+#Notes
+#Make sure there are no spaces between words when returning the function.
+
+def add(char, txt):
+	return txt.replace(' ', char)
+
+
+
+#s the Last Character an "N"? 68
+
+#Create a function that takes a string (a random name). If the last character of the name is an "n", return True, otherwise return False.
+
+#Examples
+#is_last_character_n("Aiden") ➞ True
+
+#is_last_character_n("Piet") ➞ False
+
+#is_last_character_n("Bert") ➞ False
+
+#is_last_character_n("Dean") ➞ True
+#Notes
+#The function must return a boolean value ( i.e. True or False).
+
+def is_last_character_n(word):
+	return word[-1] == "n"
+
+
+
+#Find the Smallest and Biggest Numbers 69
+
+#Create a function that accepts a list of numbers and return both the minimum and maximum numbers, in that order (as a list).
+
+#Examples
+#min_max([1, 2, 3, 4, 5]) ➞ [1, 5]
+
+#min_max([2334454, 5]) ➞ [5, 2334454]
+
+#min_max([1]) ➞ [1, 1]
+#Notes
+#All test lists will have at least one element and are valid.
+
+def min_max(nums):
+	return [min(nums), max(nums)]
+
+
+
+#Word without First Character 70
+
+#Create a function that takes a word and returns the new word without including the first character.
+
+#Examples
+#new_word("apple") ➞ "pple"
+
+#new_word("cherry") ➞ "herry"
+
+#new_word("plum") ➞ "lum"
+#Notes
+#The input is always a valid word.
+
+def new_word(word):
+	return word.replace(word[0], ' ')
+
+
+
+#Burglary Series (14): Adjectives Total 71
+
+#You call your spouse in anger and a "little" argument takes place. Count the total amount of adjectives used. Given an object with a list of adjectives, return the total amount of adjectives used.
+
+#Examples
+#total_amount_adjectives({ "a": "moron" }) ➞ 1
+
+#total_amount_adjectives({ "a": "idiot", "b": "idiot", "c": "idiot" }) ➞ 3
+
+#total_amount_adjectives({ "a": "moron", "b": "scumbag", "c": "moron", d: "dirtbag" }) ➞ 4
+#Notes
+#The list will never be empty (no empty object).
+
+def total-amount_adjectives(obj):
