@@ -1494,4 +1494,596 @@ def new_word(word):
 #Notes
 #The list will never be empty (no empty object).
 
-def total-amount_adjectives(obj):
+def total_amount_adjectives(obj):
+	count = 0
+	for element in obj.values():
+		count += 1
+	return count
+
+
+
+#Return Sole Element in a Set 72
+
+#Given a set containing one element, return the element.
+
+#Examples
+#element_from_set({"edabit"}) ➞ "edabit"
+
+#element_from_set({True}) ➞ True
+
+#element_from_set({11037}) ➞ 11037
+#Notes
+#Lists, dictionaries, and other sets won't be elements because sets won't accept any mutable data types as elements.
+
+def element_from_set(s):
+	return s.pop()
+
+
+
+#Half, Quarter and Eighth 73
+
+#Create a function that takes a number and return a list of three numbers: half of the number, quarter of the number and an eighth of the number.
+
+#Examples
+#half_quarter_eighth(6) ➞ [3, 1.5, 0.75]
+
+#half_quarter_eighth(22) ➞ [11, 5.5, 2.75]
+
+#half_quarter_eighth(25) ➞ [12.5, 6.25, 3.125]
+#Notes
+#The order of the list is: half, quarter, eighth.
+
+def half_quarter_eighth(n):
+	a = n / 2
+	b = a / 2
+	c = b / 2
+	return [a, b, c]
+
+
+
+#Stack the Boxes 74
+
+#Here's an image of four models. Some of the cubes are hidden behind other cubes. Model one consists of one cube. Model two consists of four cubes, and so on...
+
+#Stack the Boxes
+
+#Write a function that takes a number n and returns the number of stacked boxes in a model n levels high, visible and invisible.
+
+#Examples
+#stack_boxes(1) ➞ 1
+
+#stack_boxes(2) ➞ 4
+
+#stack_boxes(0) ➞ 0
+#Notes
+#Step n is a positive integer.
+
+def stack_boxes(n):
+	return n ** 2
+
+
+
+#Return the First and Last Elements in a List 75
+
+#Create a function that takes a list of elements and return the first and last elements as a new list.
+
+#Examples
+#first_last([5, 10, 15, 20, 25]) ➞ [5, 25]
+
+#first_last(["edabit", 13, None, False, True]) ➞ ["edabit", True]
+
+#first_last([None, 4, "6", "hello", None]) ➞ [None, None]
+#Notes
+#Test input will always contain a minimum of two elements within the list.
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def first_last(lst):
+	return [lst[0], lst[- 1]]
+
+
+
+#Triangle and Parallelogram Area Finder 76
+
+#Write a function that accepts base (decimal), height (decimal) and shape ("triangle", "parallelogram") as input and calculates the area of that shape.
+
+#Examples
+#area_shape(2, 3, "triangle") ➞ 3
+
+#area_shape(8, 6, "parallelogram") ➞ 48
+
+#area_shape(2.9, 1.3, "parallelogram") ➞ 3.77
+#Notes
+#Area of a triangle is 0.5 * b * h
+#Area of a parallelogram is b * h
+#Assume triangle and parallelogram are the only inputs for shape.
+
+def area_shape(base, height, shape):
+	if (shape == "triangle"):
+		return 0.5 * base * height
+	else:
+		return base * height
+
+
+
+#Recreating the abs() Function 77
+
+#The abs() function returns the absolute value of a number. This means it returns a number's positive value. You can think of it as the distance away from zero.
+
+#Create a function that recreates this functionality.
+
+#Examples
+#absolute(-5) ➞ 5
+
+#absolute(-3.14) ➞ 3.14
+
+#absolute(250) ➞ 250
+#Notes
+#Tests will only include valid numbers.
+#Note that positive numbers will stay positive!
+#Don't use the abs() function (it will defeat the purpose of the challenge).
+
+def absolute(n):
+	if n >= 0:
+		return n
+	else:
+		return n*(-1)
+
+
+
+#City School Creating IDS 78
+
+#Many IDS (for emails or Google ID) are created using the person's name.
+
+#Create a function that will return a four-character ID using the person's first name and last name. The first character will be the first letter of the first name but in lowercase. The next three characters will be the first three characters of the last name, but the first letter will be capitalized and the other two will be in lower case.
+
+#Examples
+#create_id("mary", "lamb") ➞ "mLam"
+
+#create_id("John", "SMITH") ➞ "jSmi"
+
+#create_id("mary", "smith") ➞ "mSmi"
+#Notes
+#There is always one character in the first name and at least three in the last name.
+
+def create_id(firstname, lastname):
+	return firstname[0].lower() + lastname[:3].capitalize()
+
+
+
+#Number of Stickers 79
+
+#Given a Rubik's Cube with a side length of n, return the number of individual stickers that are needed to cover the whole cube.
+
+#Pictures of Rubik's Cubes
+
+#The Rubik's cube of side length 1 has 6 stickers.
+#The Rubik's cube of side length 2 has 24 stickers.
+#The Rubik's cube of side length 3 has 54 stickers.
+#Examples
+#how_many_stickers(1) ➞ 6
+
+#how_many_stickers(2) ➞ 24
+
+#how_many_stickers(3) ➞ 54
+#Notes
+#Keep in mind there are six faces to keep track of.
+#Expect only positive whole numbers.
+
+def how_many_stickers(n):
+	return 6 * n ** 2
+
+
+
+#Edaaaaabit 80
+
+#Write a function that takes an integer and returns a string with the given number of "a"s in Edabit.
+
+#Examples
+#how_many_times(5) ➞ "Edaaaaabit"
+
+#how_many_times(0) ➞ "Edbit"
+
+#how_many_times(12) ➞ "Edaaaaaaaaaaaabit"
+#Notes
+#The string must start with "Ed" and end with "bit".
+#You'll only be given integers as test input.
+
+def how_many_times(num):
+	return "Ed" + num * "a" + "bit"
+
+
+
+#No Conditionals? 81
+
+#Write a function that returns 0 if the input is 1, and returns 1 if the input is 0.
+
+#Examples
+#flip(1) ➞ 0
+
+#flip(0) ➞ 1
+#Notes
+#Try completing this challenge without using any:
+
+#Conditionals
+#Ternary operators
+#Negations
+#Bit operators
+
+def flip(y):
+	return 1 - y
+
+
+
+#Smash Factor 82
+
+#Smash factor is a term in golf that relates to the amount of energy transferred from the club head to the golf ball. The formula for calculating smash factor is ball speed divided by club speed.
+
+#Create a function that takes ball speed bs and club speed cs as arguments and returns the smash factor to the nearest hundredth.
+
+#Examples
+#smash_factor(139.4, 93.8) ➞ 1.49
+
+#smash_factor(181.2, 124.5) ➞ 1.46
+
+#smash_factor(154.7, 104.3) ➞ 1.48
+#Notes
+#Remember to round to the nearest hundredth.
+#All values will be valid (so no dividing by zero).
+
+def smash_factor(bs, cs):
+	return round(bs / cs, 2))
+
+
+
+#Check String for Spaces 83
+
+#Create a function that returns True if a string contains any spaces.
+
+#Examples
+#has_spaces("hello") ➞ False
+
+#has_spaces("hello, world") ➞ True
+
+#has_spaces(" ") ➞ True
+
+#has_spaces("") ➞ False
+
+#has_spaces(",./!@#") ➞ False
+#Notes
+#An empty string does not contain any spaces.
+#Try doing this without RegEx.
+
+def has_spaces(txt):
+	if (' ' in txt):
+		return True
+	else:
+		return False
+
+
+
+#Drinks Allowed? 84
+
+#A bartender is writing a simple program to determine whether he should serve drinks to someone. He only serves drinks to people 18 and older and when he's not on break.
+
+#Given the person's age, and whether break time is in session, create a function which returns whether he should serve drinks.
+
+#Examples
+#should_serve_drinks(17, True) ➞ False
+
+#should_serve_drinks(19, False) ➞ True
+
+#should_serve_drinks(30, True) ➞ False
+#Notes
+#Return True or False.
+#Some countries have a slightly higher drinking age, but for the purposes of this challenge, it will be 18.
+
+def should_serve_drinks(age, on_break):
+	return age >= 18 and on_break == False
+
+
+
+#Evaluate an Equation 85
+
+#Create a function that evaluates an equation.
+
+#Examples
+#eq("1+2") ➞ 3
+
+#eq("6/(9-7)") ➞ 3
+
+#eq("3+2-4") ➞ 1
+#Notes
+#Don't print, return a value.
+#Return the value, not the equation.
+#The method used to solve this challenge should not be used in practice. However, it's important to be aware of how this functionality works and why it should not be used. Check the Resources for more information.
+
+def eq(evaluate):
+	return eval(evaluate)
+
+
+
+#AND, OR and NOT 86
+
+#You will need to write three unfinished logic gates. Continue to write the three logic gates: AND, OR, and NOT.
+
+#Examples
+#AND(1, 1) ➞ 1
+#AND(0, 0) ➞ 0
+
+#OR(1, 0) ➞ 1
+#OR(1, 1) ➞ 1
+
+#NOT(0) ➞ 1
+#NOT(1) ➞ 0
+#Notes
+#Check the Resourses tab for some help.
+
+def NOT(num):
+	return int(not num)
+
+def AND(num,num2):
+	return int(num and num2)
+
+def OR(num,num2):
+	return int(num or num2)
+
+
+
+#The 3 Programmers Problem 87
+
+#You hired three programmers and you (hopefully) pay them. Create a function that takes three numbers (the hourly wages of each programmer) and returns the difference between the highest-paid programmer and the lowest-paid.
+
+#Examples
+#programmers(147, 33, 526) ➞ 493
+
+#programmers(33, 72, 74) ➞ 41
+
+#programmers(1, 5, 9) ➞ 8
+#Notes
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def programmers(one, two, three):
+	return max(one, two, three)  - min(one, two, three)
+
+
+
+#Fix the Errors / Comparing Arrays 88
+
+#Programmer Pete is trying to create a function that returns True if two lists share the same length and have identical numerical values at every index, otherwise, it will return False.
+
+#However, the solution his function gives is in an unexpected format. Can you fix Pete's function so that it behaves as seen in the examples below?
+
+#Examples
+#check_equals([1, 2], [1, 3]) ➞ False
+
+#check_equals([1, 2], [1, 2]) ➞ True
+
+#check_equals([4, 5, 6], [4, 5, 6]) ➞ True
+
+#check_equals([4, 7, 6], [4, 5, 6]) ➞ False
+
+#check_equals([1, 12], [11, 2]) ➞ False
+#Notes
+#Check the Resources tab for more info.
+
+def check_equals(lst1, lst2):
+	if (lst1[::] == lst2[::]):
+		return True
+	else:
+		return False
+
+
+
+#Slice of Pie 89
+
+#Create a function that determines whether or not it's possible to split a pie fairly given these three parameters:
+
+#Total number of slices.
+#Number of recipients.
+#How many slices each person gets.
+#The function will be in this form:
+
+#equal_slices(total slices, no. recipients, slices each)
+#Examples
+#equal_slices(11, 5, 2) ➞ True
+## 5 people x 2 slices each = 10 slices < 11 slices 
+
+#equal_slices(11, 5, 3) ➞ False
+## 5 people x 3 slices each = 15 slices > 11 slices
+
+#equal_slices(8, 3, 2) ➞ True
+
+#equal_slices(8, 3, 3) ➞ False
+
+#equal_slices(24, 12, 2) ➞ True
+#Notes
+#Return (trivially) True if there are zero people.
+#It's fine not to use the entire pie.
+#All test parameters are integers.
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def equal_slices(total, people, each):
+	return total >= people * each
+
+
+
+#How Many D's Are There? 90
+
+#Create a function that counts how many D's are in a sentence.
+
+#Examples
+#count_d("My friend Dylan got distracted in school.") ➞ 4
+
+#count_d("Debris was scattered all over the yard.") ➞ 3
+
+#count_d("The rodents hibernated in their den.") ➞ 3
+#Notes
+#Your function must be case-insensitive.
+#Remember to return the result.
+#Check the Resources for help.
+
+def count_d(sentence):
+	return sentence.lower().count("d")
+
+
+
+#Broken Bridge 91
+
+#Create a function which validates whether a bridge is safe to walk on (i.e. has no gaps in it to fall through).
+
+#Examples
+#is_safe_bridge("####") ➞ True
+
+#is_safe_bridge("## ####") ➞ False
+
+#is_safe_bridge("#") ➞ True
+#Notes
+#You can expect the bridge's ends connecting it to its surrounding.
+
+def is_safe_bridge(s):
+	if (" " in s):
+		return False
+	else:
+		return True
+
+
+
+#Raucous Applause 92
+#After an amazing performance, the crowd goes wild! People clap enthusiastically and most claps overlap with each other to create one homogeneous sound.
+
+#An overlapped clap is a clap which starts but doesn't finish, as in "ClaClap" (the first clap is cut short and there are overall 2 claps).
+
+#Given a string of what the overlapping claps sounded like, return how many claps were made in total.
+
+#Examples
+#count_claps("ClaClaClaClap!") ➞ 4
+
+#count_claps("ClClClaClaClaClap!") ➞ 6
+
+#count_claps("CCClaClClap!Clap!ClClClap!") ➞ 9
+#Notes
+#Each clap starts with a capital "C".
+
+def count_claps(txt):
+	return txt.count("C")
+
+
+
+#Cube the Square Root 93
+
+#Create a function that takes a number as an argument and returns the square root of that number cubed.
+
+#Examples
+#cube_squareroot(81) ➞ 729
+
+#cube_squareroot(1646089) ➞ 2111932187
+
+#cube_squareroot(695556) ➞ 580093704
+#Notes
+#All numbers will evenly square root, so don't worry about decimal numbers.
+
+def cube_squareroot(num):
+	return num ** (3/2)
+
+
+
+#Minimal II: Boolean Redundancy 94
+
+#Check the principles of minimalist code in the intro to the first challenge.
+
+#In the Code tab you will find a code that is missing a single character in order to pass the tests. However, your goal is to submit a function as minimalist as possible. Use the tips in the tips section down below.
+
+#Write a function that returns the string "even" if the given integer is even, and the string "odd" if it's odd.
+
+#Tips
+#Converting a boolean, or something that will ultimately be interpreted as a boolean, into a boolean is redundant.
+
+#For example, the code:
+
+#boolean = bool(x < 4)
+#return boolean == True
+#Is equivalent to simply:
+
+#return x < 4
+#A comparison with <, <=, ==, !=, >=, > will always result in a boolean, therefore using the function bool() is totally unnecessary.
+#boolean == True is redundant, as it will always return boolean.
+#To obtain the opposite of boolean we could use boolean == False. However, a much cleaner way of doing this is simply not boolean.
+#While preserving readability, avoid declaring unnecessary variables.
+#Notes
+#This is an open series: there isn't a definite list of features for the challenges. Please, do not hesitate to leave your suggestions in Comments.
+#Readability is indeed a subjective concept. Let's discuss it! Feel free to leave your opinion in Comments.
+#You can find all the exercises in this series over here.
+
+def parity(n):
+	if (n % 2):
+		return "odd"
+	return "even"
+
+
+
+#Make My Way Home 95
+
+#You will be given a list, showing how far James travels away from his home for each day. He may choose to travel towards or away from his house, so negative values are to be expected.
+
+#Create a function which calculates how far James must walk to get back home.
+
+#Examples
+#distance_home([2, 4, 2, 5]) ➞ 13
+
+#distance_home([-1, -4, -3, -2]) ➞ 10
+
+#distance_home([3, 4, -5, -2]) ➞ 0
+#Notes
+#Assume James only travels in a straight line.
+#Distance is always a positive number.
+
+def distance_home(lst):
+	return abs(sum(lst))
+
+
+
+#Convert Kilometers to Miles 96
+
+#In this challenge, you have to implement a function that returns the given distance kilometers converted into miles. You have to round the result up to the fifth decimal digit.
+
+#Examples
+#km_to_miles(2) ➞ 1.24274
+
+#km_to_miles(6) ➞ 3.72823
+
+#km_to_miles(8) ➞ 4.97097
+#Notes
+#1 kilometer = 0.621371 miles.
+
+def km_to_miles(km):
+	return round(km*0.621371,5)
+
+
+
+#Kinetic Energy 97
+
+#Kinetic energy can be calculated with the following formula:
+
+#KE = 1/2mv²
+
+#m is mass in kg
+#v is velocity in m/s
+#KE is kinetic energy in J
+#Return the Kinetic Energy in Joules, given the mass and velocity. For the purposes of this challenge, round answers to the nearest integer.
+
+#Examples
+#calc_kinetic_energy(60, 3) ➞ 270
+
+#calc_kinetic_energy(45, 10) ➞ 2250
+
+#calc_kinetic_energy(63.5, 7.35) ➞ 1715
+#Notes
+#Expect only positive numbers for inputs.
+
+def calc_kinetic_energy(m, v):
