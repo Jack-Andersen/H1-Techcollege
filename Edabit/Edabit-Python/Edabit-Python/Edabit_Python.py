@@ -2087,3 +2087,466 @@ def km_to_miles(km):
 #Expect only positive numbers for inputs.
 
 def calc_kinetic_energy(m, v):
+	return round(0.5 * m * v ** 2)
+
+
+
+#Slightly Superior 98
+
+#You will be given two extremely similar lists, but exactly one of the items in a list will be valued slightly higher than its counterpart (which means that evaluating the value > the other value will return True).
+
+#Create a function that returns whether the first list is slightly superior to the second list.
+
+#Worked Example
+#is_first_superior([1, 2, 4], [1, 2, 3]) ➞ True
+## The pair of items at each index are compared in turn.
+## 1 from the first list is the same as 1 from the second list.
+## 2 is the same as 2.
+## However, 4 is greater than 3, so list one is superior.
+#Examples
+#is_first_superior(["a", "d", "c"], ["a", "b", "c"]) ➞ True
+
+#is_first_superior(["zebra", "ostrich", "whale"], ["ant", "ostrich", "whale"]) ➞ True
+
+#is_first_superior([1, 2, 3, 4], [1, 2, 4, 4]) ➞ False
+
+#is_first_superior([True, 10, "zebra"], [True, 10, "zebra"]) ➞ False
+#Notes
+#All values and their counterparts will always be the same data type.
+#The lists will only be different by one element.
+#If the two lists are the same, return False.
+
+def is_first_superior(lst1, lst2):
+	return lst1 > ls2
+
+
+
+#Convert Yen to USD 99
+
+#Create a function that can turn Yen (Japanese dollar) to USD (American dollar).
+
+#Examples
+#yen_to_usd(1) ➞ 0.01
+
+#yen_to_usd(500) ➞ 4.65
+
+#yen_to_usd(649) ➞ 6.04
+#Notes
+#Each Yen to USD conversion is Yen / 107.5
+#Round the result to two decimal places.
+
+def yen_to_usd(yen):
+	return round(yen / 107.5, 2)
+
+
+
+#Check if All Values Are True 100
+
+#Create a function that returns True if all parameters are truthy, and False otherwise.
+
+#Examples
+#all_truthy(True, True, True) ➞ True
+
+#all_truthy(True, False, True) ➞ False
+
+#all_truthy(5, 4, 3, 2, 1, 0) ➞ False
+#Notes
+#Truthy values include non-empty sequences, numbers (except 0 in every numeric type), and basically every value that is not falsy.
+#You can check if an item is truthy by using an if statement on that item.
+#You will always be supplied with at least one parameter.
+
+def all_truthy(*args):
+	return all(args)
+
+
+
+#Amazing Edabit! 101
+
+#Create a function that takes a string and changes the word amazing to not amazing. Return the string without any change if the word edabit is part of the string.
+
+#Examples
+#amazing_edabit("edabit is amazing.") ➞ "edabit is amazing."
+
+#amazing_edabit("Mubashir is amazing.") ➞ "Mubashir is not amazing."
+
+#amazing_edabit("Infinity is amazing.") ➞ "Infinity is not amazing."
+#Notes
+#Edabit is amazing :)
+
+def amazing_edabit(s):
+	if "edabit" in s:
+		return s
+	else:
+		return s.replace("amazing", "not amazing")
+
+
+
+#Destructuring Lists III 102
+
+#You can assign variables from lists with destructuring like this:
+
+#arr = ["eyes", "nose", "lips", "ears"]
+#eyes, nose, lips, ears = arr
+#If you don't need every list index stored in a named variable, you can use _ as a throwaway variable.
+
+#arr = ["eyes", "nose", "lips", "ears"]
+#_ , nose, _, _ = arr
+#this assigns the value in arr[1] to the variable nose. The values in each other index will be assigned to the variable _ in order, overwriting each previous value. nose now holds the string "nose", and _ now holds the string "ears".
+
+#Use destructuring assignment on the given list to assign the string "lips" to the variable provided. Do not use list indexing, or assigning variable names to any of the other strings.
+
+#Notes
+#Check the Resources tab for more examples.
+
+# DO NOT change arr
+# DO NOT USE lips = arr[2]
+# "eyes", "nose", and "ears" should not be assigned to anything
+
+arr = ["eyes", "nose", "lips", "ears"]
+_, _, lips, _ = arr
+
+
+
+#Using Ternary Operators 103
+
+#The ternary operator (sometimes called Conditional Expressions) in python is an alternative to the if... else... statement.
+
+#It is written in the format:
+
+#result_if_true if condition else result_if_false
+#Ternary operators are often more compact than multi-line if statements, and are useful for simple conditional tests.
+
+#For example:
+
+#is_nice = True
+
+## Using ternary operator.
+#state = "nice" if is_nice else "not nice"
+
+## Equivalent code using multi-line if statements.
+#if is_nice:
+#    state = "nice"
+#else:
+#    state = "not nice"
+#Write a function that uses the ternary operator to return "yeah" if b is True, and "nope" otherwise.
+
+#Examples
+#yeah_nope(True) ➞ "yeah"
+
+#yeah_nope(False) ➞ "nope"
+#Notes
+#N/A
+
+def yeah_nope(b)
+	return ["nope", "yeah"][b]
+
+
+
+#Format I: Template String 104
+
+#For each challenge of this series you do not need to submit a function. Instead, you need to submit a template string that can be formatted in order to get a certain outcome.
+
+#Write a template string according to the following example:
+
+#Example
+#a = "John"
+#b = "Joe"
+#c = "Jack"
+#template = "yourtemplatestringhere"
+#template.format(a, b, c) ➞ "Their names were: John, Joe and Jack."
+#Tips
+#A template string is a string that uses curly braces {} as a placeholder that can then be formatted:
+
+#"hello, my name is {}".format("John") ➞ "hello, my name is John."
+#Do not put any value inside {}.
+
+#Notes
+#Submit a string, not a function.
+#Do not change the name of the variable template.
+#You can find all the exercises in this series over here.
+
+template = "Their names were: {}, {} and {}."
+
+
+
+#Case Insensitive Comparison 105
+
+#Write a function that validates whether two strings are identical. Make it case insensitive.
+
+#Examples
+#match("hello", "hELLo") ➞ True
+
+#match("motive", "emotive") ➞ False
+
+#match("venom", "VENOM") ➞ True
+
+#match("mask", "mAskinG") ➞ False
+#Notes
+#N/A
+
+def match(s1, s2):
+	return s1.lower() == s2.lower()
+
+
+
+#Return Last Item 106
+
+#Create a function that returns the last value of the last item in a list or string.
+
+#Examples
+#last_ind([0, 4, 19, 34, 50, -9, 2]) ➞ 2
+
+#last_ind("The quick brown fox jumped over the lazy dog") ➞ "g"
+
+#last_ind([]) ➞ None
+#Notes
+#Lists/strings will be of varying size.
+#Return None if list/string is empty.
+
+def last_ind(lst):
+	if len(lst)>1:
+		return lst[-1]
+	else:
+		return None
+
+
+
+#Random Integer Generator 107
+#The challange is simple. Return a random integer N such that a <= N <= b.
+
+#Examples
+#random_int(5, 9) ➞ 7
+
+#random_int(5, 9) ➞ 9
+
+#random_int(5, 9) ➞ 5
+#Notes
+#Don't forget to return the result.
+#Return value must be an integer.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+import random
+
+def random_int(a, b):
+	return random.randint(a, b)
+
+
+
+#Does the Dictionary Contain a Given Key? 108
+
+#Write a function that returns True if a dictionary contains the specified key, and False otherwise.
+
+#Examples
+#has_key({ "a": 44, "b": 45, "c": 46 }, "d") ➞ False
+
+#has_key({ "craves": True, "midnight": True, "snack": True }, "morning") ➞ False
+
+#has_key({ "pot": 1, "tot": 2, "not": 3 }, "not") ➞ True
+#Notes
+#N/A
+
+def has_key(dictinoary, key):
+	return key in dict.keys(dictinoary)
+
+
+
+#Similar Bread 109
+
+#Given two lists, which represent two sandwiches, return whether both sandwiches use the same type of bread. The bread will always be found at the start and end of the list.
+
+#Examples
+#has_same_bread(
+#  ["white bread", "lettuce", "white bread"],
+#  ["white bread", "tomato", "white bread"]
+#) ➞ True
+
+#has_same_bread(
+#  ["brown bread", "chicken", "brown bread"],
+#  ["white bread", "chicken", "white bread"]
+#) ➞ False
+
+#has_same_bread(
+#  ["toast", "cheese", "toast"],
+#  ["brown bread", "cheese", "toast"]
+#) ➞ False
+#Notes
+#The lists will always be three elements long.
+#The first piece of bread on one sandwich must be the same as the first piece of bread on the other sandwich. The same goes for the last piece of bread.
+
+def has_same_bread(lst1, lst2):
+	return lst1[0] == lst2[0] and lst1[-1] == lst2[-1]
+
+
+
+#Sandwich Fillings 110
+
+#Given a sandwich (as a list), return a list of fillings inside the sandwich. This involves ignoring the first and last elements.
+
+#Examples
+#get_fillings(["bread", "ham", "cheese", "ham", "bread"]) ➞ ["ham", "cheese", "ham"]
+
+#get_fillings(["bread", "sausage", "tomato", "bread"]) ➞ ["sausage", "tomato"]
+
+#get_fillings(["bread", "lettuce", "bacon", "tomato", "bread"]) ➞ ["lettuce", "bacon", "tomato"]
+#Notes
+#The first and last elements will always be "bread".
+
+def get_fillings(sandwich):
+	sandwich.remove("bread")
+	sandwich.remove("bread")
+	return sandwich
+
+
+
+#Is the Dictionary Empty? 111
+
+#Write a function that returns True if a dictionary is empty, and False otherwise.
+
+#Examples
+#is_empty({}) ➞ True
+
+#is_empty({ "a": 1 }) ➞ False
+#Notes
+#N/A
+
+def is_empty(dictionary):
+	if not dictionary:
+		return True
+	else:
+		return False
+
+
+
+#Among Us Imposter Formula 112
+
+#Create a function that calculates the chance of being an imposter. The formula for the chances of being an imposter is 100 × (i / p) where i is the imposter count and p is the player count. Make sure to round the value to the nearest integer and return the value as a percentage.
+
+#Examples
+#imposter_formula(1, 10) ➞ "10%"
+
+#imposter_formula(2, 5) ➞ "40%"
+
+#imposter_formula(1, 8) ➞ "13%"
+#Notes
+#The player limit is 10 and the imposter count can only go up to 3.
+
+def imposter_formula(i, p):
+	return str(round(100 * (i / p))) + "%"
+
+
+
+#Find the Amount of Potatoes 113
+
+#Create a function to return the amount of potatoes there are in a string.
+
+#Examples
+#potatoes("potato") ➞ 1
+
+#potatoes("potatopotato") ➞ 2
+
+#potatoes("potatoapple") ➞ 1
+#Notes
+#N/A
+
+def potatoes(potato):
+	return potato.count("potato")
+
+
+
+#Count Instances of a Character in a String 114
+
+#Create a function that takes two strings as arguments and returns the number of times the first string (the single character) is found in the second string.
+
+#Examples
+#char_count("a", "edabit") ➞ 1
+
+#char_count("c", "Chamber of secrets") ➞ 1
+
+#char_count("b", "big fat bubble") ➞ 4
+#Notes
+#Your output must be case-sensitive (see second example).
+
+def char_count(txt1, txt2):
+	return txt2.count(txt1)
+
+
+
+#The Study of Wumbology 115
+
+#Create a function that flips M's to W's (all uppercase).
+
+#Examples
+#wumbo("I LOVE MAKING CHALLENGES") ➞ "I LOVE WAKING CHALLENGES"
+
+#wumbo("MEET ME IN WARSAW") ➞ "WEET WE IN WARSAW"
+
+#wumbo("WUMBOLOGY") ➞ "WUWBOLOGY"
+#Notes
+#N/A
+
+def wumbo(words):
+	return words.replace("M", "W")
+
+
+
+#Fraction Greater Than One 116
+
+#Given a fraction as a string, return whether or not it is greater than 1 when evaluated.
+
+#Examples
+#greater_than_one("1/2") ➞ False
+
+#greater_than_one("7/4") ➞ True
+
+#greater_than_one("10/10") ➞ False
+#Notes
+#Fractions must be strictly greater than 1 (see example #3).
+
+def greater_than_one(frac):
+	return eval(frac) > 1
+
+
+
+#Find the Total Number of Digits the Given Number Has 117
+
+#Create a function that takes a number as an argument and returns the amount of digits it has.
+
+#Examples
+#find_digit_amount(123) ➞ 3
+
+#find_digit_amount(56) ➞ 2
+
+#find_digit_amount(7154) ➞ 4
+
+#find_digit_amount(61217311514) ➞ 11
+
+#find_digit_amount(0) ➞ 1
+#Notes
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def find_digit_amount(num):
+	return len(num).count
+
+
+
+#C String to C++ String (in Python) 118
+
+#This is a list of single characters with an unwanted character at the end:
+
+#["H", "e", "l", "l", "o", "!", "\0"]
+#You could also just type "Hello!" when initializing a variable, creating the string "Hello!"
+
+#Create a function that will return a string by combining the given character list, not including the unwanted final character.
+
+#Examples
+#cpp_txt(["H", "i", "!", "\0"]) ➞ "Hi!"
+
+#cpp_txt(["H", "e", "l", "l", "o", "!", "\0"]) ➞ "Hello!"
+
+#cpp_txt(["J", "A", "V", "a", "\0"]) ➞ "JAVa"
+#Notes
+#This is a translation of a C++ challenge and is trivial in Python, but perhaps it will be helpful to someone out there. (No challenge is trivial until you know how to solve it :)
+
+def cpp_txt(lst):
