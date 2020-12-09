@@ -2550,3 +2550,608 @@ def find_digit_amount(num):
 #This is a translation of a C++ challenge and is trivial in Python, but perhaps it will be helpful to someone out there. (No challenge is trivial until you know how to solve it :)
 
 def cpp_txt(lst):
+	return "".join(lst[:-1])
+
+
+
+#Count Syllables 119
+
+#Create a function that counts the number of syllables a word has. Each syllable is separated with a dash -.
+
+#Examples
+#number_syllables("buf-fet") ➞ 2
+
+#number_syllables("beau-ti-ful") ➞ 3
+
+#number_syllables("mon-u-men-tal") ➞ 4
+
+#number_syllables("on-o-mat-o-poe-ia") ➞ 6
+#Notes
+#Don't forget to return the result.
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def number_syllables(word):
+	return word.count("-") + 1
+
+
+
+#50-30-20 Strategy 120
+
+#The 50-30-20 strategy is a simple way to budget, which involves spending 50% of after-tax income on needs, 30% after tax income on wants, and 20% after-tax income on savings or paying off debt.
+
+#Given the after-tax income as ati, what you are supposed to do is to make a function that will return a dictionary that shows how much a person needs to spend on needs, wants, and savings.
+
+#Examples
+#fifty_thirty_twenty(10000) ➞ { "Needs": 5000, "Wants": 3000, "Savings": 2000 }
+
+#fifty_thirty_twenty(50000) ➞ { "Needs": 25000, "Wants": 15000, "Savings": 10000 }
+
+#fifty_thirty_twenty(13450) ➞ { "Needs": 6725, "Wants": 4035, "Savings": 2690 }
+#Notes
+#Check the Resources tab if you want to learn more about the 50-30-20 budget strategy.
+
+def fifty_thirty_twenty(ati):
+	return {"Needs": ati * 50 / 100, "Wants": ati * 30 / 100, "Savings": ati * 20 / 100}
+
+
+
+#Check if One Array can be Nested in Another 121
+
+#Create a function that returns True if the first list can be nested inside the second.
+
+#list1 can be nested inside list2 if:
+
+#list1's min is greater than list2's min.
+#list1's max is less than list2's max.
+#Examples
+#can_nest([1, 2, 3, 4], [0, 6]) ➞ True
+
+#can_nest([3, 1], [4, 0]) ➞ True
+
+#can_nest([9, 9, 8], [8, 9]) ➞ False
+
+#can_nest([1, 2, 3, 4], [2, 3]) ➞ False
+#Notes
+#Note the strict inequality (see example #3).
+
+def can_nest(list1, list2):
+	return min(list1) > min(list2) and max(list1) < max(list2)
+
+
+
+#Convert All List Items to String 122
+
+#Create a function that takes a list of integers and strings. Convert integers to strings and return the new list.
+
+#Examples
+#parse_list([1, 2, "a", "b"]) ➞ ["1", "2", "a", "b"]
+
+#parse_list(["abc", 123, "def", 456]) ➞ ["abc", "123", "def", "456"]
+
+#parse_list([1, 2, 3, 17, 24, 3, "a", "123b"]) ➞ ["1", "2", "3", "17", "24", "3", "a", "123b"]
+
+#parse_list([]) ➞ []
+#Notes
+#N/A
+
+def parse_list(lst):
+	return list(map(str, lst))
+
+
+
+#Buggy Code 123
+
+#The challenge is to try and fix this buggy code, given the inputs True and False. See the examples below for the expected output.
+
+#Examples
+#has_bugs(True) ➞ "sad days"
+
+#has_bugs(False) ➞ "it's a good day"
+#Notes
+#Don't overthink this challenge (look at the syntax and correct it).
+
+def has_bugs(buggy_code):
+	if (buggy_code == True):
+		return "sad days"
+	elif (buggy_code == False):
+		return "it's a good day"
+
+
+
+#Upvotes vs Downvotes 124
+
+#Given a dictionary containing counts of both upvotes and downvotes, return what vote count should be displayed. This is calculated by subtracting the number of downvotes from upvotes.
+
+#Examples
+#get_vote_count({ "upvotes": 13, "downvotes": 0 }) ➞ 13
+
+#get_vote_count({ "upvotes": 2, "downvotes": 33 }) ➞ -31
+
+#get_vote_count({ "upvotes": 132, "downvotes": 132 }) ➞ 0
+#Notes
+#You can expect only positive integers for vote counts.
+
+def get_vote_count(votes):
+	return votes['upvotes'] - votes['downvotes']
+
+
+
+#Is the Water Boiling? 125
+
+#Create a function that determines if the temp of the water is considered boiling or not. temp will be measured in fahrenheit and celsius.
+
+#Examples
+#is_boiling("212F") ➞ True
+
+#is_boiling("100C") ➞ True
+
+#is_boiling("0F") ➞ False
+#Notes
+#The boiling point of water is 212F in fahrenheit and 100C in celsius.
+
+def is_boiling(temp):
+	return temp>="212F" or temp>="100C"
+
+
+
+#Nothing is Nothing? 126
+
+#Given any number of parameters (which is signified using *args syntax), return True if none of the variables are falsy/empty.
+
+#Examples
+#nothing_is_nothing(0, False, [], {}) ➞ False
+
+#nothing_is_nothing(33, "Hello", (True, True, 3)) ➞ True
+
+#nothing_is_nothing(True, None) ➞ False
+#Notes
+#*args allows a function to take any number of parameters.
+#Falsy refers to values which evaluate to False in a boolean context. This includes (but is not limited to) variables such as 0, False, None, empty sets, lists and tuples.
+
+def nothing_is_nothing(*args):
+	return all(args)
+
+
+
+#The Modulus Operator Function 127
+
+#Create a function that will work as the modulus operator % without using the modulus operator. The modulus operator is a way to determine the remainder of a division operation. Instead of returning the result of the division, the modulo operation returns the whole number remainder.
+
+#Examples
+#mod(5,  2) ➞ 1
+
+#mod(218, 5) ➞ 3
+
+#mod(6, 3) ➞ 0
+#Notes
+#Don't use the % operator to return the results.
+
+def mod(a, b):
+	return a - a // b * b
+
+
+
+#Sort Numbers in Ascending Order 128
+
+#Create a function that takes a list of numbers and returns a new list, sorted in ascending order (smallest to biggest).
+
+#Sort numbers list in ascending order.
+#If the function's argument is None or an empty list, return an empty list.
+#Return a new array of sorted numbers.
+#Examples
+#sort_nums_ascending([1, 2, 10, 50, 5]) ➞ [1, 2, 5, 10, 50]
+
+#sort_nums_ascending([80, 29, 4, -95, -24, 85]) ➞ [-95, -24, 4, 29, 80, 85]
+
+#sort_nums_ascending([]) ➞ []
+#Notes
+#Test input can be positive or negative.
+
+def sort_nums_ascending(lst):
+	if (lst == ""):
+		return []
+	else:
+		return sorted(lst)
+
+
+
+#Assign Person to Occupation 129
+
+#You have two lists. One shows the names of the people, while the other shows their occupation. Your task is to make a dictionary displaying each person to their respective occupations.
+
+#Person	Job
+#Annie	Teacher
+#Steven	Engineer
+#Lisa	Doctor
+#Osman	Cashier
+#Notes
+
+def assign_person_to_job(pl, jl):
+	return dict(zip(pl, jl))
+
+
+
+#Minimal IV: if-elif-else Inferno 130
+#Check the principles of minimalist code in the intro to the first challenge.
+
+#In the Code tab you will find a code that is missing a single character in order to pass the tests. However, your goal is to submit a function as minimalist as possible. Use the tips in the tips section below.
+
+#Write a function that returns the boolean True if the given number is zero, the string "positive" if the number is greater than zero or the string "negative" if it's smaller than zero.
+
+#Tips
+#Executing a return will effectively end your function.
+
+#For example, the code:
+
+#def compare_to_100(x):
+#    if x > 100:
+#        return "greater"
+#    elif x < 100:
+#        return "smaller"
+#    else:
+#        return "equal"
+#Can be simplified to:
+
+#def compare_to_100(x):
+#    if x > 100:
+#        return "greater"
+#    if x < 100:
+#        return "smaller"
+#    return "equal"
+#If x is greater than 100, Python will not execute the code past the first return.
+#If x is smaller than 100, Python will not execute the code inside the first if statement or past the second return.
+#If x is equal to 100, Python will not execute the code inside the two if statements.
+#This can only be used if you have a return inside your if statement.
+#Bonus
+#Further simplification of the code above:
+
+#def compare_to_100(x):
+#    return "greater" if x > 100 else "smaller" if x < 100 else "equal"
+#Notes
+#This is an open series: there isn't a definite list of features for the challenges. Please, do not hesitate to leave your suggestions in the Comments.
+#Readability is indeed a subjective concept. Let's discuss it! Feel free to leave your opinion in the Comments.
+
+def equilibrium(x):
+	return "positive" if x > 0 else "negative" if x < 0 else True
+
+
+
+#Find the Second Largest Number 131
+
+#Create a function that takes a list of numbers and returns the second largest number.
+
+#Examples
+#second_largest([10, 40, 30, 20, 50]) ➞ 40
+
+#second_largest([25, 143, 89, 13, 105]) ➞ 105
+
+#second_largest([54, 23, 11, 17, 10]) ➞ 23
+#Notes
+#N/A
+
+def second_largest(lst):
+	newLst = sorted(lst)
+	return newLst[-2]
+
+
+
+#Find the Index 132
+
+#Create a function that takes a list and a string as arguments and return the index of the string.
+
+#Examples
+#find_index(["hi", "edabit", "fgh", "abc"], "fgh") ➞ 2
+
+#find_index(["Red", "blue", "Blue", "Green"], "blue") ➞ 1
+
+#find_index(["a", "g", "y", "d"], "d") ➞ 3
+
+#find_index(["Pineapple", "Orange", "Grape", "Apple"], "Pineapple") ➞ 0
+#Notes
+#Don't forget to return the result.
+#If you are stuck, find help in the Resources tab.
+#The variable for list is lst, not 1st.
+
+def find_index(lst, txt):
+	return lst.index(txt)
+
+
+
+#Re-Form the Word 133
+
+#A word has been split into a left part and a right part. Re-form the word by adding both halves together, changing the first character to an uppercase letter.
+
+#Examples
+#get_word("seas", "onal") ➞ "Seasonal"
+
+#get_word("comp", "lete") ➞ "Complete"
+
+#get_word("lang", "uage") ➞ "Language"
+#Notes
+#N/A
+
+#def get_word(left, right):
+#	return left.capitalize() + right
+
+
+
+#Keyboard Mistakes 134
+
+#Character recognition software often makes mistakes when documents (especially old ones written with a typewriter) are digitized.
+
+#Your task is to correct the errors in the digitized text. You only have to handle the following mistakes:
+
+#A is misinterpreted as 4
+#S is misinterpreted as 5
+#O is misinterpreted as 0
+#I is misinterpreted as 1
+#The test cases contain numbers only by mistake.
+
+#Examples
+#keyboard_mistakes("MUB45H1R") ➞ "MUBASHIR"
+
+#keyboard_mistakes("DUBL1N") ➞ "DUBLIN"
+
+#keyboard_mistakes("51NG4P0RE") ➞ "SINGAPORE"
+#Notes
+#N/A
+
+def keyboard_mistakes(txt):
+	txt = txt.replace("4", "A")
+	txt = txt.replace("5", "S")
+	txt = txt.replace("0", "O")
+	txt = txt.replace("1", "I")
+	return txt
+
+
+
+#Find the Bomb 135
+
+#Create a function that finds the word "bomb" in the given string. If found, return "Duck!!!", otherwise, return "There is no bomb, relax.".
+
+#Examples
+#bomb("There is a bomb.") ➞ "Duck!!!"
+
+#bomb("Hey, did you think there is a bomb?") ➞ "Duck!!!"
+
+#bomb("This goes boom!!!") ➞ "There is no bomb, relax."
+#Notes
+#"bomb" may appear in different cases (i.e. uppercase, lowercase, mixed).
+
+def bomb(txt):
+	return "Duck!!!" if "bomb" in txt.lower() else "There is no bomb, relax."
+
+
+
+#Find None in a List 136
+
+#Create a function to find None in a list of numbers. The return value should be the index where None is found. If None is not found in the list, then return -1.
+
+#Examples
+#find_none([1, 2, None]) ➞ 2
+
+#find_none([None, 1, 2, 3, 4]) ➞ 0
+
+#find_none([0, 1, 2, 3, 4]) ➞ -1
+#Notes
+#N/A
+
+def find_None(lst):
+	return lst.index(None) if None in lst else -1
+
+
+
+#Format II: Argument Indices 137
+
+#For each challenge of this series you do not need to submit a function. Instead, you need to submit a template string that can be formatted in order to get a certain outcome.
+
+#Write a template string according to the following example:
+
+#Example
+#a = "John"
+#b = "Joe"
+#template = "yourtemplatestringhere"
+
+#template.format(a, b) ➞ "Joe hit John and then John hit Joe."
+#Tips
+#Writing a number n inside a place holder will tell .format() to fill in with the nth argument. For example:
+
+#"{0} said: Hi, I'm {0}.".format("Monica") ➞ "Monica said: Hi, I'm Monica."
+#Notes
+#Submit a string, not a function.
+#Do not change the name of the variable template.
+
+template = "{1} hit {0} and then {0} hit {1}."
+
+
+
+#Equality Check 138
+
+#In this challenge, you must verify the equality of two different values given the parameters a and b.
+
+#Both the value and type of the parameters need to be equal. The possible types of the given parameters are:
+
+#Numbers
+#Strings
+#Booleans (False or True)
+#Special values: None
+#What have you learned so far that will permit you to do two different checks (value and type) with a single statement?
+
+#Implement a function that returns True if the parameters are equal, and False if they are not.
+
+#Examples
+#check_equality(1, true) ➞ False
+## A number and a boolean: the value and type are different.
+
+#check_equality(0, "0") ➞ False
+## A number and a string: the type is different.
+
+#check_equality(1,  1) ➞ True
+## A number and a number: the type and value are equal.
+#Notes
+#If you get stuck on a challenge, find help in the Resources tab.
+#If you're really stuck, unlock solutions in the Solutions tab.
+
+def check_equality(a, b):
+	return type(a) == type(b) and a ==b
+
+
+
+#Count the Syllables 139
+
+#Create a function that returns the number of syllables in a simple string. The string is made up of short repeated words like "Lalalalalalala" (which would have 7 syllables).
+
+#Examples
+#count_syllables("Hehehehehehe") ➞ 6
+
+#count_syllables("bobobobobobobobo") ➞ 8
+
+#count_syllables("NANANA") ➞ 3
+#Notes
+#For simplicity, please note that each syllable will consist of two letters only.
+#Your code should accept strings of any case (upper, lower and mixed case).
+
+def count_syllables(txt):
+	return len(txt)//2
+
+
+
+#Check if the Same Case 140
+
+#Create a function that returns True if an input string contains only uppercase or only lowercase letters.
+
+#Examples
+#same_case("hello") ➞ True
+
+#same_case("HELLO") ➞ True
+
+#same_case("Hello") ➞ False
+
+#same_case("ketcHUp") ➞ False
+#Notes
+#N/A
+
+def same_case(txt):
+	if (txt.islower() or txt.isupper()):
+		return True
+	else:
+		return False
+
+
+
+#Length and Element of Range 141
+
+#Create a function that takes a range object r, index i, and returns a list where the first element is the number of elements in the range object, and the second element is the element of the range object at the given index.
+
+#Examples
+#length_element(range(2, 4), 0) ➞ [2, 2]
+
+#length_element(range(12, 15, 2), 1) ➞ [2, 14]
+
+#length_element(range(40, 50, 3), 2) ➞ [4, 46]
+#Notes
+#No need to check for IndexError.
+
+def length_element(r,i):
+    return [len(r), r[i]]
+
+
+
+#The Full Length of a Google
+#Google's logo can be stretched depending on how many pages it lets you skip forward to.
+
+#Image of Goooooooooogle
+
+#Let's say we wanted to change the number of pages that Google could skip to. Create a function where given a number of pages n, return the word "Google" but with the correct number of "o"s.
+
+#Examples
+#googlify(10) ➞ "Goooooooooogle"
+
+#googlify(23) ➞ "Gooooooooooooooooooooooogle"
+
+#googlify(2) ➞ "Google"
+
+#googlify(-2) ➞ "invalid"
+#Notes
+#If n is equal to or less than 1, return invalid.
+
+def googlify(n):
+	return 'G{}gle'.format('o' * n) if n > 1 else 'invalid'
+
+
+
+#Word Numbers! 142
+
+#Create a function that returns a number, based on the string provided. Here is a list of all digits (if you are non english speaker):
+
+#String	Number
+#"one"	1
+#"two"	2
+#"three"	3
+#"four"	4
+#"five"	5
+#"six"	6
+#"seven"	7
+#"eight"	8
+#"nine"	9
+#"zero"	0
+#Examples
+#word("one") ➞ 1
+
+#word("two") ➞ 2
+
+#word("nine") ➞ 9
+#Notes
+#All numbers will be 1 digit and they will always exist, also all numbers will be in ℕ ℕo(don't have decimal places, and they are positive, including 0).
+
+def word(s):
+	dict = {"one": 1,
+	"two": 2,
+	"three": 3,
+	"four": 4,
+	"five": 5,
+	"six": 6,
+	"seven": 7,
+	"eight": 8,
+	"nine": 9,
+	"zero": 0}
+	
+	return dict.get(s)
+
+
+
+#Video Streaming Plans 143
+#Given a class for a BasicPlan, write the classes for StandardPlan and PremiumPlan which have class attributes of the following:
+
+#BasicPlan	StandardPlan	Premium Plan
+#✓	✓	✓	can_stream
+#✓	✓	✓	can_download
+#✓	✓	✓	has_SD
+#✓	✓	has_HD
+#✓	has_UHD
+#1	2	4	num_of_devices
+#$8.99	$12.99	$15.99	price
+#Examples
+#BasicPlan.has_SD ➞ True
+
+#PremiumPlan.has_SD ➞ True
+
+#BasicPlan.has_UHD ➞ False
+
+#BasicPlan.price ➞ "$8.99"
+
+#PremiumPlan.num_of_devices ➞ 4
+#Notes
+#Try using Inheritance to complete the challenge! If you're unsure what that means, try checking out the Python class tutorials in the Resources tab.
+
+class BasicPlan:
+	can_stream = True
+	can_download = True
+	num_of_devices = 1
+	has_SD = True
+	has_HD = False
+	has_UHD = False
+	price = '$8.99'
+	
+# Write the classes for StandardPlan and PremiumPlan here!
