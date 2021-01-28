@@ -1,0 +1,13 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\bin\Debug\netcoreapp3.1\Guessing_game.exe
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\bin\Debug\netcoreapp3.1\Guessing_game.deps.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\bin\Debug\netcoreapp3.1\Guessing_game.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\bin\Debug\netcoreapp3.1\Guessing_game.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\bin\Debug\netcoreapp3.1\Guessing_game.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\bin\Debug\netcoreapp3.1\Guessing_game.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Guessing_game\Guessing_game\obj\Debug\netcoreapp3.1\Guessing_game.genruntimeconfig.cache

@@ -2,15 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\H1-Projects",
-    "\\H1-Projects\\Highscore",
-    "\\H1-Projects\\Highscore\\Highscore",
-    "\\H1-Projects\\Lagersystem_project",
+    "\\H1-Projects\\GPOpgaver",
+    "\\H1-Projects\\GPOpgaver\\GPOpgaver",
     "\\H1-Projects\\Noodle_chat",
     "\\H1-Projects\\Noodle_chat\\Noodle_chat",
     "\\H1-Projects\\Noodle_chat\\Noodle_chat\\Noodle_chat",
+    "\\H1-Projects\\Reaction time game",
+    "\\H1-Projects\\Reaction time game\\Reaction_time_game_new",
     "\\Skp-H1",
     "\\Skp-H1\\One-2-Watch"
   ],
-  "SelectedNode": "\\H1-Projects\\Lagersystem_project\\Lagersystem_project.sln",
+  "SelectedNode": "\\H1-Projects\\Reaction time game\\Reaction_time_game_new\\Reaction_time_game_new.sln",
   "PreviewInSolutionExplorer": false
 }

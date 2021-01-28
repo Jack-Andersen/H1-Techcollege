@@ -1,0 +1,13 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\bin\Debug\netcoreapp3.1\Vehicles_heritage.exe
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\bin\Debug\netcoreapp3.1\Vehicles_heritage.deps.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\bin\Debug\netcoreapp3.1\Vehicles_heritage.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\bin\Debug\netcoreapp3.1\Vehicles_heritage.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\bin\Debug\netcoreapp3.1\Vehicles_heritage.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\bin\Debug\netcoreapp3.1\Vehicles_heritage.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Vehicles_heritage\Vehicles_heritage\obj\Debug\netcoreapp3.1\Vehicles_heritage.genruntimeconfig.cache
