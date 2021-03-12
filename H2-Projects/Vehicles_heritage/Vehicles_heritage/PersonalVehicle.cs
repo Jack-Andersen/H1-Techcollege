@@ -1,52 +1,180 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Vehicles_heritage
 {
-    class PersonalVehicle : Vehicles
+
+    abstract class PersonalVehicle : Vehicles
     {
-
-        public bool Isofix;
-        public bool SecurityHang;
-        public int capacity;
-
-        public PersonalVehicle(string vehicle, string vehicleName, int weight, bool towingHook) : base(vehicle, vehicleName, weight, towingHook)
+        public PersonalVehicle(string vehicle,
+            string vehicleName,
+            double km,
+            string registrationNumber,
+            int year,
+            double newPrice,
+            bool towbar,
+            double engineSize,
+            double kmPerLiter,
+            fuelTypeEnum fuelType,
+            int numberOfSeats,
+            trunkDimentionsStruct trunkDimentions) : base(vehicle, vehicleName, km, registrationNumber, year, newPrice, towbar, kmPerLiter, fuelType)
         {
-            this.capacity = weight;
+            this.NumberOfSeats = numberOfSeats;
+            this.TrunkDimentions = trunkDimentions;
+            this.EngineSize = engineSize;
         }
 
-        public void Seats(int seats)
+        //fields and probertys
+        public int NumberOfSeats
         {
-            if(seats  >= 1 && seats <= 3)
+            get { return numberOfSeats; }
+            set
             {
-                Console.WriteLine("Privat pervogn med " + seats + " sæder. ");
+                var r = new Regex(@"^[2-7]{1}$");
+
+                if (!r.IsMatch(value.ToString()))
+                    throw new Exception("Antal sæder er ikke gyldigt!");
+
+                else
+                    numberOfSeats = value;
             }
-            else if(seats >= 3 && seats <= 7)
+        }
+        private int numberOfSeats;
+
+        //TrunkDimentions field, proberty and struct
+        public trunkDimentionsStruct TrunkDimentions
+        {
+            get { return trunkDimentions; }
+            set { trunkDimentions = value; }
+        }
+        private trunkDimentionsStruct trunkDimentions;
+        public struct trunkDimentionsStruct
+        {
+            public double height;
+            public double width;
+            public double depth;
+            public override string ToString() => $"({height}, {width}, {depth})";
+        }
+
+        //fields and probertys
+        public override double EngineSize
+        {
+            get { return this.engineSize; }
+            set
             {
-                Console.WriteLine("Privat personvogn med " + seats + " sæder. ");
+                if (value < 0.7 || value > 10.0)
+                    throw new ArgumentOutOfRangeException(
+                          " must be between 0.7 and 10.0 L.");
+
+                this.engineSize = value;
+            }
+        }
+
+        //Returns the PersonalCar in a string
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("\n {0}: {1}\n {2}: {3}",
+                nameof(this.NumberOfSeats),
+                this.NumberOfSeats,
+                nameof(this.TrunkDimentions),
+                this.TrunkDimentions.ToString()
+                );
+        }
+    }
+
+    class PrivatePersonalvehicle : PersonalVehicle
+    {
+        public PrivatePersonalvehicle(string vehicle,
+            string vehicleName,
+            double km,
+            string registrationNumber,
+            int year,
+            double newPrice,
+            bool towbar,
+            double engineSize,
+            double kmPerLiter,
+            fuelTypeEnum fuelType,
+            int numberOfSeats,
+            trunkDimentionsStruct trunkDimentions,
+            bool isofixFittings) : base(vehicle, vehicleName, km, registrationNumber, year, newPrice, towbar, engineSize, kmPerLiter, fuelType, numberOfSeats, trunkDimentions)
+        {
+            this.IsofixFittings = isofixFittings;
+            this.DriversLisence = driversLisenceEnum.B;
+        }
+
+        //fields and probertys
+        public bool IsofixFittings
+        {
+            get { return isofixFittings; }
+            set { isofixFittings = value; }
+        }
+        private bool isofixFittings;
+
+        //Returns the PrivatePersonalvehicle in a string
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("\n {0}: {1}\n",
+                nameof(this.IsofixFittings),
+                this.IsofixFittings
+                );
+        }
+    }
+
+    class ProfessionalPersonalvehicle : PersonalVehicle
+    {
+        public ProfessionalPersonalvehicle(string vehicle,
+            string vehicleName,
+            double km,
+            string registrationNumber,
+            int year,
+            double newPrice,
+            bool towbar,
+            double engineSize,
+            double kmPerLiter,
+            fuelTypeEnum fuelType,
+            int numberOfSeats,
+            trunkDimentionsStruct trunkDimentions,
+            double loadCapacity) : base(vehicle, vehicleName, km, registrationNumber, year, newPrice, towbar, engineSize, kmPerLiter, fuelType, numberOfSeats, trunkDimentions)
+        {
+            this.Towbar = towbar;
+            this.NumberOfSeats = 2;
+            this.LoadCapacity = loadCapacity;
+
+            if (this.loadCapacity > 750.0)
+            {
+                this.DriversLisence = driversLisenceEnum.BE;
             }
             else
             {
-                Console.WriteLine(seats + " Passer ikke til personvogn ");
+                this.DriversLisence = driversLisenceEnum.B;
             }
         }
 
-        public void Baggage( int l, int b, int h)
+        //fields and probertys
+        public bool Towbar
         {
-            Console.WriteLine("Længde: " + l + " Bredde: " + b + " Højde: " + h);
+            get { return towbar; }
+            set { towbar = value; }
         }
-
-        public string LicenseType(string type)
+        public bool towbar;
+        public double LoadCapacity
         {
-            if(capacity >= 750)
-            {
-                return "BE";
-            }
-            else
-            {
-                return "B";
-            }
+            get { return loadCapacity; }
+            set { loadCapacity = value; }
+        }
+        public double loadCapacity;
+
+        //Returns the ProfessionalPersonalvehicle in a string
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("\n {0}: {1}\n {2}: {3}\n",
+                nameof(this.Towbar),
+                this.Towbar,
+                nameof(this.LoadCapacity),
+                this.LoadCapacity
+                );
         }
     }
 }

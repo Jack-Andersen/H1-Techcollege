@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Vehicles_heritage.Vehicles" Collapsed="true">
+    <Position X="9.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAkRAQADEgEAAAAGAAgBAgQDEAAEARAAAAEAAg=</HashCode>
+      <FileName>Vehicles.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Auction" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Vehicles_heritage.Truck" Collapsed="true">
+    <Position X="7.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAEAQAAAAEABAgAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Truck.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.Program" Collapsed="true">
+    <Position X="9.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.PersonalVehicle" Collapsed="true">
+    <Position X="9.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAEAAAAAAAABAgAAAQAAAAAAAAAQAA=</HashCode>
+      <FileName>PersonalVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.PrivatePersonalvehicle" Collapsed="true">
+    <Position X="10.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonalVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.ProfessionalPersonalvehicle" Collapsed="true">
+    <Position X="8" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAEAQAAAAEAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PersonalVehicle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.Bus" Collapsed="true">
+    <Position X="11.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAQEEAAEBAAAABAgAAAQAAAAAAAAAQAA=</HashCode>
+      <FileName>Bus.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.AuctionHouse_AH.Auction" Collapsed="true">
+    <Position X="14.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAAAIABAACAAQAAAABAAAAAQAAAAAAAAACAA=</HashCode>
+      <FileName>AuctionHouse_AH\Auction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Vehicles_heritage.AuctionHouse_AH.AuctionHouse" Collapsed="true">
+    <Position X="16.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAEAAAAAAAAAAAAAAAAAQAAAAAgAAAAAA=</HashCode>
+      <FileName>AuctionHouse_AH\AuctionHouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.AuctionHouse_AH.User" Collapsed="true">
+    <Position X="15.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAUAAAABAAAAEAAgAQAAAAEIAAAADAgAACAAAAIg=</HashCode>
+      <FileName>AuctionHouse_AH\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Vehicles_heritage.AuctionHouse_AH.CorporateUser" Collapsed="true">
+    <Position X="16.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAKAAAAFAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AuctionHouse_AH\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vehicles_heritage.AuctionHouse_AH.PrivateUser" Collapsed="true">
+    <Position X="14.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAEAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AuctionHouse_AH\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Vehicles_heritage.AuctionHouse_AH.IBuyerModel" Collapsed="true">
+    <Position X="19.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AuctionHouse_AH\IBuyerModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Vehicles_heritage.AuctionHouse_AH.ISellerModel" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAAAAAAA=</HashCode>
+      <FileName>AuctionHouse_AH\ISellerModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

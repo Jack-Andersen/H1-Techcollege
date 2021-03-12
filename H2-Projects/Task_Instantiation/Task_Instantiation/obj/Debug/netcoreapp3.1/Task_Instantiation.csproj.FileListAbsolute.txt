@@ -1,0 +1,13 @@
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\bin\Debug\netcoreapp3.1\Task_Instantiation.exe
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\bin\Debug\netcoreapp3.1\Task_Instantiation.deps.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\bin\Debug\netcoreapp3.1\Task_Instantiation.runtimeconfig.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\bin\Debug\netcoreapp3.1\Task_Instantiation.runtimeconfig.dev.json
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\bin\Debug\netcoreapp3.1\Task_Instantiation.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\bin\Debug\netcoreapp3.1\Task_Instantiation.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.AssemblyInfoInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.AssemblyInfo.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.csproj.CoreCompileInputs.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.dll
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.pdb
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\H2-Projects\Task_Instantiation\Task_Instantiation\obj\Debug\netcoreapp3.1\Task_Instantiation.genruntimeconfig.cache

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="WPF_H2_V02.SeeStudentsPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_H2_V02"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500" Background="HotPink">
+    <StackPanel>
+        <DataGrid Name="StudentGrid" Height="100" AutoGenerateColumns="False" Margin="6,10,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="First_Name" Binding="{Binding Path=First_Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Last_Name" Binding="{Binding Path=Last_Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}"></DataGridTextColumn>
+                <DataGridTextColumn Header="ClassName" Binding="{Binding Path=ClassName}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

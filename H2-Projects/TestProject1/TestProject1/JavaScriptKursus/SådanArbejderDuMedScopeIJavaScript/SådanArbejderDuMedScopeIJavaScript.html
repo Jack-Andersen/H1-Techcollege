@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+        function hello()
+        {
+            //lokal
+            var x = 3
+            document.write(x + " / " + z + "<br>");
+        }
+
+        //global
+        if (true)
+        {
+            var z = 10;
+        }
+
+        hello();
+
+        //??
+        alert(z);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

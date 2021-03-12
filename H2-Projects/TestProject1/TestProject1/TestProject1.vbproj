@@ -94,16 +94,32 @@
   <ItemGroup>
     <Content Include="CSS\StyleSheet.css" />
     <Content Include="JavaScriptKursus\AritmetiskeOperationer\AritmetiskeOperationer.html" />
+    <Content Include="JavaScriptKursus\ArraysIJavaScript\ArraysIJavaScript.html" />
     <Content Include="JavaScriptKursus\BooleanDatatyperIJavaScript\BooleanDatatyperIJavaScript.html" />
     <Content Include="JavaScriptKursus\Brugafogiif-else statements\Brugafogiif-else statements.html" />
     <Content Include="JavaScriptKursus\DatatyperIJavaScript\DatatyperIJavaScript.html" />
     <Content Include="JavaScriptKursus\DOMIJavaScript\DOMIjavaScript.html" />
     <Content Include="Index.HTML" />
     <Content Include="JavaScriptFile\JavaScriptFunction.js" />
+    <Content Include="JavaScriptKursus\For-loopsIJavaScript\For-loopsIJavaScript.html" />
+    <Content Include="JavaScriptKursus\JavaScriptEvents%28OnChangeOnKeyUpOgOnClick...%29\JavaScriptEvents%28OnChangeOnKeyUpOgOnClick...%29.html" />
+    <Content Include="JavaScriptKursus\JavaScriptOgJQuery\JavaScriptOgJQuery.html" />
     <Content Include="JavaScriptKursus\Kontrolstruktur%28if-else statements%29\Kontrolstruktur%28if-else statements%29.html" />
+    <Content Include="JavaScriptKursus\LommeregnerMedJavaScript\LommeregnerMedJavaScript.html" />
     <Content Include="JavaScriptKursus\OutputIJavaScript\OutputIJacaScript.html" />
+    <Content Include="JavaScriptKursus\SådanAnvenderDuJavaScriptTilAtManipulereMedHTML\SådanAnvenderDuJavaScriptTilAtManipulereMedHTML.html" />
+    <Content Include="JavaScriptKursus\SådanArbejderDuMedScopeIJavaScript\SådanArbejderDuMedScopeIJavaScript.html" />
+    <Content Include="JavaScriptKursus\SådanArbejderDuMedStringMetoderIJavaScript\SådanArbejderDuMedStringMetoderIJavaScript.html" />
+    <Content Include="JavaScriptKursus\SådanImplementeresEnSeperatJavaScriptFil\JavaScript.js" />
+    <Content Include="JavaScriptKursus\SådanImplementeresEnSeperatJavaScriptFil\SådanImplementeresEnSeperatJavaScriptFil.html" />
+    <Content Include="JavaScriptKursus\UdskiftCSSFilMedJavaScript\dark.css" />
+    <Content Include="JavaScriptKursus\UdskiftCSSFilMedJavaScript\JavaScript.js" />
+    <Content Include="JavaScriptKursus\UdskiftCSSFilMedJavaScript\light.css" />
+    <Content Include="JavaScriptKursus\UdskiftCSSFilMedJavaScript\UdskiftCSSFilMedJavaScript.html" />
+    <Content Include="JavaScriptKursus\UdskrivTabelMedJavaScript\UdskrivTabelMedJavaScript.html" />
     <Content Include="JavaScriptKursus\VariablerIJavaScript\VariablerIJavaScript.html" />
     <Content Include="JavaScriptKursus\PopupAltertMedJavaScript\PopupAltertMedJavaScript.html" />
+    <Content Include="JavaScriptKursus\WhileOgDo-whileLoopsIJavaScript\WhileOgDo-whileLoopsIJavaScript.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

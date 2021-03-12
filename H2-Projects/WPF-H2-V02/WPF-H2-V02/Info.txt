@@ -1,0 +1,51 @@
+﻿2. Eleven kan implementere en grafisk brugergrænseflade, som understøtter et eller
+flere funktionelle krav.
+
+	Lave et Wpf project og lave en betingelse som skal
+	opfyldes før man kan gå virdre i programmet.
+
+3. Eleven kan anvende forskellige typer af layout containers.
+
+	Layout panels:			Layout controls:
+	-Grid					-Border
+	-UniformGrid			-ScrollViewer
+	-Canvas					-Viewbox
+	-StackPanel
+	-WrapPanel
+	-DockPanel
+
+4. Eleven kan udvælge og konfigurere de korrekte kontroller til at understøtte et eller
+flere funktionelle krav.
+
+	Man kan vælge de rigtige kontroller såsom
+	hvis man skulle være i stand til at skrive
+	i et felt ville man vælge en TextBox og ikke en
+	TextBlock, fordi man kun kan skrive i en textbox
+	den anden viser kun en stykke text man har lavet.
+
+5. Eleven kan implementere "event-handling".
+	
+	Er fx. når man klikker på en knap "Click" som er et keyword som viser over til en metode
+	i programmet og udføre det kode under metoden.
+
+6. Eleven kan implementere et UI Design pattern.
+
+	er den måde microsoft gerne vil have at vi designer
+	vore layout på og mønster.
+
+7. Eleven kan designe, udvikle og anvende "custom-controls".
+
+	-User controls
+	-templated controls
+
+	Er hvor du kan navigate til andre pages.
+
+8. Eleven kan konfigurere Application-klassen og dens lifetime-events.
+
+	At vi kan få events til at virke over Program.Main såsom når man lukker programmet.
+
+9. Eleven kan implementere en multitrådet applikation.
+
+	At vi kan få flere applikationer op at køre på samme tid.
+
+10. Eleven kan udføre en simpel usability-test.

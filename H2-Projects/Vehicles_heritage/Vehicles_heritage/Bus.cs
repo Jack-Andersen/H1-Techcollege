@@ -1,67 +1,117 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Vehicles_heritage
 {
+
     class Bus : Vehicles
     {
-
-        public bool Toliets;
-        public bool Towing;
-
-        public Bus(string vehicle, string vehicleName, int weight, bool towingHook, bool Toliets) : base(vehicle, vehicleName, weight, towingHook)
+        public Bus(string vehicle,
+            string vehicleName,
+            double km,
+            string registrationNumber,
+            int year,
+            double newPrice,
+            bool towbar,
+            double engineSize,
+            double kmPerLiter,
+            fuelTypeEnum fuelType,
+            bool toilet,
+            int numberOfSeats,
+            int sleepingplaces,
+            trunkDimentionsStruct trunkDimentions) : base(vehicle, vehicleName, km, registrationNumber, year, newPrice, towbar, kmPerLiter, fuelType)
         {
-            this.Toliets = Toliets;
-            this.Towing = towingHook;
+            this.Toilet = toilet;
+            this.NumberOfSeats = numberOfSeats;
+            this.Sleepingplaces = sleepingplaces;
+            this.TrunkDimentions = trunkDimentions;
+            this.EngineSize = engineSize;
         }
 
-        public void Seats(int seats)
+        //fields and probertys
+        public bool Toilet
         {
-            Console.WriteLine(" Sidde pladser: " + seats);
+            get { return toilet; }
+            set { toilet = value; }
         }
-        public void SleepingPlaces(int place)
-        {
-            Console.WriteLine(" Soveplader: " + place);
-        }
+        public bool toilet;
 
-        public bool ContainsToliets(bool type)
+        public int NumberOfSeats
         {
-            if (Toliets == true)
+            get { return numberOfSeats; }
+            set
             {
-                return true;
+                var r = new Regex(@"^[2-7]{1}$");
+
+                if (!r.IsMatch(value.ToString()))
+                    throw new Exception("Antal sæder er ikke gyldigt!");
+
+                else
+                    numberOfSeats = value;
             }
-            else
+        }
+        private int numberOfSeats;
+
+        public int Sleepingplaces
+        {
+            get { return sleepingplaces; }
+            set
             {
-                return false;
+                var r = new Regex(@"^[2-7]{1}$");
+
+                if (!r.IsMatch(value.ToString()))
+                    throw new Exception("Antal sover plader er ikke gyldigt!");
+
+                else
+                    sleepingplaces = value;
             }
         }
+        private int sleepingplaces;
 
-        public void Height(int h)
+        //TrunkDimentions field, proberty and struct
+        public trunkDimentionsStruct TrunkDimentions
         {
-            Console.WriteLine(" Højde: " + h);
+            get { return trunkDimentions; }
+            set { trunkDimentions = value; }
+        }
+        private trunkDimentionsStruct trunkDimentions;
+        public struct trunkDimentionsStruct
+        {
+            public double height;
+            public double width;
+            public double depth;
+            public override string ToString() => $"({height}, {width}, {depth})";
         }
 
-        public void Weight(int w)
+        //fields and probertys
+        public override double EngineSize
         {
-            Console.WriteLine(" vægt: " + w);
-        }
-
-        public void Lenght(int l)
-        {
-            Console.WriteLine(" længde: " + l);
-        }
-
-        public string LicenseType(bool type)
-        {
-            if (Towing)
+            get { return this.engineSize; }
+            set
             {
-                return "C";
+                if (value < 4.2 || value > 15.0)
+                    throw new ArgumentOutOfRangeException(
+                          "Must be between 4.2 and 15.0 L.");
+
+                this.engineSize = value;
             }
-            else
-            {
-                return "CE";
-            }
+        }
+
+        //Returns the Bus in a string
+        public override string ToString()
+        {
+            return base.ToString() + String.Format("\n {0}: {1}\n {2}: {3}\n {4}: {5}\n {6}: {7}\n",
+                nameof(this.Toilet),
+                this.Toilet,
+                nameof(this.NumberOfSeats),
+                this.NumberOfSeats,
+                nameof(this.Sleepingplaces),
+                this.Sleepingplaces,
+                nameof(this.TrunkDimentions),
+                this.TrunkDimentions.ToString()
+                );
         }
     }
 }
