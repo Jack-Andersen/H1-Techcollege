@@ -305,13 +305,5 @@ namespace Vehicles_heritage
                 this.EngeryClass
                 );
         }
-
-        internal AuctionHouse_AH.Auction Auction
-        {
-            get => default;
-            set
-            {
-            }
-        }
     }
 }

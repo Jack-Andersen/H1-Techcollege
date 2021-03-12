@@ -3,12 +3,9 @@
   <Class Name="Vehicles_heritage.Vehicles" Collapsed="true">
     <Position X="9.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQEAAAkRAQADEgEAAAAGAAgBAgQDEAAEARAAAAEAAg=</HashCode>
+      <HashCode>AAQEAAAkRAQADEgEAAAAEAAgBAgQDEAAEARAAAAEAAg=</HashCode>
       <FileName>Vehicles.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Auction" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Vehicles_heritage.Truck" Collapsed="true">
     <Position X="7.25" Y="3.25" Width="1.5" />
@@ -55,10 +52,11 @@
   <Class Name="Vehicles_heritage.AuctionHouse_AH.Auction" Collapsed="true">
     <Position X="14.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAJAAAAAAAIABAACAAQAAAABAAAAAQAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAJAAAAAAAIgBAACAAQAAAABAAAAAQAAAAAAAAACAA=</HashCode>
       <FileName>AuctionHouse_AH\Auction.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Property Name="Vehicles" />
       <Property Name="User" />
     </ShowAsAssociation>
   </Class>

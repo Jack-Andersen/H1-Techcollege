@@ -39,6 +39,14 @@ namespace Vehicles_heritage.AuctionHouse_AH
         }
         private User buyer;
 
+        internal Vehicles Vehicles
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         internal User User
         {
             get => default;
