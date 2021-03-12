@@ -52,12 +52,13 @@
   <Class Name="Vehicles_heritage.AuctionHouse_AH.Auction" Collapsed="true">
     <Position X="14.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAJAAAAAAAIgBAACAAQAAAABAAAAAQAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAJAAAAAAAIABAAKAAQAAAABAAAAAQAAAAAAAAACAA=</HashCode>
       <FileName>AuctionHouse_AH\Auction.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Vehicles" />
+      <Property Name="Vehicle" />
       <Property Name="User" />
+      <Property Name="User1" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Vehicles_heritage.AuctionHouse_AH.AuctionHouse" Collapsed="true">

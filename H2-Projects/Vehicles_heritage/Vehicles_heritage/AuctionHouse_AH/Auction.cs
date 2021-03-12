@@ -10,56 +10,47 @@ namespace Vehicles_heritage.AuctionHouse_AH
         {
             this.Bid = myPrice;
             this.Vehicle = vehicleType;
-            this.Seller = (User)seller;
+            this.UserSeller = (User)seller;
         }
 
         public decimal Bid
         {
-            get { }
+            get => default;
             set { }
         }
         private decimal bid;
 
-        public Vehicles Vehicle
+        internal Vehicles Vehicle
         {
-            get;
+            get => default;
+            set
+            {
+            }
         }
         public Vehicles vehicle;
 
-        public User Seller
+        internal User UserSeller
         {
-            get;
+            get => default;
+            set
+            {
+            }
         }
         private User seller;
 
-        public User Buyer
-        {
-            get { }
-            set { }
-        }
-        private User buyer;
-
-        internal Vehicles Vehicles
+        internal User UserBuyer
         {
             get => default;
             set
             {
             }
         }
-
-        internal User User
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        private User Userbuyer;
 
         //get { return cprNumver; }
         //set { cprNumber = value; }
 
     }
-    
 
     //public class Auction
     //{
