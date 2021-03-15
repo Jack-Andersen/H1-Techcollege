@@ -7,8 +7,8 @@ body{
 .links{
     float: right;
     margin-top: 0.5%;
-    margin-left: 65%;
-    padding: 10px 4px;
+    margin-left: 64%;
+    padding: 10px 10px;
     position: fixed;
     background-color: black;
     line-height: 35px;
@@ -130,13 +130,13 @@ a:active {
 
 .image .kvalifikationer{
     background: rgb(0, 0, 0); 
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(218, 202, 202, 0.5); 
     width: 45%;
 }
 
 .image .uddannelsesmæssig{
     background: rgb(0, 0, 0); 
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(167, 29, 29, 0.5); 
     width: 45%;
 }
 
