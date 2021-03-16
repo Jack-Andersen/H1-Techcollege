@@ -175,8 +175,15 @@ a:active {
     padding: 20px;
 } 
 
-/* Large devices (laptops/desktops, 768px and up) */
- @media only screen and (max-width: 768px) {
+@media only screen and (max-width:1150px) {
+
+    .intro img{
+        visibility: hidden;
+    }
+}
+
+ /*For mobile phones: 620px)*/
+ @media only screen and (max-width:620px) {
     
     .links{
     
@@ -184,15 +191,24 @@ a:active {
         line-height: 35px;
     }
 
+    .links{
+        margin-left: 75%;
+    }
+
+    .intro{
+        height: 160vh;
+    }
+
     .intro img{
-        margin-left: 150px;
+        visibility: visible;
+        margin-left: 120px;
         margin-top: 35px;
         height: 200px;
     }
     
     .intro h1{
         margin: 0%;
-        padding-top: 65%;
+        padding-top: 60%;
     }
     
     
@@ -251,92 +267,4 @@ a:active {
     .image .footerInfo {
         padding: 20px;
     } 
-
-  /* Extra small devices (phones, 375px and down) */
- @media only screen and (max-width: 375px) {
-  
-    .links{
-
-        line-height: 35px;
-
-    }
-    
-    .intro img {
-        margin-left: 60px;
-        margin-top: 20px;
-        height: 200px;
-        
-    }
-
-    .intro{
-        background-image: url("Images/Circuit2.jpg");
-        height: 200vh;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    
-        color: white;
-    }
-    
-    .intro h1{
-        padding-top: 65%;
-
-    }   
-    
-    .brødtext h2{
-        text-align: center;
-        padding-left: 15px;
-
-    }
-    
-    .brødtext{
-        text-align: center;
-        padding-right: 150px;
-    
-    }
-
-    .first {
-        width: 40%;
-        float: left;
-        height: 250px;
-    }
-    .second {
-        width: 25%;
-        float: left;
-        height: 250px;
-    }
-    .third {
-        width: 25%;
-        float: left;
-        height: 250px;
-    }
-    .clear {
-        clear: both;
-    }
-    
-    .image .kvalifikationer{
-        width: 63%;
-
-    }
-    
-    .image .uddannelsesmæssig{
-        width: 63%;
-
-    }
-    
-    .image .erhvervserfaring{ 
-        width: 63%;
-
-    }
-    
-    .image .projekter {
-        width: 63%;
-
-    }
-    
-    .image .footerInfo {
-        padding: 4%;
-        
-    }
-    }
-}
+ }
