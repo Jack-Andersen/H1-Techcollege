@@ -66,7 +66,6 @@ a:active {
     padding-top: 15%;
 }
 
-
 .itext a{
     text-decoration: none;
     font-size: 130%;
@@ -79,7 +78,6 @@ a:active {
     margin-right: 150px;
     font-size: 110%;
 }
-
 
 .brødtext h2{
     margin-left: 40px;
@@ -110,6 +108,25 @@ a:active {
 
 }
 
+.first {
+    width: 40%;
+    float: left;
+    height: 250px;
+}
+.second {
+    width: 25%;
+    float: left;
+    height: 250px;
+}
+.third {
+    width: 25%;
+    float: left;
+    height: 250px;
+}
+.clear {
+    clear: both;
+}
+
 .projekter a{
     color: blue;
     border: none;
@@ -130,13 +147,13 @@ a:active {
 
 .image .kvalifikationer{
     background: rgb(0, 0, 0); 
-    background: rgba(218, 202, 202, 0.5); 
+    background: rgba(0, 0, 0, 0.5); 
     width: 45%;
 }
 
 .image .uddannelsesmæssig{
     background: rgb(0, 0, 0); 
-    background: rgba(167, 29, 29, 0.5); 
+    background: rgba(0, 0, 0, 0.5); 
     width: 45%;
 }
 
@@ -166,12 +183,11 @@ a:active {
         text-align: center;
         line-height: 35px;
     }
-    
-    .intro img {
-        margin-left: 60px;
+
+    .intro img{
+        margin-left: 150px;
         margin-top: 35px;
         height: 200px;
-
     }
     
     .intro h1{
@@ -195,6 +211,25 @@ a:active {
         text-align: center;
         margin-right: 150px;
     
+    }
+
+    .first {
+        width: 40%;
+        float: left;
+        height: 250px;
+    }
+    .second {
+        width: 25%;
+        float: left;
+        height: 250px;
+    }
+    .third {
+        width: 25%;
+        float: left;
+        height: 250px;
+    }
+    .clear {
+        clear: both;
     }
 
     .image .kvalifikationer{
@@ -232,6 +267,16 @@ a:active {
         height: 200px;
         
     }
+
+    .intro{
+        background-image: url("Images/Circuit2.jpg");
+        height: 200vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    
+        color: white;
+    }
     
     .intro h1{
         padding-top: 65%;
@@ -248,6 +293,25 @@ a:active {
         text-align: center;
         padding-right: 150px;
     
+    }
+
+    .first {
+        width: 40%;
+        float: left;
+        height: 250px;
+    }
+    .second {
+        width: 25%;
+        float: left;
+        height: 250px;
+    }
+    .third {
+        width: 25%;
+        float: left;
+        height: 250px;
+    }
+    .clear {
+        clear: both;
     }
     
     .image .kvalifikationer{
