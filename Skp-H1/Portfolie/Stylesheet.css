@@ -1,7 +1,6 @@
 body{
     margin: 0%;
     background-color: black;
-
 }
 
 .links{
@@ -66,12 +65,6 @@ a:active {
     padding-top: 15%;
 }
 
-.itext a{
-    text-decoration: none;
-    font-size: 130%;
-    padding-bottom: 50px;
-}
-
 .itext{
     text-align: center;
     margin-top: 30px;
@@ -104,8 +97,7 @@ a:active {
 .kvalifikationer h2{
     margin-left: 40px;
     padding-top: 20px;
-    word-spacing: 100px;
-
+    word-spacing: 190px;
 }
 
 .first {
@@ -148,25 +140,25 @@ a:active {
 .image .kvalifikationer{
     background: rgb(0, 0, 0); 
     background: rgba(0, 0, 0, 0.5); 
-    width: 45%;
+    width: 60%;
 }
 
 .image .uddannelsesmæssig{
     background: rgb(0, 0, 0); 
     background: rgba(0, 0, 0, 0.5); 
-    width: 45%;
+    width: 60%;
 }
 
 .image .erhvervserfaring{
     background: rgb(0, 0, 0); 
     background: rgba(0, 0, 0, 0.5); 
-    width: 45%;
+    width: 60%;
 }
 
 .image .projekter {
     background: rgb(0, 0, 0); 
     background: rgba(0, 0, 0, 0.5); 
-    width: 45%;
+    width: 60%;
 }
 
 .image .footerInfo {
@@ -175,28 +167,120 @@ a:active {
     padding: 20px;
 } 
 
+@media only screen and (max-width:1491.5px) {
+
+    .links{
+        text-align: center;
+        margin-left: 72%;
+        margin-right: 1%;
+    }
+
+    .itext{
+        text-align: center;
+        margin-top: 30px;
+        margin-right: 150px;
+        font-size: 110%;
+    }
+
+    .brødtext{
+        margin-right: 345px;
+    }
+
+    .kvalifikationer h2{
+        margin-left: 40px;
+        padding-top: 20px;
+        word-spacing: 100px;
+    }
+
+    .image .kvalifikationer{
+        width: 60%;
+        height: 360px;
+    }
+    
+    .image .uddannelsesmæssig{
+        width: 60%;
+    }
+    
+    .image .erhvervserfaring{
+        width: 60%;
+    }
+    
+    .image .projekter {
+        width: 60%;
+    }
+    
+    .image .footerInfo {
+        padding: 20px;
+    }
+
+}
+
 @media only screen and (max-width:1150px) {
+
+    .intro{
+        height: 130vh;
+    }
 
     .intro img{
         visibility: hidden;
+    }
+
+    .intro h1{
+        margin-right: 20px;
+    }
+
+    .itext{
+        text-align: center;
+        margin-top: 30px;
+        margin-right: 220px;
+        font-size: 110%;
+    }
+
+    .brødtext{
+        margin-right: 300px;
+    }
+
+    .image .kvalifikationer{
+        width: 60%;
+        height: 360px;
+    }
+    
+    .image .uddannelsesmæssig{
+        width: 60%;
+    }
+    
+    .image .erhvervserfaring{
+        width: 60%;
+    }
+    
+    .image .projekter {
+        width: 60%;
+    }
+    
+    .image .footerInfo {
+        padding: 20px;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    
+    .image .kvalifikationer{
+        width: 60%;
+        height: 530px;
     }
 }
 
  /*For mobile phones: 620px)*/
  @media only screen and (max-width:620px) {
-    
-    .links{
-    
-        text-align: center;
-        line-height: 35px;
-    }
 
     .links{
-        margin-left: 75%;
+        text-align: center;
+        margin-left: 72%;
+        margin-right: 2%;
     }
 
     .intro{
-        height: 160vh;
+        height: 165vh;
     }
 
     .intro img{
@@ -211,21 +295,14 @@ a:active {
         padding-top: 60%;
     }
     
-    
-    .itext a{
-        text-decoration: none;
-        font-size: 130%;
-        padding-bottom: 50px;
-    }
-    
     .itext{
         text-align: center;
-        margin-right: 150px;
+        margin-right: 170px;
     }
     
     .brødtext{
         text-align: center;
-        margin-right: 150px;
+        margin-right: 170px;
     
     }
 
@@ -249,19 +326,20 @@ a:active {
     }
 
     .image .kvalifikationer{
-        width: 52%;
+        width: 70%;
+        height: 420px;
     }
     
     .image .uddannelsesmæssig{
-        width: 52%;
+        width: 70%;
     }
     
     .image .erhvervserfaring{
-        width: 52%;
+        width: 70%;
     }
     
     .image .projekter {
-        width: 52%;
+        width: 70%;
     }
     
     .image .footerInfo {
