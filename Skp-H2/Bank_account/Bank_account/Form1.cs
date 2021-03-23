@@ -40,7 +40,7 @@ namespace Bank_account
 
         private void Reset_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
