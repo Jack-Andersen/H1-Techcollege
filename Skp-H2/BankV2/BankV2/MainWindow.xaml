@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BankV2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="483" Width="812">
     <StackPanel>
         <local:ContentArea x:Name="contentArea"></local:ContentArea>
     </StackPanel>

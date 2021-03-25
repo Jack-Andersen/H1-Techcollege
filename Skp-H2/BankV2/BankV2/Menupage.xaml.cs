@@ -2,19 +2,22 @@
 
 namespace BankV2
 {
-    /// <summary>
-    /// Interaction logic for Menupage.xaml
-    /// </summary>
-    public partial class Menupage : UserControl
+    public partial class MenuPage : UserControl
     {
 
         MainWindow window;
 
-        public Menupage(MainWindow window)
+        public MenuPage(MainWindow window)
         {
             InitializeComponent();
 
             this.window = window;
+
+        }
+
+        private void Login_Btn_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            window.LogIn().Navigate(new LoginPage(window));
         }
     }
 }

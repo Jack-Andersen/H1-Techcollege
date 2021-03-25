@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bank_account
 {
-    public class Bank_account
+    public class BankAccount
     {
 
         public string Number { get; }
@@ -14,7 +14,7 @@ namespace Bank_account
 
         private List<Transaction> allTransactions = new List<Transaction>();
 
-        public Bank_account(string name, double balance)
+        public BankAccount(string name, double balance)
         {
             this.Owner = name;
             this.Balance = balance;

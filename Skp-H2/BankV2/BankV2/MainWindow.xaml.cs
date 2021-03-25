@@ -9,8 +9,28 @@ namespace BankV2
         {
             InitializeComponent();
 
-            contentArea.Navigate(new Menupage(this));
+            contentArea.Navigate(new MenuPage(this));
 
+        }
+
+        public void LogedIn()
+        {
+            contentArea.Navigate(new MenuPage(this));
+        }
+
+        public ContentArea LogIn()
+        {
+            return contentArea;
+        }
+
+        public ContentArea NewUser()
+        {
+            return contentArea;
+        }
+
+        public ContentArea Return()
+        {
+            return contentArea;
         }
     }
 }
