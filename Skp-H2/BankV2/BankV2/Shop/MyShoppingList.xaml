@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="BankV2.Shop.MyShoppingList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BankV2.Shop"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Image Source="c:\users\elder\documents\github\jack_andersen\skp-h2\bankv2\bankv2\images\background.jfif" Stretch="Fill"/>
+        <StackPanel>
+            <Grid Name="Banner" HorizontalAlignment="Left" Margin="-20,15,0,0" RenderTransformOrigin="0.5,0.5" Width="300">
+                <Grid.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-30.00"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Grid.RenderTransform>
+                <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Height="70" Margin="-29,0,0,0">
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                    <TextBlock Background="#A0522D" Margin="0,0,0,-5"/>
+                </Border>
+                <Label FontSize="25" FontStyle="Oblique" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,70,5">My Shopping list
+                    <Label.BitmapEffect>
+                        <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity=".9" Softness=".5" />
+                    </Label.BitmapEffect>
+                </Label>
+            </Grid>
+        </StackPanel>
+        <!--Middle part-->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,75,0,0">
+            <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <DataGrid Name="ShoppingGrid" Height="100" AutoGenerateColumns="False" FontSize="35">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Apple" Binding="{Binding Path=Apple}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Bread" Binding="{Binding Path=Bread}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Donut" Binding="{Binding Path=Dount}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Cost" Binding="{Binding Path=Cost}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Border>
+            <StackPanel Margin="0,30,0,0">
+                <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="140" Height="50">
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                    <Button Content="Buy" Name="Buy_Btn" Width="130" FontSize="25" Background="White" FontStyle="Oblique" Click="Buy_Btn_Click"></Button>
+                </Border>
+            </StackPanel>
+            <StackPanel Margin="0,5,0,0">
+                <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="200" Height="50">
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                    <Button Content="Clear List" Name="Clear_Btn" Width="190" FontSize="25" Background="White" FontStyle="Oblique" Click="Clear_Btn_Click"></Button>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <!--Back Btn-->
+        <StackPanel Margin="650,395,0,0">
+            <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="140" Height="50">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <Button Content="Back" Name="Back_Btn" Margin="0,0,0,0" Width="130" Background="White" FontWeight="Bold" FontStyle="Oblique" Click="Back_Btn_Click"></Button>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>

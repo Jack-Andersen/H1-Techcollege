@@ -7,33 +7,63 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ContentArea.xaml.cs">
+    <Compile Update="Bank\AboutMePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="LoginPage.xaml.cs">
+    <Compile Update="Bank\ContentArea.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="MenuPage.xaml.cs">
+    <Compile Update="Bank\ForgotUsernameAndPassword.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="NewUserPage.xaml.cs">
+    <Compile Update="Bank\LoginPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Bank\MenuPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Bank\NewUserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Bank\TransactionOverViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Shop\MyShoppingList.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Shop\ShopPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="ContentArea.xaml">
+    <Page Update="Bank\AboutMePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="LoginPage.xaml">
+    <Page Update="Bank\ContentArea.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Bank\ForgotUsernameAndPassword.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Bank\LoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MenuPage.xaml">
+    <Page Update="Bank\MenuPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="NewUserPage.xaml">
+    <Page Update="Bank\NewUserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Bank\TransactionOverViewPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Shop\MyShoppingList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Shop\ShopPage.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
