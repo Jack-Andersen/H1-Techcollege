@@ -46,14 +46,20 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Border>
-            <StackPanel Margin="0,30,0,0">
-                <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="140" Height="50">
+            <Grid Margin="0,30,0,0">
+                <Border Name="BuyBorder" BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="140" Height="50">
                     <Border.Effect>
                         <DropShadowEffect/>
                     </Border.Effect>
-                    <Button Content="Buy" Name="Buy_Btn" Width="130" FontSize="25" Background="White" FontStyle="Oblique" Click="Buy_Btn_Click"></Button>
+                    <Button Name="Buy_Btn" Content="Buy" Width="130" FontSize="25" Background="White" FontStyle="Oblique" Click="Buy_Btn_Click"></Button>
                 </Border>
-            </StackPanel>
+                <Border Name="SellBorder" BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="140" Height="50" Visibility="Collapsed">
+                    <Border.Effect>
+                        <DropShadowEffect/>
+                    </Border.Effect>
+                <Button Name="Sell_Btn" Content="Sell" Width="130" FontSize="25" Background="White" FontStyle="Oblique" Visibility="Collapsed" Click="Sell_Btn_Click"></Button>
+                </Border>
+            </Grid>
             <StackPanel Margin="0,5,0,0">
                 <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="200" Height="50">
                     <Border.Effect>

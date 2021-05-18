@@ -8,8 +8,6 @@ namespace BankV2
 
         readonly MainWindow window;
 
-        public static Transaction userBuffer { get; set; } = new Transaction();
-
         public TransactionOverViewPage(MainWindow window)
         {
             InitializeComponent();

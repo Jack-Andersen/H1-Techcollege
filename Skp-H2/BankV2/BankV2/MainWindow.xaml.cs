@@ -1,4 +1,5 @@
-﻿using BankV2.Shop;
+﻿using BankV2.Bank;
+using BankV2.Shop;
 using System.Windows;
 
 namespace BankV2
@@ -25,13 +26,24 @@ namespace BankV2
             contentArea.Navigate(new LoginPage(this));
         }
 
+        public void TransferMoneyPage()
+        {
+            contentArea.Navigate(new TransferMoneyPage(this));
+        }
+
         //Navigate to NewUserPage
         public void NewUserPage()
         {
             contentArea.Navigate(new NewUserPage(this));
         }
 
-        //Navigate to TransactionOverView
+        //Navigate to ForgotUserLoginPage
+        public void ForgotUserNameAndPassword()
+        {
+            contentArea.Navigate(new ForgotUserLoginPage(this));
+        }
+
+        //Navigate to TransactionOverViewPage
         public void TransactionOverView()
         {
             contentArea.Navigate(new TransactionOverViewPage(this));
@@ -43,11 +55,13 @@ namespace BankV2
             contentArea.Navigate(new AboutMePage(this));
         }
 
+        //Navigate to ShopPage
         public void Shop()
         {
             contentArea.Navigate(new ShopPage(this));
         }
 
+        //Navigate to MyShoppingListPage
         public void MyShoppingList()
         {
             contentArea.Navigate(new MyShoppingList(this));

@@ -25,13 +25,11 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\bin\Debug\net
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\AboutMePage.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\ContentArea.g.cs
-C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\ForgotUsernameAndPassword.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\LoginPage.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\MenuPage.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\TransactionOverViewPage.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\AboutMePage.baml
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\ContentArea.baml
-C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\ForgotUsernameAndPassword.baml
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\LoginPage.baml
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\MenuPage.baml
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\TransactionOverViewPage.baml
@@ -44,3 +42,7 @@ C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\net
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Shop\MyShoppingList.g.cs
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Shop\MyShoppingList.baml
 C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\BankV2.csprojAssemblyReference.cache
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\TransferMoneyPage.g.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\TransferMoneyPage.baml
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\ForgotUserLoginPage.g.cs
+C:\Users\Elder\Documents\GitHub\Jack_Andersen\Skp-H2\BankV2\BankV2\obj\Debug\netcoreapp3.1\Bank\ForgotUserLoginPage.baml

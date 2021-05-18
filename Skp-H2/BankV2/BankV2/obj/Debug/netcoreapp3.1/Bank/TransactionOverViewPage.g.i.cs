@@ -77,7 +77,7 @@ namespace BankV2 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BankV2;V1.0.0.0;component/bank/transactionoverviewpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BankV2;component/bank/transactionoverviewpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Bank\TransactionOverViewPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

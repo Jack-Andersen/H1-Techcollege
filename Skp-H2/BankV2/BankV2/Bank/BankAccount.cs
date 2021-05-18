@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankV2.Shop;
+using System;
 using System.Collections.Generic;
 using System.Windows;
 
@@ -35,21 +36,38 @@ namespace BankV2
         //Calculates the newBalance
         public void Buy(decimal amount, DateTime date, string note, decimal balance)
         {
-            decimal newBalance = balance - amount;
+            if (balance <= 0 || balance - amount < 0)
+            {
+                throw new ArgumentException("You don't have enough money");
+            }
+            else
+            {
+                decimal newBalance = balance - amount;
+
+                Transaction.TransactionBufferValues(amount, date, note);
+
+                Balance = newBalance;
+            }
+        }
+
+        //Calculates the newBalance
+        public void Sell(decimal amount, DateTime date, string note, decimal balance)
+        {
+            decimal newBalance = balance + amount;
 
             Transaction.TransactionBufferValues(amount, date, note);
 
             Balance = newBalance;
         }
 
-        //Calculates the newBalance
-        public void MakeWithdrawal(decimal amount, DateTime date, string note)
+        //Gets info from withdraw
+        public void WithdrawInfo(decimal amount, DateTime date, string note)
         {
             Transaction.TransactionBufferValues(amount, date, note);
         }
 
-        //Calculates the newBalance 
-        public void MakeDeposit(decimal amount, DateTime date, string note)
+        //Gets info from Deposit 
+        public void DepositInfo(decimal amount, DateTime date, string note)
         {
             Transaction.TransactionBufferValues(amount, date, note);
         }
@@ -59,5 +77,8 @@ namespace BankV2
         {
             Balance.ToString();
         }
+
+        // lav en metode som sender - Amount
+        // modtager + amount
     }
 }

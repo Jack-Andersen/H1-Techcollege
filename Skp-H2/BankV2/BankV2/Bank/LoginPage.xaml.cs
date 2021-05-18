@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Threading;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace BankV2
@@ -30,10 +31,15 @@ namespace BankV2
                     BalanceId = NewUserPage.userBuffer.Bank_Account.Id = Database.GetBalanceId(Id);
                     NewUserPage.userBuffer.Bank_Account.Balance = Database.GetBalance(BalanceId);
 
-                    if (Database.IdTotal() > 50)
+                    if (Database.IdTotal(Id) > 50)
                     {
-                        Database.TruncateTable("[Transaction]");
-                        Database.TruncateTable("TransactionBalance");
+
+                        Thread.Sleep(2000);
+                        Database.DeleteTable("[Transaction]", LoginPage.Id);
+                        Database.DeleteTable("TransactionBalance", LoginPage.Id);
+
+                        //Database.TruncateTable("[Transaction]");
+                        //Database.TruncateTable("TransactionBalance");
                     }
 
                     UpdateName();
@@ -62,7 +68,7 @@ namespace BankV2
         //Forgot UserName/Password_Btn
         private void Forgot_UserName_Password_Click(object sender, RoutedEventArgs e)
         {
-            //En Email sendes til personen
+            window.ForgotUserNameAndPassword();
         }
 
         //Back_Btn

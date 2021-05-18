@@ -70,6 +70,20 @@
                 </Border>
             </StackPanel>
         </StackPanel>
+        <!--Sell items-->
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,45,15,0">
+            <Label FontSize="25" FontStyle="Oblique" FontWeight="Bold" HorizontalAlignment="Center">Sell items
+                <Label.BitmapEffect>
+                    <DropShadowBitmapEffect Color="Black" Direction="320" ShadowDepth="10" Opacity=".9" Softness=".5" />
+                </Label.BitmapEffect>
+            </Label>
+            <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="26" Height="25">
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <CheckBox Name="Sell" Width="16" Background="White" FontSize="20" VerticalContentAlignment="Center" Checked="Sell_Checked" Unchecked="Sell_Unchecked"></CheckBox>
+            </Border>
+        </StackPanel>
         <!--Back Btn-->
         <StackPanel Margin="650,395,0,0">
             <Border BorderBrush="#A0522D" BorderThickness="5" CornerRadius="5" Width="140" Height="50">

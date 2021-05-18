@@ -70,12 +70,46 @@ class Database
     }
     #endregion
 
+    #region GetMail...
+    public static bool GetMail(string mail)
+    {
+        using SqlCommand command = new SqlCommand(@"
+            SELECT Mail FROM [User] WHERE Mail = @Mail", connection);
+        {
+            command.Parameters.AddWithValue("@Mail", mail);
+
+            var result = command.ExecuteScalar();
+
+            if (result != null ? (int)result > 0 : false)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+    #endregion
+
+    #region Password...
+    public static void Password(string password, int id)
+    {
+        using SqlCommand command = new SqlCommand(@"
+            UPDATE [User] SET [Password] = @Password WHERE Id = @Id", connection);
+        {
+            command.Parameters.AddWithValue("@Password", password);
+            command.Parameters.AddWithValue("@Id", id);
+
+            command.ExecuteNonQuery();
+        }
+    }
+    #endregion
+
     #region
     public static void NewBalance(decimal balance, int id)
     {
         using SqlCommand command = new SqlCommand(@"
             INSERT INTO TransactionBalance (TransactionBalance, PersonId)
-            VALUES(@Balance, @PersonId)", connection);
+            VALUES (@Balance, @PersonId)", connection);
         {
             command.Parameters.AddWithValue("@Balance", balance);
             command.Parameters.AddWithValue("@PersonId", id);
@@ -180,12 +214,39 @@ class Database
     #region UserId...
     public static int UserId(string firstName, string password)
     {
-        //Look at sql injection!
         SqlCommand command = new SqlCommand(@"
         SELECT Id FROM [User] WHERE FirstName = @FirstName AND [Password] = Password", connection);
 
         command.Parameters.AddWithValue("@FirstName", firstName);
         command.Parameters.AddWithValue("@Password", password);
+
+        int Id = (int)command.ExecuteScalar();
+
+        return Id;
+    }
+    #endregion
+
+    #region UserId...
+    public static int UserIdMail(string mail)
+    {
+        SqlCommand command = new SqlCommand(@"
+        SELECT Id FROM [User] WHERE Mail = @Mail", connection);
+
+        command.Parameters.AddWithValue("@Mail", mail);
+
+        int Id = (int)command.ExecuteScalar();
+
+        return Id;
+    }
+    #endregion
+
+    #region UserIdPhone...
+    public static int UserIdPhone(int phoneNumber)
+    {
+        SqlCommand command = new SqlCommand(@"
+        SELECT Id FROM [User] WHERE PhoneNumber = @PhoneNumber", connection);
+
+        command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
 
         int Id = (int)command.ExecuteScalar();
 
@@ -221,24 +282,41 @@ class Database
     }
     #endregion
 
+    #region GetBalance...
+    public static decimal GetReceiverBalance(int phoneNumber)
+    {
+        SqlCommand command = new SqlCommand(@"
+        SELECT Balance From Balance
+        INNER JOIN [User] ON Balance.Id = [User].Id Where PhoneNumber = @PhoneNumber", connection);
+
+        command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
+
+        decimal balance = (decimal)command.ExecuteScalar();
+
+        return balance;
+    }
+    #endregion
+
     #region UpdateBalance...
     public static void UpdateBalance(decimal balance, int id)
     {
         SqlCommand command = new SqlCommand(@"
-        Update Balance SET Balance = @balance WHERE PersonId = @id".Replace(", ", "."), connection);
+        Update Balance SET Balance = @balance WHERE PersonId = @Id".Replace(", ", "."), connection);
 
         command.Parameters.AddWithValue("@balance", balance);
-        command.Parameters.AddWithValue("@id", id);
+        command.Parameters.AddWithValue("@Id", id);
 
         command.ExecuteNonQuery();
     }
     #endregion
 
     #region IdTotal...
-    public static int IdTotal()
+    public static int IdTotal(int id)
     {
         SqlCommand command = new SqlCommand(@"
-        SELECT TOP 1 Id FROM [Transaction] ORDER BY Id DESC", connection);
+        SELECT COUNT (Id) FROM [Transaction] WHERE PersonId = @Id", connection);
+
+        command.Parameters.AddWithValue("@Id", id);
 
         int? IdTotal = (int?)command.ExecuteScalar();
 
@@ -256,6 +334,32 @@ class Database
     {
         SqlCommand command = new SqlCommand(@"
         TRUNCATE TABLE " + name + "" , connection);
+
+        command.ExecuteNonQuery();
+    }
+    #endregion
+
+    #region TruncateTable...
+    public static void DeleteTable(string name, int id)
+    {
+        SqlCommand command = new SqlCommand(@"
+        DELETE FROM " + name + " WHERE PersonId = @Id", connection);
+
+        command.Parameters.AddWithValue("@Id", id);
+
+        command.ExecuteNonQuery();
+    }
+    #endregion
+
+    #region TransferMoney...
+    public static void TransferMoney(decimal balance, int phoneNumber)
+    {
+        SqlCommand command = new SqlCommand(@"
+        Update Balance Set Balance = @Balance FROM Balance
+        INNER JOIN [User] ON Balance.Id = [User].Id Where PhoneNumber = PhoneNumber", connection);
+
+        command.Parameters.AddWithValue("@Balance", balance);
+        command.Parameters.AddWithValue("@PhoneNumber", phoneNumber);
 
         command.ExecuteNonQuery();
     }
@@ -360,8 +464,8 @@ class Database
         SqlDataReader dataReader = command.ExecuteReader();
         while (dataReader.Read())
         {
-            MyShoppingList.InventoryBuffer.Apple = Convert.ToInt32(dataReader.GetValue(0).ToString());
-            MyShoppingList.InventoryBuffer.Bread = Convert.ToInt32(dataReader.GetValue(1).ToString());
+            MyShoppingList.InventoryBuffer.Apple = Convert.ToInt32(dataReader.GetValue(0));
+            MyShoppingList.InventoryBuffer.Bread = Convert.ToInt32(dataReader.GetValue(1));
             MyShoppingList.InventoryBuffer.Dount = Convert.ToInt32(dataReader.GetValue(2));
         }
         dataReader.Close();
@@ -369,7 +473,6 @@ class Database
 
     public static void UpdateInventory(List<Inventory> inventori, int id)
     {
-
         using SqlCommand command = new SqlCommand(@"
         UPDATE Inventory SET Apple = @Apple, Bread = @Bread, Dount = @Dount WHERE PersonId = @PersonId", connection);
 

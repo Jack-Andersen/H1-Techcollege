@@ -13,7 +13,7 @@
     <Compile Update="Bank\ContentArea.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Bank\ForgotUsernameAndPassword.xaml.cs">
+    <Compile Update="Bank\ForgotUserLoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Bank\LoginPage.xaml.cs">
@@ -26,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Bank\TransactionOverViewPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Bank\TransferMoneyPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Shop\MyShoppingList.xaml.cs">
@@ -42,10 +45,13 @@
     <Page Update="Bank\ContentArea.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Bank\ForgotUsernameAndPassword.xaml">
+    <Page Update="Bank\ForgotUserLoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Bank\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Bank\TransferMoneyPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

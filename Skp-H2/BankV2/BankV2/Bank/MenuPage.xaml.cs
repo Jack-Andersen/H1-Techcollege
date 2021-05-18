@@ -8,6 +8,7 @@ namespace BankV2
     public partial class MenuPage : UserControl
     {
         readonly MainWindow window;
+
         private const Visibility visible = Visibility.Visible;
         private const Visibility collapsed = Visibility.Collapsed;     
 
@@ -32,6 +33,7 @@ namespace BankV2
             //ComboboxItems
             if (LoginPage.Id != 0)
             {
+                TransfurMoney_Btn.Visibility = visible;
                 Shop_Btn.Visibility = visible;
                 TransactionOverView.Visibility = visible;
                 AboutMe_Btn.Visibility = visible;
@@ -42,6 +44,12 @@ namespace BankV2
         private void Login_Btn_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             window.LogInPage();
+        }
+
+        //TransfurMoney_Btn
+        private void TransfurMoney_Btn_PreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            window.TransferMoneyPage();
         }
 
         //TransactionOverView_Btn
@@ -80,7 +88,7 @@ namespace BankV2
 
                     //Code for Transaction and TransactionsBalance
                     NewUserPage.userBuffer.Note = "Withdrew " + Convert.ToDecimal(WithdrawAndDepositBar.Text) + " from the bank";
-                    NewUserPage.userBuffer.Bank_Account.MakeWithdrawal(Convert.ToDecimal(WithdrawAndDepositBar.Text), DateTime.Now, NewUserPage.userBuffer.Note);
+                    NewUserPage.userBuffer.Bank_Account.WithdrawInfo(Convert.ToDecimal(WithdrawAndDepositBar.Text), DateTime.Now, NewUserPage.userBuffer.Note);
                     Database.NewBalance(newBalance, LoginPage.Id);
                     Database.SetListTransactions(Transaction.transactionBuffer, LoginPage.Id);
                 }              
@@ -111,7 +119,7 @@ namespace BankV2
 
                     //Code for Transaction and TransactionsBalance
                     NewUserPage.userBuffer.Note = "Deposited " + Convert.ToDecimal(WithdrawAndDepositBar.Text) + " to the bank" ;
-                    NewUserPage.userBuffer.Bank_Account.MakeDeposit(Convert.ToDecimal(WithdrawAndDepositBar.Text), DateTime.Now, NewUserPage.userBuffer.Note);
+                    NewUserPage.userBuffer.Bank_Account.DepositInfo(Convert.ToDecimal(WithdrawAndDepositBar.Text), DateTime.Now, NewUserPage.userBuffer.Note);
                     Database.NewBalance(newBalance, LoginPage.Id);
                     Database.SetListTransactions(Transaction.transactionBuffer, LoginPage.Id);
                 }
@@ -126,6 +134,7 @@ namespace BankV2
             NameDisplay.Content = LoginPage.name;
             NewUserPage.userBuffer.Bank_Account.Balance = 0;
             Balance.Content = NewUserPage.userBuffer.Bank_Account.Balance;
+            TransfurMoney_Btn.Visibility = collapsed;
             Shop_Btn.Visibility = collapsed;
             TransactionOverView.Visibility = collapsed;
             AboutMe_Btn.Visibility = collapsed;

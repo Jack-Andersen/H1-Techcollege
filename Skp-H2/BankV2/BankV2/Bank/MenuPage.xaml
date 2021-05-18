@@ -38,6 +38,7 @@
                         </Border.Effect>
                         <ComboBox Name="Login" Margin="0,0,0,0" Width="130" Background="White" FontWeight="Bold" FontStyle="Oblique" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                             <ComboBoxItem IsSelected="True" HorizontalContentAlignment="left" Name="Login_Btn" PreviewMouseLeftButtonDown="Login_Btn_PreviewMouseLeftButtonDown">Login</ComboBoxItem>
+                            <ComboBoxItem HorizontalContentAlignment="left" Name="TransfurMoney_Btn" Visibility="Collapsed" PreviewMouseLeftButtonDown="TransfurMoney_Btn_PreviewMouseLeftButtonDown">Transfur money</ComboBoxItem>
                             <ComboBoxItem HorizontalContentAlignment="left" Name="Shop_Btn" Visibility="Collapsed" PreviewMouseLeftButtonDown="Shop_Btn_PreviewMouseLeftButtonDown">Shop</ComboBoxItem>
                             <ComboBoxItem HorizontalContentAlignment="left" Name="TransactionOverView" Visibility="Collapsed" PreviewMouseLeftButtonDown="TransactionOverView_PreviewMouseLeftButtonDown">Transaction OverView</ComboBoxItem>
                             <ComboBoxItem HorizontalContentAlignment="left" Name="AboutMe_Btn" Visibility="Collapsed" PreviewMouseLeftButtonDown="AboutMe_Btn_PreviewMouseLeftButtonDown">About Me</ComboBoxItem>
