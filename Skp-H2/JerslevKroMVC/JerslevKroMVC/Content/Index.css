@@ -1,0 +1,57 @@
+﻿.row-top {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 10%;
+    min-height: inherit;
+    height: inherit;
+    max-width: 73.846rem;
+}
+
+.messageOfTheDay {
+    width: auto;
+    margin-left: -0.769rem;
+    margin-right: -0.769rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: none;
+    margin-top: 10%;
+    padding: 20px;
+}
+
+.messageOfTheDay h1 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.messageOfTheDay p {
+     font-size: 35px;
+     margin-bottom: 0;
+}
+
+.row-bottom {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 10%;
+    min-height: inherit;
+    height: inherit;
+    max-width: 115rem;
+}
+
+.title h2 {
+    text-align: center;
+    margin: 20px 0 20px 0;
+}
+
+.title p {
+    font-size: 18px;
+    line-height: 1.6em;
+    padding: 5px 5px 5px 5px;
+    margin: 0 0 0 0;
+}

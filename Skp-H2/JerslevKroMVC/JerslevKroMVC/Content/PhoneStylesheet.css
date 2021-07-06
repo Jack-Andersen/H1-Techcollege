@@ -1,0 +1,148 @@
+﻿/* When it's over 767 don't display the buger icon */
+@media screen and (min-width: 768px) {
+    .topnav a.icon {
+        display:none !important;
+    }
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+
+    /* Hide the links inside the navigation menu */
+    .topnav #mylinks {
+        display: none;
+    }
+
+    /* Style navigation menu links */
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    /* Style the hamburger menu */
+    .topnav a.icon {
+        background: black;
+        display: block;
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+
+    /* Add a grey background color on mouse-over */
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    /* The hole navbar */
+    .navbar-header {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* PhoneNumber block */
+    .block1 {
+        float: left;
+        width: 40%;
+        height: 100%;
+    }
+
+    .PhoneNumber-container {
+        height: auto;
+        margin: 5px 0 0 0;
+        padding: 8px 0 0 20%;
+        position: relative;
+    }
+
+    .PhoneNumber {
+        font-weight: 400;
+        font-size: 3vw;
+        text-decoration: none;
+    }
+
+    /* Image block */
+    .block2 {
+        float: left;
+        width: 100%;
+        height: 100%;
+        order: -1;
+    }
+
+    .navbar-header .Image {
+        display: block;
+        border-radius: 100px;
+        width: 100%;
+        height: auto;
+    }
+
+    .navbar-header .Text {
+        position: absolute;
+        top: 15%;
+        left: 33%;
+        transform: translate(-50%, -50%);
+        font-size: 5vw;
+        font-family: cursive;
+    }
+
+    /* Email block */
+    .block3 {
+        float: left;
+        width: 60%;
+        height: 100%;
+    }
+
+    .block3 p {
+        margin: 0 0 0 0;
+    }
+
+    .email-container {
+        height: auto;
+        margin: 5px 0 0 0;
+        padding: 8px 0 0 15px;
+        position: relative;
+    }
+
+    .email {
+        font-weight: 400;
+        font-size: 3vw;
+        text-decoration: none;
+    }
+
+    /* Flags */
+    .Flags {
+        order: -2;
+    }
+
+    .Flags p {
+        width: 100%;
+        float: left;
+    }
+
+    /* Navigate links */
+    .nav {
+        font-size: 3vw;
+        margin: 40px 5px 10px 5px;
+        padding: unset;
+        text-align: center;
+    }
+
+    .nav li {
+        font-family: cursive;
+        margin: 0 0 0 0;
+        display: inline;
+    }
+
+    .nav a {
+        color: black;
+        letter-spacing: 0.36px;
+     }
+
+    .carousel-inner > .item > img {
+        line-height: 1;
+        width: 100%;
+        height: 300px !important;
+    }
+}

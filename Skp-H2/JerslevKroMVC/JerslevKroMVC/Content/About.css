@@ -1,0 +1,10 @@
+﻿.row-top-About p {
+    margin: 0 0 2.5% 0;
+    color: white
+}
+
+.row-bottom-About p {
+    margin: 2.5% 0 0 0;
+    font-size: 18px;
+    color: white;
+}

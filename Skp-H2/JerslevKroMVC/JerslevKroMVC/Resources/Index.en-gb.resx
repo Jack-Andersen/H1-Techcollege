@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="h1_1" xml:space="preserve">
+    <value>Moms day d. 9. May</value>
+  </data>
+  <data name="h2_1" xml:space="preserve">
+    <value>Inn with traditional, Danish food &amp; cosiness</value>
+  </data>
+  <data name="h3_1" xml:space="preserve">
+    <value>Inn stay in idyllic surroundings</value>
+  </data>
+  <data name="h3_2" xml:space="preserve">
+    <value>Contact us for ordering</value>
+  </data>
+  <data name="p_1" xml:space="preserve">
+    <value>Jerslev kro will of course also celebrate our mothers, therefore we offer pork roast with potatoes, sky sauce and chips for ½ price (65, -) to the mothers who are invited out, the 9th of May from kl. 17:00 to 20:00, here at the inn.</value>
+  </data>
+  <data name="p_2" xml:space="preserve">
+    <value>From Thursday 6 May, there is no longer a requirement
+            table reservations, however, still require a bandage
+            and valid Coronapas.</value>
+  </data>
+  <data name="p_3" xml:space="preserve">
+    <value>At Jerslev Kro, we focus on traditional, Danish cosiness. Are you looking for an inn stay in Jerslev or Brønderslev, we have the perfect setting, own restaurant,
+                high level of service and generally an atmospheric inn. If you need to keep company, spend the night or maybe take a short holiday, you are always welcome with us.</value>
+  </data>
+  <data name="p_4" xml:space="preserve">
+    <value>As an inn, we can offer lots of different options. Here is both the traditional inn and restaurant, good accommodation, function rooms and meeting facilities.
+                If, for example, you need to have a Christmas lunch, it is possible to do so with us, where we take care of everything. And you can combine it with an inn stay where guests can stay overnight.</value>
+  </data>
+  <data name="p_5" xml:space="preserve">
+    <value>Our inn is located in quiet surroundings in beautiful North Jutland, which is why an inn stay with us is pure balm for both body and mind.</value>
+  </data>
+  <data name="p_6" xml:space="preserve">
+    <value>We make a virtue out of creating the well-known Danish cosiness, as we greatly appreciate all our guests and want to give them a memorable stay.</value>
+  </data>
+  <data name="p_7" xml:space="preserve">
+    <value>It is also possible to order food out of the house if you need to hold company or New Year somewhere else. We like to make the food for the party so you can concentrate on being a good host.</value>
+  </data>
+  <data name="p_8" xml:space="preserve">
+    <value>We welcome you here at the inn, where there is always a friendly and welcoming staff who focus on your wishes and needs.</value>
+  </data>
+  <data name="p_9" xml:space="preserve">
+    <value>Do you want to book an inn stay, New Year's menu, accommodation or dinner in our inn,
+                you can always call to order on telephone 98 83 11 88 or write to us at info@Jerslev-kro.dk.</value>
+  </data>
+</root>
